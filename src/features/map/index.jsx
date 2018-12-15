@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import styles from "./map.css";
+import Player from "../player";
+
+import "./map.css";
 
 export class Map extends Component {
   render() {
-    return <div style={styles.Map} />;
+    return (
+      <div className="Map">
+        <Player />
+      </div>
+    );
   }
 }
 
