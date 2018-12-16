@@ -1,14 +1,14 @@
-import {MOVE_PLAYER} from "./actions";
+import { MOVE_PLAYER } from "./actions";
 const initialState = {
-  position: [0, 0],
+  position: [0, 0]
 };
 
 const playerReducer = (state = initialState, action) => {
   switch (action.type) {
-    case MOVE_PLAYER: 
+    case MOVE_PLAYER:
       return {
-        ...action.payload,
-      }
+        ...action.payload
+      };
     default:
       return state;
   }
