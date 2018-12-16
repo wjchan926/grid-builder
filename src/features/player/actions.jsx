@@ -34,7 +34,7 @@ export const attemptMove = direction => {
   const oldPos = store.getState().player.position;
   const newPos = getNewPosition(oldPos, direction);
 
-  if (observeBoundaries(oldPos, newPos) && observeImpassable(oldPos, newPos)) {
+  if (observeBoundaries(newPos) && observeImpassable(newPos)) {
     directionMove(newPos);
   }
 };
@@ -47,7 +47,7 @@ const observeBoundaries = newPos => {
   );
 };
 
-const observeImpassable = (oldPos, newPos) => {
+const observeImpassable = (newPos) => {
   const tiles = store.getState().map.tiles;
   const y = newPos[1] / SPRITE_SIZE;
   const x = newPos[0] / SPRITE_SIZE;
