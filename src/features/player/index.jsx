@@ -8,7 +8,7 @@ import { SPRITE_SIZE } from "../../config/constants";
 
 class Player extends Component {
   render() {
-    const { position } = this.props;
+    const { position, spriteLocation } = this.props;
 
     return (
       <div
@@ -16,7 +16,8 @@ class Player extends Component {
           top: position[1],
           left: position[0],
           height: SPRITE_SIZE,
-          width: SPRITE_SIZE
+          width: SPRITE_SIZE,
+          backgroundPosition: spriteLocation
         }}
         className="Player"
       />

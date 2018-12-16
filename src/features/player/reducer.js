@@ -1,6 +1,11 @@
 import { MOVE_PLAYER } from "./actions";
+import { DIRECTION, SPRITE_SIZE } from "../../config/constants";
+
 const initialState = {
-  position: [0, 0]
+  position: [0, 0],
+  spriteLocation: `${SPRITE_SIZE * 0}px ${SPRITE_SIZE * 0}px`,
+  direction: DIRECTION.SOUTH,
+  walkIndex: 0
 };
 
 const playerReducer = (state = initialState, action) => {
