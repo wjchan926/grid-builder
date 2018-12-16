@@ -1,7 +1,11 @@
+:root{
+    --grassColor: rgb(41, 145, 41);
+}
+
 .Map {
     position: relative;
-    width: 800px;
-    height: 400px;
+    /* width: 800px;
+    height: 600px; */
     border: 4px solid white;
     top: 0px;
     left: 0px;
@@ -13,11 +17,11 @@
 
 .tile {
     display: inline-flex;
-    background-color: green;
+    background-color: var(--grassColor);
 }
 
 .grass {
-    background-color: green;
+    background-color: var(--grassColor);
 }
 
 .rock {
