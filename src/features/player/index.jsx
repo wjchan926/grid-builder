@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
+import handleMovement from "./movement";
+
 import "./player.css";
 
 class Player extends Component {
@@ -23,4 +26,5 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Player);
+
+export default connect(mapStateToProps)(handleMovement(Player));

@@ -1,11 +1,12 @@
 :root {
   --walkSprite: url("player_walk.png");
+  --spriteSize: 40px;
 }
 
 .Player {
   position: absolute;
   background-image: var(--walkSprite);
   background-position: 0 0;
-  width: 40px;
-  height: 40px;
+  width: var(--spriteSize);
+  height: var(--spriteSize);
 }
