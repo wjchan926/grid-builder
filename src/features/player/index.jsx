@@ -7,13 +7,13 @@ import "./player.css";
 
 class Player extends Component {
   render() {
-    const {position} = this.props;
+    const { position } = this.props;
 
     return (
       <div
         style={{
           top: position[1],
-          left: position[0],
+          left: position[0]
         }}
         className="Player"
       />
@@ -25,6 +25,5 @@ const mapStateToProps = state => {
     ...state.player
   };
 };
-
 
 export default connect(mapStateToProps)(handleMovement(Player));

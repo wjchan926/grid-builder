@@ -1,5 +1,5 @@
-import {DIRECTION} from "../../config/constants";
-import {directionMove} from "./actions";
+import { DIRECTION } from "../../config/constants";
+import { directionMove } from "./actions";
 
 const handleMovement = player => {
   const handleKeyDown = e => {
@@ -14,7 +14,7 @@ const handleMovement = player => {
         return directionMove(DIRECTION.EAST);
       case 40:
         return directionMove(DIRECTION.SOUTH);
-        default:
+      default:
         return null;
     }
   };
