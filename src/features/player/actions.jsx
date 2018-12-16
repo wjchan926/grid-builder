@@ -39,3 +39,7 @@ const observeBoundaries = (oldPos, newPos) => {
     ? newPos
     : oldPos;
 };
+
+const observeImpassable = (oldPos, newPps) => {
+  return 
+}

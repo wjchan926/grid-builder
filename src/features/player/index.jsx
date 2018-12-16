@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import handleMovement from "./movement";
 
 import "./player.css";
+import { SPRITE_SIZE } from "../../config/constants";
 
 class Player extends Component {
   render() {
@@ -13,17 +14,17 @@ class Player extends Component {
       <div
         style={{
           top: position[1],
-          left: position[0]
+          left: position[0],
+          height: SPRITE_SIZE,
+          width: SPRITE_SIZE
         }}
         className="Player"
       />
     );
   }
 }
-const mapStateToProps = state => {
-  return {
-    ...state.player
-  };
-};
+const mapStateToProps = state => ({
+  ...state.player
+});
 
-export default connect(mapStateToProps)(handleMovement(Player));
+export default connect(mapStateToProps, null)(handleMovement(Player));
