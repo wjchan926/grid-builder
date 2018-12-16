@@ -27,4 +27,5 @@ const mapStateToProps = state => ({
   ...state.player
 });
 
+
 export default connect(mapStateToProps, null)(handleMovement(Player));

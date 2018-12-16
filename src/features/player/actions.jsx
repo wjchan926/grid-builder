@@ -8,16 +8,14 @@ import store from "../../config/store";
 
 export const MOVE_PLAYER = "MOVE_PLAYER";
 
-export const directionMove = direction => {
-  const oldPos = store.getState().player.position;
+const directionMove = newPos => {
   store.dispatch({
     type: MOVE_PLAYER,
-    payload: { position: observeBoundaries(oldPos, getNewPosition(direction)) }
+    payload: { position: newPos }
   });
 };
 
-const getNewPosition = direction => {
-  const oldPos = store.getState().player.position;
+const getNewPosition = (oldPos, direction) => {
   switch (direction) {
     case DIRECTION.WEST:
       return [oldPos[0] - SPRITE_SIZE, oldPos[1]];
@@ -32,14 +30,27 @@ const getNewPosition = direction => {
   }
 };
 
-const observeBoundaries = (oldPos, newPos) => {
-  return newPos[0] >= 0 &&
-    newPos[0] <= MAP_WIDTH - SPRITE_SIZE &&
-    (newPos[1] >= 0 && newPos[1] <= MAP_HEIGHT - SPRITE_SIZE)
-    ? newPos
-    : oldPos;
+export const attemptMove = direction => {
+  const oldPos = store.getState().player.position;
+  const newPos = getNewPosition(oldPos, direction);
+
+  if (observeBoundaries(oldPos, newPos) && observeImpassable(oldPos, newPos)) {
+    directionMove(newPos);
+  }
 };
 
-const observeImpassable = (oldPos, newPps) => {
-  return 
-}
+const observeBoundaries = newPos => {
+  return (
+    newPos[0] >= 0 &&
+    newPos[0] <= MAP_WIDTH - SPRITE_SIZE &&
+    (newPos[1] >= 0 && newPos[1] <= MAP_HEIGHT - SPRITE_SIZE)
+  );
+};
+
+const observeImpassable = (oldPos, newPos) => {
+  const tiles = store.getState().map.tiles;
+  const y = newPos[1] / SPRITE_SIZE;
+  const x = newPos[0] / SPRITE_SIZE;
+  const nextTile = tiles[y][x];
+  return nextTile < 5;
+};

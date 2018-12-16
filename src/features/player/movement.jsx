@@ -1,5 +1,5 @@
 import { DIRECTION } from "../../config/constants";
-import { directionMove } from "./actions";
+import { attemptMove } from "./actions";
 
 const handleMovement = player => {
   const handleKeyDown = e => {
@@ -7,13 +7,13 @@ const handleMovement = player => {
 
     switch (e.keyCode) {
       case 37:
-        return directionMove(DIRECTION.WEST);
+        return attemptMove(DIRECTION.WEST);
       case 38:
-        return directionMove(DIRECTION.NORTH);
+        return attemptMove(DIRECTION.NORTH);
       case 39:
-        return directionMove(DIRECTION.EAST);
+        return attemptMove(DIRECTION.EAST);
       case 40:
-        return directionMove(DIRECTION.SOUTH);
+        return attemptMove(DIRECTION.SOUTH);
       default:
         return null;
     }
