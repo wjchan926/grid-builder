@@ -4,8 +4,8 @@
 
 .Map {
     position: relative;
-    /* width: 800px;
-    height: 600px; */
+    width: 1000px;
+    height: 600px;
     border: 4px solid white;
     top: 0px;
     left: 0px;
@@ -30,4 +30,8 @@
 
 .tree {
     background-image: url('/tiles/tree.png');
+}
+
+.chest {
+    background-image: url('/tiles/chest.png');
 }

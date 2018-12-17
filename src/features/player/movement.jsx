@@ -1,9 +1,14 @@
 import { DIRECTION } from "../../config/constants";
 import { attemptMove } from "./actions";
 
+const preventedKeys = [37, 38, 39, 40];
+
 const handleMovement = player => {
   const handleKeyDown = e => {
-    e.preventDefault();
+
+    if (preventedKeys.includes(e.keyCode)){
+      e.preventDefault();
+    }
 
     switch (e.keyCode) {
       case 37:
