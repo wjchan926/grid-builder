@@ -1,6 +1,11 @@
+:root {
+    --mapWidth: 1000px;
+    --mapHeight: 600px;
+}
+
 .World {
     position: relative;
-    width: 1000px;
-    height: 600px;
-    margin: 20px auto 20px 20px;
+    width: var(--mapWidth);
+    height: var(--mapHeight);
+    margin: 20px 10px 20px auto;
 }
