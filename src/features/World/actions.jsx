@@ -1,5 +1,5 @@
 import store from "../../config/store";
-import { tiles } from "../../data/maps/1";
+import { tiles } from "../../data/Maps/1";
 
 export const ADD_TILES = "ADD_TILES";
 

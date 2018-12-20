@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Map from "../map";
-import Player from "../player";
+import Map from "../Map";
+import Player from "../Player";
 
 import { addTiles } from "./actions";
 
-import "./world.css";
+import "./World.css";
 
 export class World extends Component {
   componentDidMount(){

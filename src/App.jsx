@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import World from "./features/world";
+import World from "./features/World";
 
 
 class App extends Component {

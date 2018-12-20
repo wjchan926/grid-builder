@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import handleMovement from "./movement";
 
-import "./player.css";
+import "./Player.css";
 import { SPRITE_SIZE } from "../../config/constants";
 
 class Player extends Component {

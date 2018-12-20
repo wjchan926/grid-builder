@@ -1,4 +1,4 @@
-import {ADD_TILES} from "../world/actions"
+import {ADD_TILES} from "../World/actions"
 const initialState = {
   tiles: []
 };

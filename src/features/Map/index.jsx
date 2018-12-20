@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import { SPRITE_SIZE } from "../../config/constants";
 
-import "./map.css";
+import "./Map.css";
+
+const BORDER_SIZE = 1;
 
 export class Map extends Component {
   render() {
@@ -18,8 +20,8 @@ export class Map extends Component {
   }
 }
 
-const MapRow = (props) => {
-  const {row} = props;
+const MapRow = props => {
+  const { row } = props;
 
   return (
     <div className="row">
@@ -30,13 +32,13 @@ const MapRow = (props) => {
   );
 };
 
-const MapTile = (props) => {
+const MapTile = props => {
   return (
     <div
       className={`tile ${getTileSprite(props.tile)}`}
       style={{
-        width: SPRITE_SIZE,
-        height: SPRITE_SIZE
+        width: SPRITE_SIZE - 2 * BORDER_SIZE,
+        height: SPRITE_SIZE - 2 * BORDER_SIZE
       }}
     />
   );
@@ -61,4 +63,7 @@ const mapStateToProps = state => ({
   tiles: state.map.tiles
 });
 
-export default connect(mapStateToProps, null)(Map);
+export default connect(
+  mapStateToProps,
+  null
+)(Map);
