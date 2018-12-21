@@ -4,9 +4,6 @@
 
 .Map {
     position: relative;
-    width: 1000px;
-    height: 600px;
-    border: 4px solid white;
     top: 0px;
     left: 0px;
 }
@@ -18,7 +15,7 @@
 .tile {
     display: inline-flex;
     background-color: var(--grassColor);
-    border: 1px solid black
+    outline: 1px solid black
 }
 
 .grass {

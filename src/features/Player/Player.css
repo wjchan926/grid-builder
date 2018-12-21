@@ -1,5 +1,4 @@
 .Player {
   position: absolute;
   background-image: url("player_walk.png");
-  margin: 3px;
 }

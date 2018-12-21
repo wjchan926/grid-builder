@@ -4,8 +4,6 @@ import { SPRITE_SIZE } from "../../config/constants";
 
 import "./Map.css";
 
-const BORDER_SIZE = 1;
-
 export class Map extends Component {
   render() {
     const { tiles } = this.props;
@@ -37,8 +35,8 @@ const MapTile = props => {
     <div
       className={`tile ${getTileSprite(props.tile)}`}
       style={{
-        width: SPRITE_SIZE - 2 * BORDER_SIZE,
-        height: SPRITE_SIZE - 2 * BORDER_SIZE
+        width: SPRITE_SIZE,
+        height: SPRITE_SIZE
       }}
     />
   );
