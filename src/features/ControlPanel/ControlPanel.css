@@ -17,10 +17,3 @@
 #MainControl:hover {
   filter: brightness(80%);
 }
-
-.VariablePanel {
-  margin: 2px;
-  border: 4px solid burlywood;
-  justify-content: center;
-  flex: 1;
-}

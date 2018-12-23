@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./ControlPanel.css";
 import MainControls from "./MainControls";
-import VariablePanel from "./VariablePanel";
+import VariablePanel from "./VariablePanel/VariablePanel";
 
 export class ControlPanel extends Component {
   render() {
