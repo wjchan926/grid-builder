@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import {Form } from "semantic-ui-react";
 import TerrainSelector from "./TerrainSelector";
 
-import "../VariablePanel.css";
+import "./EditMap.css";
 
 export class EditMap extends Component {
   render() {
     return (
       <div>
-        <div>Map Size</div>
+        <div style={{textAlign:"center"}}>Map Size</div>
         <Form>
           <Form.Group widths="equal">
             <Form.Input label="Width:" placeholder="Width" fluid />
@@ -17,7 +17,7 @@ export class EditMap extends Component {
           <Form.Button content="Resize" />
         </Form>
         <div className="Terrain">
-          <div>Terrain</div>
+        <div style={{textAlign:"center"}}>Terrain</div>
           <TerrainSelector />
         </div>
       </div>

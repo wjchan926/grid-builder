@@ -1,0 +1,10 @@
+.Terrain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .TerrainRow {
+    display: flex;
+    flex-direction: row;
+  }

@@ -29,22 +29,30 @@ export class MainControls extends Component {
   render() {
     return (
       <div>
-        <div>Main Controls</div>
-        <Button
-          content="Edit Map"
-          id="MainControl"
-          onClick={this.handleEditMapOnClick}
-        />
-        <Button
-          content="Edit Characters"
-          id="MainControl"
-          onClick={this.handleEditCharOnClick}
-        />
-        <Button
-          content="Play Game"
-          id="MainControl"
-          onClick={this.handlePlayGameOnClick}
-        />
+        <div style={{ textAlign: "center" }}>Main Controls</div>
+        <div>
+          <Button.Group vertical>
+            <Button
+              content="Edit Map"
+              id="MainControl"
+              onClick={this.handleEditMapOnClick}
+            />
+            <Button
+              content="Edit Pieces"
+              id="MainControl"
+              onClick={this.handleEditCharOnClick}
+            />
+          </Button.Group>        
+          <Button.Group vertical>
+            <Button content="Save" id="MainControl" onClick={() => {}} />
+            <Button content="Load" id="MainControl" onClick={() => {}} />
+          </Button.Group>
+          <Button
+            content="Play Game"
+            id="MainControlPlay"
+            onClick={this.handlePlayGameOnClick}
+          />
+        </div>
       </div>
     );
   }

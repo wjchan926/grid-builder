@@ -8,7 +8,6 @@ export class ControlPanel extends Component {
     return (
       <div className="ControlPanel">
         <MainControls />
-        <hr/>
         <VariablePanel/>
       </div>
     );

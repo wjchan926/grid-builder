@@ -5,7 +5,7 @@ import "./VariablePanel.css";
 
 import { CONTROL_TYPE } from "../../../config/constants";
 import EditMap from "./EditMap/EditMap";
-import EditCharacters from "./EditCharacter/EditCharacters";
+import EditPieces from "./EditPieces/EditPieces";
 import Gameplay from "./Gameplay/Gameplay";
 
 export class VariablePanel extends Component {
@@ -19,7 +19,7 @@ export class VariablePanel extends Component {
         variableControls = <EditMap />;
         break;
       case CONTROL_TYPE.CHARACTERS:
-        variableControls = <EditCharacters />;
+        variableControls = <EditPieces />;
         break;
       case CONTROL_TYPE.PLAY:
         variableControls = <Gameplay />;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { SPRITE_SIZE } from "../../../../config/constants";
 
-import "../VariablePanel.css";
+import "./EditMap.css";
 
 export class TerrainSelector extends Component {
   render() {
