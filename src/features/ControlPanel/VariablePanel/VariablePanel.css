@@ -3,6 +3,7 @@
     border: 4px solid burlywood;
     justify-content: center;
     flex: 1;
+    overflow-y:scroll;
   }
   
   .Terrain{
@@ -11,6 +12,16 @@
   }
   
   .TerrainRow {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Monster{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .MonsterRow {
     display: flex;
     flex-direction: row;
   }
