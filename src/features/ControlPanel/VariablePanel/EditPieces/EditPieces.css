@@ -7,6 +7,10 @@
     padding: 5px;
 }
 
+#EditPieceButton:hover {
+  filter: brightness(80%);
+}
+
 .Monster {
     display: flex;
     flex-direction: column;

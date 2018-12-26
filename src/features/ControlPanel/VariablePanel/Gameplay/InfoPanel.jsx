@@ -62,7 +62,7 @@ export class InfoPanel extends Component {
         />
         <span>Other Notes</span>
         <Form>
-          <TextArea autoHeight placeHolder="Add Character Info"/>
+          <TextArea autoHeight placeholder="Add Character Info"/>
         </Form>
       </div>
     );

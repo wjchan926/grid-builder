@@ -10,8 +10,8 @@ export class Map extends Component {
 
     return (
       <div className="Map">
-        {tiles.map(row => (
-          <MapRow row={row} />
+        {tiles.map((row, i) => (
+          <MapRow row={row} key={i} />
         ))}
       </div>
     );
@@ -23,8 +23,8 @@ const MapRow = props => {
 
   return (
     <div className="row">
-      {row.map(tile => (
-        <MapTile tile={tile} />
+      {row.map((tile, i) => (
+        <MapTile tile={tile} key={i} />
       ))}
     </div>
   );

@@ -13,7 +13,7 @@ export class Stat extends Component {
         {showButtons ? (
           <span>
             <Button className="PlusMinus" icon="minus circle" />
-            <Button className="PlusMinus" icon="plus " />
+            <Button className="PlusMinus" icon="plus circle" />
           </span>
         ) : null}
       </span>

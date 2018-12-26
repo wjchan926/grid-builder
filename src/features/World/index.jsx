@@ -8,27 +8,42 @@ import { addTiles } from "./actions";
 import "./World.css";
 
 export class World extends Component {
-  componentDidMount(){
-    const {addTiles} = this.props;
+  constructor(props) {
+    super(props);
 
-    addTiles();
+    this.state = {
+      tiles: []
+    };
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.tiles !== state.tiles) {
+      return {
+        tiles: props.tiles
+      };
+    }
+    return null;
   }
 
   render() {
     return (
       <div className="World">
-        <Map/>
+        <Map />
         <Player />
       </div>
     );
   }
 }
 
+const mapStateToProps = state => ({
+  tiles: state.map.tiles
+});
+
 const mapDispatchToProps = {
   addTiles
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(World);
