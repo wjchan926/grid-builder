@@ -7,8 +7,8 @@ export const DIRECTION = {
   SOUTH: 40
 };
 
-export const MAP_HEIGHT = SPRITE_SIZE * 15;
-export const MAP_WIDTH = SPRITE_SIZE * 25;
+export const MAX_MAP_HEIGHT = SPRITE_SIZE * 15;
+export const MAX_MAP_WIDTH = SPRITE_SIZE * 25;
 
 export const CONTROL_TYPE = {
   MAP: "MAP",

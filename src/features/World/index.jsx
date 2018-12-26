@@ -5,14 +5,18 @@ import Player from "../Player";
 
 import { addTiles } from "./actions";
 
+import { tiles } from "../../data/Maps/1";
+
 import "./World.css";
 
 export class World extends Component {
   constructor(props) {
     super(props);
 
+    const { addTiles } = props;
+
     this.state = {
-      tiles: []
+      tiles: addTiles(tiles)
     };
   }
 

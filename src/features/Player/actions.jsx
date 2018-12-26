@@ -1,8 +1,6 @@
 import {
   DIRECTION,
-  SPRITE_SIZE,
-  MAP_WIDTH,
-  MAP_HEIGHT
+  SPRITE_SIZE
 } from "../../config/constants";
 import store from "../../config/store";
 
@@ -47,10 +45,13 @@ export const attemptMove = direction => {
 };
 
 const observeBoundaries = newPos => {
+  const mapWidth = store.getState().map.size.width * SPRITE_SIZE;
+  const mapHeight = store.getState().map.size.height* SPRITE_SIZE;
+
   return (
     newPos[0] >= 0 &&
-    newPos[0] <= MAP_WIDTH - SPRITE_SIZE &&
-    (newPos[1] >= 0 && newPos[1] <= MAP_HEIGHT - SPRITE_SIZE)
+    newPos[0] <= mapWidth - SPRITE_SIZE &&
+    (newPos[1] >= 0 && newPos[1] <= mapHeight - SPRITE_SIZE)
   );
 };
 
