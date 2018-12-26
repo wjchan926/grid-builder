@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { SPRITE_SIZE } from "../../config/constants";
+import MapTile from "./MapTile";
 
 import "./Map.css";
 
@@ -28,33 +28,6 @@ const MapRow = props => {
       ))}
     </div>
   );
-};
-
-const MapTile = props => {
-  return (
-    <div
-      className={`tile ${getTileSprite(props.tile)}`}
-      style={{
-        width: SPRITE_SIZE,
-        height: SPRITE_SIZE
-      }}
-    />
-  );
-};
-
-const getTileSprite = type => {
-  switch (type) {
-    case 0:
-      return "grass";
-    case 4:
-      return "chest";
-    case 5:
-      return "rock";
-    case 6:
-      return "tree";
-    default:
-      return "grass";
-  }
 };
 
 const mapStateToProps = state => ({

@@ -1,15 +1,23 @@
 import { CONTROL_TYPE } from "../../config/constants";
-import {SET_CONTROL_TYPE} from "./actions";
+import { SET_CONTROL_TYPE } from "./actions";
+import { SET_SELECTED_TERRAIN_TILE } from "./VariablePanel/EditMap/actions";
 
 const initialState = {
-  controlType: CONTROL_TYPE.PLAY
+  controlType: CONTROL_TYPE.PLAY,
+  selectedTerrain: "none"
 };
 
 const controlsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CONTROL_TYPE:
       return {
+        ...state,
         ...action.payload
+      };
+    case SET_SELECTED_TERRAIN_TILE:
+      return {
+        ...state,
+        selectedTerrain: action.payload
       };
     default:
       return state;

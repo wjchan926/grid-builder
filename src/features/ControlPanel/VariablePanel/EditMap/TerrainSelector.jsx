@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { SPRITE_SIZE } from "../../../../config/constants";
-
+import { MapTile } from "../../../Map/MapTile";
 import "./EditMap.css";
+import  SelectorTile  from "./SelectorTile/";
 
 export class TerrainSelector extends Component {
   render() {
@@ -9,82 +9,19 @@ export class TerrainSelector extends Component {
     return (
       <div>
         <div className="TerrainRow">
-          <div
-            style={{
-              width: SPRITE_SIZE,
-              height: SPRITE_SIZE,
-              backgroundColor: "black",
-              margin:"1px"
-            }}
-          />
-          <div
-            style={{
-              width: SPRITE_SIZE,
-              height: SPRITE_SIZE,
-              backgroundColor: "black",
-              margin:"1px"
-            }}
-          />
-          <div
-            style={{
-              width: SPRITE_SIZE,
-              height: SPRITE_SIZE,
-              backgroundColor: "black",
-              margin:"1px"
-            }}
-          />
+          <SelectorTile tile={<MapTile tile={0} />} />
+          <SelectorTile tile={<MapTile tile={1} />} />
+          <SelectorTile tile={<MapTile tile={2} />} />
         </div>
         <div className="TerrainRow">
-          <div
-            style={{
-              width: SPRITE_SIZE,
-              height: SPRITE_SIZE,
-              backgroundColor: "black",
-              margin:"1px"
-            }}
-          />
-          <div
-            style={{
-              width: SPRITE_SIZE,
-              height: SPRITE_SIZE,
-              backgroundColor: "black",
-              margin:"1px"
-            }}
-          />
-          <div
-            style={{
-              width: SPRITE_SIZE,
-              height: SPRITE_SIZE,
-              backgroundColor: "black",
-              margin:"1px"
-            }}
-          />
+          <SelectorTile tile={<MapTile tile={3} />} />
+          <SelectorTile tile={<MapTile tile={4} />} />
+          <SelectorTile tile={<MapTile tile={5} />} />
         </div>
         <div className="TerrainRow">
-          <div
-            style={{
-              width: SPRITE_SIZE,
-              height: SPRITE_SIZE,
-              backgroundColor: "black",
-              margin:"1px"
-            }}
-          />
-          <div
-            style={{
-              width: SPRITE_SIZE,
-              height: SPRITE_SIZE,
-              backgroundColor: "black",
-              margin:"1px"
-            }}
-          />
-          <div
-            style={{
-              width: SPRITE_SIZE,
-              height: SPRITE_SIZE,
-              backgroundColor: "black",
-              margin:"1px"
-            }}
-          />
+          <SelectorTile tile={<MapTile tile={6} />} />
+          <SelectorTile tile={<MapTile tile={7} />} />
+          <SelectorTile tile={<MapTile tile={8} />} />
         </div>
       </div>
     );

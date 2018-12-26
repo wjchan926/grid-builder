@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { Form } from "semantic-ui-react";
 import TerrainSelector from "./TerrainSelector";
 
 import "./EditMap.css";
-
-import { setMapSize } from "./actions";
 
 export class EditMap extends Component {
   constructor(props) {
@@ -18,10 +15,22 @@ export class EditMap extends Component {
   }
 
   handleWidthChange = e => {
+    if (parseInt(e.target.value) > 25) {
+      e.target.value = 25;
+    }
+    if (parseInt(e.target.value) < 1) {
+      e.target.value = 1;
+    }
     this.setState({ width: parseInt(e.target.value) });
   };
 
   handleHeightChange = e => {
+    if (parseInt(e.target.value) > 15) {
+      e.target.value = 15;
+    }
+    if (parseInt(e.target.value) < 1) {
+      e.target.value = 1;
+    }
     this.setState({ height: parseInt(e.target.value) });
   };
 
@@ -47,7 +56,12 @@ export class EditMap extends Component {
               onChange={this.handleHeightChange}
             />
           </Form.Group>
-          <Form.Button content="Resize" onClick={()=>{setMapSize(width, height)}} />
+          <Form.Button
+            content="Resize"
+            onClick={() => {
+              setMapSize(width, height);
+            }}
+          />
         </Form>
         <div className="Terrain">
           <div style={{ textAlign: "center" }}>Terrain</div>
@@ -57,12 +71,3 @@ export class EditMap extends Component {
     );
   }
 }
-
-const mapDispatchToProps = () => ({
-  setMapSize
-});
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(EditMap);

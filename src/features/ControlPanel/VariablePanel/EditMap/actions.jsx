@@ -1,7 +1,9 @@
 import store from "../../../../config/store";
 import { addTiles } from "../../../World/actions";
+import { getTileSprite } from "../../../Map/MapTile";
 
 export const SET_MAP_SIZE = "SET_MAP_SIZE";
+export const SET_SELECTED_TERRAIN_TILE = "SET_SELECTED_TERRAIN_TILE";
 
 export const setMapSize = async (width, height) => {
   await store.dispatch({
@@ -9,7 +11,7 @@ export const setMapSize = async (width, height) => {
     payload: { width, height }
   });
 
-  addTiles(createArr([height, width]));
+  await addTiles(createArr([height, width]));
 };
 
 const createArr = dimensions => {
@@ -20,4 +22,11 @@ const createArr = dimensions => {
   }
 
   return array;
+};
+
+export const setSelectedTerrainTile = async tile => {
+  await store.dispatch({
+    type: SET_SELECTED_TERRAIN_TILE,
+    payload: getTileSprite(tile)
+  });
 };

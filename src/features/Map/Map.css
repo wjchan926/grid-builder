@@ -22,6 +22,26 @@
     background-color: var(--grassColor);
 }
 
+.water {
+    background-image: url('/tiles/water.png');
+}
+
+.dirt {
+    background-image: url('/tiles/dirt.png');
+}
+
+.jungle {
+    background-image: url('/tiles/jungle.png');
+}
+
+.chest {
+    background-image: url('/tiles/chest.png');
+}
+
+.campfire {
+    background-image: url('/tiles/campfire.png');
+}
+
 .rock {
     background-image: url('/tiles/rock.png');
 }
@@ -30,6 +50,10 @@
     background-image: url('/tiles/tree.png');
 }
 
-.chest {
-    background-image: url('/tiles/chest.png');
+.wall {
+    background-image: url('/tiles/wall.png');
+}
+
+.none {
+    background-color: black;
 }

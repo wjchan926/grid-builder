@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "./VariablePanel.css";
 
 import { CONTROL_TYPE } from "../../../config/constants";
-import EditMap from "./EditMap/EditMap";
+import EditMap from "./EditMap";
 import EditPieces from "./EditPieces/EditPieces";
 import Gameplay from "./Gameplay/Gameplay";
 

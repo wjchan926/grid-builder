@@ -43,9 +43,9 @@ const mapStateToProps = state => ({
   tiles: state.map.tiles
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps = () =>({
   addTiles
-};
+});
 
 export default connect(
   mapStateToProps,
