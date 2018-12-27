@@ -14,24 +14,8 @@ export class EditMap extends Component {
     };
   }
 
-  handleWidthChange = e => {
-    if (parseInt(e.target.value) > 25) {
-      e.target.value = 25;
-    }
-    if (parseInt(e.target.value) < 1) {
-      e.target.value = 1;
-    }
-    this.setState({ width: parseInt(e.target.value) });
-  };
-
-  handleHeightChange = e => {
-    if (parseInt(e.target.value) > 15) {
-      e.target.value = 15;
-    }
-    if (parseInt(e.target.value) < 1) {
-      e.target.value = 1;
-    }
-    this.setState({ height: parseInt(e.target.value) });
+  handleChange = e => {
+    this.setState({ [e.target.name]: parseInt(e.target.value) });
   };
 
   render() {
@@ -47,19 +31,23 @@ export class EditMap extends Component {
               label="Width:"
               placeholder="Width"
               fluid
-              onChange={this.handleWidthChange}
+              onChange={this.handleChange}
+              name="width"
             />
             <Form.Input
               label="Height:"
               placeholder="Height"
               fluid
-              onChange={this.handleHeightChange}
+              onChange={this.handleChange}
+              name="height"
             />
           </Form.Group>
           <Form.Button
             content="Resize"
             onClick={() => {
-              setMapSize(width, height);
+              if (Number.isInteger(width) && Number.isInteger(height)) {
+                setMapSize(width, height);
+              }
             }}
           />
         </Form>
