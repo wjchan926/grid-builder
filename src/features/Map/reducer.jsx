@@ -1,5 +1,5 @@
-import {ADD_TILES} from "../World/actions"
-import { SET_MAP_SIZE } from "../ControlPanel/VariablePanel/EditMap/actions";
+import {ADD_TILES} from "./actions"
+import { SET_MAP_SIZE, SET_TILE } from "../ControlPanel/actions";
 
 const initialState = {
   tiles: [],
@@ -14,13 +14,18 @@ const mapReducer = (state = initialState, action) => {
     case ADD_TILES:
       return {
         ...state,
-        ...action.payload
+        tiles: action.payload
       };
     case SET_MAP_SIZE:
       return {
         ...state,
         size: action.payload
       };
+    case SET_TILE:
+      return {
+        ...state,
+        tiles: action.payload
+      }
     default:
       return state;
   }

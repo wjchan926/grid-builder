@@ -1,59 +1,67 @@
-:root{
-    --grassColor: rgb(41, 145, 41);
+:root {
+  --grassColor: rgb(41, 145, 41);
 }
 
 .Map {
-    position: relative;
-    top: 0px;
-    left: 0px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.MapTileWrapper {
+  height: 40px;
+}
+
+.MapTileWrapperHover {
+  filter: brightness(50%);
 }
 
 .row {
-    display: flex;
+  display: flex;
 }
 
 .tile {
-    display: inline-flex;
-    background-color: var(--grassColor);
-    outline: 1px solid black
+  display: inline-flex;
+  background-color: var(--grassColor);
+  outline: 1px solid black;
 }
 
 .grass {
-    background-color: var(--grassColor);
+  background-color: var(--grassColor);
 }
 
 .water {
-    background-image: url('/tiles/water.png');
+  background-image: url("/tiles/water.png");
 }
 
 .dirt {
-    background-image: url('/tiles/dirt.png');
+  background-image: url("/tiles/dirt.png");
 }
 
 .jungle {
-    background-image: url('/tiles/jungle.png');
+  background-image: url("/tiles/jungle.png");
 }
 
 .chest {
-    background-image: url('/tiles/chest.png');
+  background-image: url("/tiles/chest.png");
 }
 
 .campfire {
-    background-image: url('/tiles/campfire.png');
+  background-image: url("/tiles/campfire.png");
 }
 
 .rock {
-    background-image: url('/tiles/rock.png');
+  background-image: url("/tiles/rock.png");
 }
 
 .tree {
-    background-image: url('/tiles/tree.png');
+  background-image: url("/tiles/tree.png");
 }
 
 .wall {
-    background-image: url('/tiles/wall.png');
+  background-image: url("/tiles/wall.png");
 }
 
 .none {
-    background-color: black;
+  background-color: black;
 }

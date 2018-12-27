@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 import "./Player.css";
-import { SPRITE_SIZE } from "../../config/constants";
+import { SPRITE_SIZE, CONTROL_TYPE } from "../../config/constants";
 
 export default class Player extends Component {
   render() {
-    const { position, spriteLocation } = this.props;
+    const { position, spriteLocation, controlType } = this.props;
 
     return (
       <div
@@ -14,7 +14,8 @@ export default class Player extends Component {
           left: position[0],
           height: SPRITE_SIZE,
           width: SPRITE_SIZE,
-          backgroundPosition: spriteLocation
+          backgroundPosition: spriteLocation,
+          pointerEvents: `${controlType === CONTROL_TYPE.PLAY ? "" : "none"}`
         }}
         className="Player"
       />

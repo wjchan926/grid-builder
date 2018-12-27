@@ -1,6 +1,6 @@
 import { CONTROL_TYPE } from "../../config/constants";
 import { SET_CONTROL_TYPE } from "./actions";
-import { SET_SELECTED_TERRAIN_TILE } from "./VariablePanel/EditMap/actions";
+import { SET_SELECTED_TERRAIN_TILE } from "./actions";
 
 const initialState = {
   controlType: CONTROL_TYPE.PLAY,

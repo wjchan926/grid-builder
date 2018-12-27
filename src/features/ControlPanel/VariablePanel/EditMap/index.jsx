@@ -1,6 +1,6 @@
 import { EditMap } from "./EditMap";
 import { connect } from "react-redux";
-import { setMapSize } from "./actions";
+import { setMapSize } from "../../actions";
 
 const mapDispatchToProps = () => ({
   setMapSize

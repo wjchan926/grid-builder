@@ -3,8 +3,8 @@ import store from "../../config/store";
 
 export const ADD_TILES = "ADD_TILES";
 
-export const addTiles = (tiles) =>
+export const addTiles = tiles =>
   store.dispatch({
     type: ADD_TILES,
-    payload: { tiles }
+    payload: tiles
   });

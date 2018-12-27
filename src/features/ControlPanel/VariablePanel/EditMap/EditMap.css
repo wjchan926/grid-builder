@@ -13,8 +13,12 @@
 .Selector {
   display: inline-block;
   height: 40px;
-  width:40px;
+  width: 40px;
   margin: 2px;
+}
+
+.Selector:hover {
+  filter: brightness(80%);
 }
 
 .Highlight {
