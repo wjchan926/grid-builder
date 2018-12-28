@@ -113,33 +113,44 @@ export class CreateEditChracter extends Component {
         avatar: "",
         dndClass: "",
         race: "",
-        level: 0,
-        hp: 0,
-        ac: 0,
-        ms: 0,
-        strength: 0,
-        dexterity: 0,
-        constitution: 0,
-        intelligence: 0,
-        wisdom: 0,
-        charisma: 0,
+        level: null,
+        hp: null,
+        ac: null,
+        ms: null,
+        strength: null,
+        dexterity: null,
+        constitution: null,
+        intelligence: null,
+        wisdom: null,
+        charisma: null,
         equipment: "",
         profAndLang: "",
         featAndTraits: "",
         otherInfo: "",
         portraitPath: "",
         spritePath: "",
-        location:[0, 0],
+        location: [0, 0],
         visible: false,
         spriteLocation: `${SPRITE_SIZE * 0}px ${SPRITE_SIZE * 0}px`,
         walkIndex: 0,
-        direction: DIRECTION.SOUTH,
+        direction: DIRECTION.SOUTH
       }
     };
   }
 
+  componentDidMount() {
+    const { currentCharacter, mode } = this.props;
+
+    if (
+      mode === "edit" &&
+      JSON.stringify(currentCharacter) !== JSON.stringify({})
+    ) {
+      this.setState({ characterFormData: currentCharacter });
+    }
+  }
+
   createCharacter = () => {
-    const { generateCharacter, closeCreateEdit } = this.props;
+    const { generateCharacter, closeCreateEdit, mode } = this.props;
     const { characterFormData: formData } = this.state;
     const { avatar } = formData;
 
@@ -150,7 +161,10 @@ export class CreateEditChracter extends Component {
 
     characterFormData["portraitPath"] = `${portraitPath}${avatar}`;
     characterFormData["spritePath"] = `${spirtePath}${avatar}`;
-    characterFormData["id"] = uuid.v4();
+
+    if (mode === "create") {
+      characterFormData["id"] = uuid.v4();
+    }
 
     this.setState({ characterFormData });
     generateCharacter(characterFormData);
@@ -173,6 +187,7 @@ export class CreateEditChracter extends Component {
 
   render() {
     const { closeCreateEdit } = this.props;
+    const { characterFormData } = this.state;
 
     return (
       <div>
@@ -184,6 +199,7 @@ export class CreateEditChracter extends Component {
               placeholder="Character Name"
               name="characterName"
               onChange={this.handleInputChange}
+              value={characterFormData.characterName}
             />
             <Form.Input
               fluid
@@ -191,6 +207,7 @@ export class CreateEditChracter extends Component {
               placeholder="Player Name"
               name="playerName"
               onChange={this.handleInputChange}
+              value={characterFormData.playerName}
             />
             <Form.Select
               fluid
@@ -198,6 +215,7 @@ export class CreateEditChracter extends Component {
               options={avatar}
               name="avatar"
               onChange={this.handleSelectChange}
+              value={characterFormData.avatar}
             />
           </Form.Group>
           <Form.Group widths="equal">
@@ -208,6 +226,7 @@ export class CreateEditChracter extends Component {
               placeholder="Class"
               name="dndClass"
               onChange={this.handleSelectChange}
+              value={characterFormData.dndClass}
             />
             <Form.Select
               fluid
@@ -216,6 +235,7 @@ export class CreateEditChracter extends Component {
               placeholder="Race"
               name="race"
               onChange={this.handleSelectChange}
+              value={characterFormData.race}
             />
             <Form.Select
               fluid
@@ -224,6 +244,7 @@ export class CreateEditChracter extends Component {
               placeholder="Level"
               name="level"
               onChange={this.handleSelectChange}
+              value={characterFormData.level}
             />
           </Form.Group>
           <Form.Group widths="equal">
@@ -233,6 +254,7 @@ export class CreateEditChracter extends Component {
               placeholder="Health Points"
               name="hp"
               onChange={this.handleInputChange}
+              value={characterFormData.hp}
             />
             <Form.Input
               fluid
@@ -240,6 +262,7 @@ export class CreateEditChracter extends Component {
               placeholder="Armor Class"
               name="ac"
               onChange={this.handleInputChange}
+              value={characterFormData.ac}
             />
             <Form.Input
               fluid
@@ -247,6 +270,7 @@ export class CreateEditChracter extends Component {
               placeholder="Movement Speed"
               name="ms"
               onChange={this.handleInputChange}
+              value={characterFormData.ms}
             />
           </Form.Group>
           <Form.Group
@@ -267,36 +291,42 @@ export class CreateEditChracter extends Component {
                 placeholder="Strength"
                 name="strength"
                 onChange={this.handleInputChange}
+                value={characterFormData.strength}
               />
               <Form.Input
                 label="Dexterity"
                 placeholder="Dexterity"
                 name="dexterity"
                 onChange={this.handleInputChange}
+                value={characterFormData.dexterity}
               />
               <Form.Input
                 label="Constitution"
                 placeholder="Constitution"
                 name="constitution"
                 onChange={this.handleInputChange}
+                value={characterFormData.constitution}
               />
               <Form.Input
                 label="Intelligence"
                 placeholder="Intelligence"
                 name="intelligence"
                 onChange={this.handleInputChange}
+                value={characterFormData.intelligence}
               />
               <Form.Input
                 label="Wisdom"
                 placeholder="Wisdom"
                 name="wisdom"
                 onChange={this.handleInputChange}
+                value={characterFormData.wisdom}
               />
               <Form.Input
                 label="Charisma"
                 placeholder="Charisma"
                 name="charisma"
                 onChange={this.handleInputChange}
+                value={characterFormData.charisma}
               />
             </Form.Group>
             <Form.Group
@@ -312,24 +342,28 @@ export class CreateEditChracter extends Component {
                 placeholder="Equipment"
                 name="equipment"
                 onChange={this.handleInputChange}
+                value={characterFormData.equipment}
               />
               <Form.TextArea
                 label={`Other Proficiencies & Languages`}
                 placeholder={`Other Proficiencies & Languages`}
                 name="profAndLang"
                 onChange={this.handleInputChange}
+                value={characterFormData.profAndLang}
               />
               <Form.TextArea
                 label={`Features & Traits`}
                 placeholder={`Features & Traits`}
                 name="featAndTraits"
                 onChange={this.handleInputChange}
+                value={characterFormData.featAndTraits}
               />
               <Form.TextArea
                 label="Other Info"
                 placeholder="Other Info"
                 name="otherInfo"
                 onChange={this.handleInputChange}
+                value={characterFormData.otherInfo}
               />
             </Form.Group>
           </Form.Group>

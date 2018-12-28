@@ -12,19 +12,27 @@ export class EditPieces extends Component {
     super(props);
 
     this.state = {
-      createEditModalVisible: false
+      createEditModalVisible: false,
+      mode: "create"
     };
   }
 
-  handleCreateEdit = () => {
-    this.setState({ createEditModalVisible: true });
+  handleCreate = () => {
+    this.setState({ createEditModalVisible: true, mode: "create" });
+  };
+
+  handleEdit = () => {
+    this.setState({
+      createEditModalVisible: true,
+      mode: "edit"
+    });
   };
 
   closeCreateEdit = () => this.setState({ createEditModalVisible: false });
 
   render() {
-    const { createEditModalVisible } = this.state;
-    const { characterList } = this.props;
+    const { createEditModalVisible, mode } = this.state;
+    const { characterList, currentCharacter } = this.props;
 
     return (
       <div>
@@ -34,9 +42,17 @@ export class EditPieces extends Component {
             <Button
               id="EditPieceButton"
               content="Create"
-              onClick={this.handleCreateEdit}
+              onClick={this.handleCreate}
             />
-            <Button id="EditPieceButton" content="Edit" />
+            <Button
+              id="EditPieceButton"
+              content="Edit"
+              onClick={
+                JSON.stringify(currentCharacter) !== JSON.stringify({})
+                  ? this.handleEdit
+                  : null
+              }
+            />
             <Button id="EditPieceButton" content="Delete" />
           </Button.Group>
           <Button.Group vertical>
@@ -62,7 +78,10 @@ export class EditPieces extends Component {
         >
           <Modal.Header>Create/Edit Character</Modal.Header>
           <Modal.Content>
-            <CreateEditChracter closeCreateEdit={this.closeCreateEdit} />
+            <CreateEditChracter
+              closeCreateEdit={this.closeCreateEdit}
+              mode={mode}
+            />
           </Modal.Content>
         </Modal>
       </div>

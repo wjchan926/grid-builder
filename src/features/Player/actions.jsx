@@ -98,9 +98,17 @@ const getWalkIndex = selectedPlayer => {
 };
 
 export const generateCharacter = character => {
-  const characterList = Array.from(getCharacterList());
+  let characterList = Array.from(getCharacterList());
 
-  characterList.push(character);
+  const playerIndex = characterList.findIndex(
+    player => player.id === character.id
+  );
+
+  if (playerIndex === -1) {
+    characterList.push(character);
+  } else {
+    characterList[playerIndex] = Object.assign({}, character);
+  }
 
   store.dispatch({
     type: GENERATE_CHARACTER,
