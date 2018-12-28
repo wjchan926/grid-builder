@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./Player.css";
-import { SPRITE_SIZE, CONTROL_TYPE } from "../../config/constants";
+import { CONTROL_TYPE } from "../../config/constants";
 
 export default class Player extends Component {
   render() {

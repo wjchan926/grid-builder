@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Stat from "./Stat";
 
 import "./Gameplay.css";
-import { TextArea, Form} from "semantic-ui-react";
+import { TextArea, Form } from "semantic-ui-react";
 
 export class InfoPanel extends Component {
   render() {
@@ -10,7 +10,7 @@ export class InfoPanel extends Component {
 
     return (
       <div className="InfoPanel">
-        <div className="Picture">Picture</div>
+        <div className="Picture" />
         <Stat stat="Name:" value={selectedCharacter.name} showButtons={false} />
         <Stat
           stat="Class:"
@@ -62,7 +62,7 @@ export class InfoPanel extends Component {
         />
         <span>Other Notes</span>
         <Form>
-          <TextArea autoHeight placeholder="Add Character Info"/>
+          <TextArea autoHeight placeholder="Add Character Info" />
         </Form>
       </div>
     );
