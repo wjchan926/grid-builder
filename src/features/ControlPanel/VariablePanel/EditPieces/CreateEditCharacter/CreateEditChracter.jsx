@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Form } from "semantic-ui-react";
+import uuid from "uuid";
+import { SPRITE_SIZE, DIRECTION } from "../../../../../config/constants";
 
 const race = [
   { key: "Dwarf", text: "Dwarf", value: "Dwarf" },
@@ -105,6 +107,7 @@ export class CreateEditChracter extends Component {
 
     this.state = {
       characterFormData: {
+        id: "",
         characterName: "",
         playerName: "",
         avatar: "",
@@ -125,7 +128,12 @@ export class CreateEditChracter extends Component {
         featAndTraits: "",
         otherInfo: "",
         portraitPath: "",
-        spritePath: ""
+        spritePath: "",
+        location:[0, 0],
+        visible: false,
+        spriteLocation: `${SPRITE_SIZE * 0}px ${SPRITE_SIZE * 0}px`,
+        walkIndex: 0,
+        direction: DIRECTION.SOUTH,
       }
     };
   }
@@ -142,6 +150,7 @@ export class CreateEditChracter extends Component {
 
     characterFormData["portraitPath"] = `${portraitPath}${avatar}`;
     characterFormData["spritePath"] = `${spirtePath}${avatar}`;
+    characterFormData["id"] = uuid.v4();
 
     this.setState({ characterFormData });
     generateCharacter(characterFormData);

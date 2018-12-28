@@ -37,7 +37,6 @@ export class EditPieces extends Component {
               onClick={this.handleCreateEdit}
             />
             <Button id="EditPieceButton" content="Edit" />
-            <Button id="EditPieceButton" content="Move" />
             <Button id="EditPieceButton" content="Delete" />
           </Button.Group>
           <Button.Group vertical>

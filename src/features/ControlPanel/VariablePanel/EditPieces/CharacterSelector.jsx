@@ -8,7 +8,7 @@ export class CharacterSelector extends Component {
 
     let characterArr = [];
 
-    characterList.forEach((character, i) => {
+    characterList.forEach((character) => {
       characterArr.push(
         <SelectorCharacter
           character={character}
@@ -18,10 +18,10 @@ export class CharacterSelector extends Component {
               spriteLocation="0px 0px"
               controlType={controlType}
               positioning="relative"
-              key={`${character.characterName} ${i}`}
+              key={`${character.id}`}
             />
           }
-          key={`${i}`}
+          key={`${character.id}`}
         />
       );
     });

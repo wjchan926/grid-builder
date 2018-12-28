@@ -5,8 +5,7 @@ const preventedKeys = [37, 38, 39, 40];
 
 const handleMovement = player => {
   const handleKeyDown = e => {
-
-    if (preventedKeys.includes(e.keyCode)){
+    if (preventedKeys.includes(e.keyCode)) {
       e.preventDefault();
     }
 

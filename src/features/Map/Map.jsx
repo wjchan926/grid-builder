@@ -29,7 +29,7 @@ export default class Map extends Component {
   }
 
   render() {
-    const { controlType, selectedTerrain, setTile } = this.props;
+    const { controlType, selectedTerrain, setTile, currentCharacter, setPlayerLocation } = this.props;
     const { tiles } = this.state;
 
     return (
@@ -43,6 +43,8 @@ export default class Map extends Component {
               controlType={controlType}
               selectedTerrain={selectedTerrain}
               setTile={setTile}
+              currentCharacter={currentCharacter}
+              setPlayerLocation={setPlayerLocation}
             />
           );
         })}

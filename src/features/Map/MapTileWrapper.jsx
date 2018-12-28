@@ -16,20 +16,36 @@ export class MapTileWrapper extends Component {
       columnIndex,
       controlType,
       selectedTerrain,
-      setTile
+      setTile,
+      currentCharacter,
+      setPlayerLocation
     } = this.props;
 
     e.stopPropagation();
-
-    if (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "none") {
-      setTile(rowIndex, columnIndex, selectedTerrain);
+    switch (controlType) {
+      case CONTROL_TYPE.MAP:
+        if (selectedTerrain !== "none") {
+          setTile(rowIndex, columnIndex, selectedTerrain);
+        }
+        break;
+      case CONTROL_TYPE.CHARACTERS:
+        if (JSON.stringify(currentCharacter) !== JSON.stringify({})) {
+          setPlayerLocation(rowIndex, columnIndex);
+        }
+        break;
+      default:
+        break;
     }
   };
 
   handleOver = () => {
-    const { controlType, selectedTerrain } = this.props;
+    const { controlType, selectedTerrain, currentCharacter } = this.props;
 
-    if (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "none") {
+    if (
+      (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "none") ||
+      (controlType === CONTROL_TYPE.CHARACTERS &&
+        JSON.stringify(currentCharacter) !== JSON.stringify({}))
+    ) {
       this.setState({ on: true });
     }
   };
@@ -41,7 +57,7 @@ export class MapTileWrapper extends Component {
   render() {
     const { mapTile } = this.props;
     const { on } = this.state;
-  
+
     return (
       <div
         onClick={this.handleOnClick}

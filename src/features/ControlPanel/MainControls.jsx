@@ -5,25 +5,32 @@ import { Button } from "semantic-ui-react";
 import "./ControlPanel.css";
 
 import { CONTROL_TYPE } from "../../config/constants";
-import { setControlType } from "./actions";
+import { setControlType, setSelectedTerrainTile } from "./actions";
+import {setCurrentCharacter} from "../Player/actions"
 
 export class MainControls extends Component {
   handleEditMapOnClick = () => {
-    const { setControlType } = this.props;
+    const { setControlType, setSelectedTerrainTile, setCurrentCharacter} = this.props;
 
     setControlType(CONTROL_TYPE.MAP);
+    setSelectedTerrainTile(null);
+    setCurrentCharacter({});
   };
 
   handleEditCharOnClick = () => {
-    const { setControlType } = this.props;
+    const { setControlType, setSelectedTerrainTile, setCurrentCharacter } = this.props;
 
     setControlType(CONTROL_TYPE.CHARACTERS);
+    setSelectedTerrainTile(null);
+    setCurrentCharacter({});
   };
 
   handlePlayGameOnClick = () => {
-    const { setControlType } = this.props;
+    const { setControlType, setSelectedTerrainTile, setCurrentCharacter } = this.props;
 
     setControlType(CONTROL_TYPE.PLAY);
+    setSelectedTerrainTile(null);
+    setCurrentCharacter({});
   };
 
   render() {
@@ -59,7 +66,9 @@ export class MainControls extends Component {
 }
 
 const mapDispatchToProps = () => ({
-  setControlType
+  setControlType,
+  setCurrentCharacter,
+  setSelectedTerrainTile
 });
 
 export default connect(

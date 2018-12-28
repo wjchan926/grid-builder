@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./Player.css";
 
 import PlayerSprite from "./PlayerSprite";
+import { SPRITE_SIZE } from "../../config/constants";
 
 export class Player extends Component {
   render() {
@@ -17,8 +18,8 @@ export class Player extends Component {
     return (
       <div
         style={{
-          top: position[1],
-          left: position[0],
+          top: position[1] * SPRITE_SIZE,
+          left: position[0] * SPRITE_SIZE,
           position: positioning
         }}
       >

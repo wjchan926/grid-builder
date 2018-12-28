@@ -4,7 +4,15 @@ import MapTileWrapper from "./MapTileWrapper";
 
 export default class MapRow extends Component {
   render() {
-    const { row, rowIndex, controlType, selectedTerrain, setTile } = this.props;
+    const {
+      row,
+      rowIndex,
+      controlType,
+      selectedTerrain,
+      setTile,
+      currentCharacter,
+      setPlayerLocation
+    } = this.props;
 
     return (
       <div className="row">
@@ -17,6 +25,8 @@ export default class MapRow extends Component {
               controlType={controlType}
               selectedTerrain={selectedTerrain}
               setTile={setTile}
+              currentCharacter={currentCharacter}
+              setPlayerLocation={setPlayerLocation}
               mapTile={
                 <MapTile
                   tile={tile}

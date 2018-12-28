@@ -1,22 +1,36 @@
 import { DIRECTION, SPRITE_SIZE } from "../../config/constants";
 import store from "../../config/store";
-import { getCharacterList } from "./reselect";
+import {
+  getCharacterList,
+  getCurrentCharacter,
+  getSelectedPlayer
+} from "./reselect";
 
 export const MOVE_PLAYER = "MOVE_PLAYER";
 export const GENERATE_CHARACTER = "GENERATE_CHARACTER";
 export const SET_CURRENT_CHARACTER = "SET_CURRENT_CHARACTER";
+export const SET_CURRENT_CHARACTER_LOCATION = "SET_CURRENT_CHARACTER_LOCATION";
 
 const directionMove = (direction, newPos) => {
-  const walkIndex = getWalkIndex();
+  const selectedPlayer = getSelectedPlayer();
+  const walkIndex = getWalkIndex(selectedPlayer);
+
+  let characterList = Array.from(getCharacterList());
+
+  const playerIndex = characterList.findIndex(
+    player => player.id === selectedPlayer.id
+  );
+
+  characterList[playerIndex] = Object.assign(selectedPlayer, {
+    position: newPos,
+    direction,
+    walkIndex,
+    spriteLocation: getSpriteLocation(direction, walkIndex)
+  });
 
   store.dispatch({
-    type: MOVE_PLAYER,
-    payload: {
-      position: newPos,
-      direction,
-      walkIndex,
-      spriteLocation: getSpriteLocation(direction, walkIndex)
-    }
+    type: GENERATE_CHARACTER,
+    payload: characterList
   });
 };
 
@@ -36,7 +50,7 @@ const getNewPosition = (oldPos, direction) => {
 };
 
 export const attemptMove = direction => {
-  const oldPos = store.getState().player.position;
+  const oldPos = getSelectedPlayer().location;
   const newPos = getNewPosition(oldPos, direction);
 
   if (observeBoundaries(newPos) && observeImpassable(newPos)) {
@@ -77,8 +91,8 @@ const getSpriteLocation = (direction, walkIndex) => {
   }
 };
 
-const getWalkIndex = () => {
-  const walkIndex = store.getState().player.walkIndex;
+const getWalkIndex = selectedPlayer => {
+  const walkIndex = selectedPlayer.walkIndex;
 
   return walkIndex >= 2 ? 0 : walkIndex + 1;
 };
@@ -93,9 +107,36 @@ export const generateCharacter = character => {
     payload: characterList
   });
 };
+
 export const setCurrentCharacter = character => {
   store.dispatch({
     type: SET_CURRENT_CHARACTER,
     payload: Object.assign({}, character)
+  });
+};
+
+export const setPlayerLocation = (rowIndex, columnIndex) => {
+  const currentCharacter = getCurrentCharacter();
+  const startPos = [columnIndex, rowIndex];
+
+  store.dispatch({
+    type: SET_CURRENT_CHARACTER_LOCATION,
+    payload: Object.assign(currentCharacter, { location: startPos })
+  });
+
+  let characterList = Array.from(getCharacterList());
+
+  const playerIndex = characterList.findIndex(
+    player => player.id === currentCharacter.id
+  );
+
+  characterList[playerIndex] = Object.assign(currentCharacter, {
+    location: startPos,
+    visible: true
+  });
+
+  store.dispatch({
+    type: GENERATE_CHARACTER,
+    payload: characterList
   });
 };

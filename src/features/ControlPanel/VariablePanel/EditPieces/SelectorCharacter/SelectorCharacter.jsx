@@ -20,7 +20,7 @@ export class SelectorCharacter extends Component {
     const { character, setCurrentCharacter, currentCharacter } = this.props;
     e.stopPropagation();
 
-    if (currentCharacter === character) {
+    if (JSON.stringify(currentCharacter) === JSON.stringify(character)) {
       this.setState({ selected: false });
       setCurrentCharacter(null);
     } else {
@@ -51,7 +51,10 @@ export class SelectorCharacter extends Component {
         trigger={
           <div
             className={`Selector ${
-              JSON.stringify(currentCharacter) === JSON.stringify(character) && selected ? `Highlight` : null
+              JSON.stringify(currentCharacter) === JSON.stringify(character) &&
+              selected
+                ? `Highlight`
+                : null
             }`}
             onClick={this.handleOnClick}
           >
