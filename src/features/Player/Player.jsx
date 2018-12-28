@@ -8,17 +8,15 @@ export default class Player extends Component {
     const { position, spriteLocation, controlType } = this.props;
 
     return (
-      <div
-        style={{
-          top: position[1],
-          left: position[0],
-          height: SPRITE_SIZE,
-          width: SPRITE_SIZE,
-          backgroundPosition: spriteLocation,
-          pointerEvents: `${controlType === CONTROL_TYPE.PLAY ? "" : "none"}`
-        }}
-        className="Player"
-      />
+        <div
+          style={{
+            top: position[1],
+            left: position[0],
+            backgroundPosition: spriteLocation,
+            pointerEvents: `${controlType === CONTROL_TYPE.PLAY ? "" : "none"}`
+          }}
+          className="Player"
+        />
     );
   }
 }

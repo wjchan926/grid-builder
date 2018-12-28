@@ -66,13 +66,13 @@ const observeImpassable = newPos => {
 const getSpriteLocation = (direction, walkIndex) => {
   switch (direction) {
     case DIRECTION.EAST:
-      return `${SPRITE_SIZE * walkIndex}px -${SPRITE_SIZE * 3}px`;
+      return `${SPRITE_SIZE*.8 * walkIndex}px -${SPRITE_SIZE*.8 * 3}px`;
     case DIRECTION.WEST:
-      return `${SPRITE_SIZE * walkIndex}px -${SPRITE_SIZE * 2}px`;
+      return `${SPRITE_SIZE*.8 * walkIndex}px -${SPRITE_SIZE*.8 * 2}px`;
     case DIRECTION.NORTH:
-      return `${SPRITE_SIZE * walkIndex}px -${SPRITE_SIZE * 1}px`;
+      return `${SPRITE_SIZE*.8 * walkIndex}px -${SPRITE_SIZE*.8 * 1}px`;
     case DIRECTION.SOUTH:
-      return `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 0}px`;
+      return `${SPRITE_SIZE*.8 * walkIndex}px ${SPRITE_SIZE*.8 * 0}px`;
     default:
   }
 };
@@ -80,5 +80,5 @@ const getSpriteLocation = (direction, walkIndex) => {
 const getWalkIndex = () => {
   const walkIndex = store.getState().player.walkIndex;
 
-  return walkIndex >= 7 ? 0 : walkIndex + 1;
+  return walkIndex >= 2 ? 0 : walkIndex + 1;
 };

@@ -1,4 +1,8 @@
 .Player {
   position: absolute;
-  background-image: url("player_walk.png");
+  /* background-image: url("player_walk.png"); */
+  background-image: url("playerSprites/HolyDragoon.png");
+  height:32px;
+  width:32px;
+  margin:4px;
 }
