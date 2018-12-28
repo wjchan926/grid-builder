@@ -1,10 +1,10 @@
-import {
-  DIRECTION,
-  SPRITE_SIZE
-} from "../../config/constants";
+import { DIRECTION, SPRITE_SIZE } from "../../config/constants";
 import store from "../../config/store";
+import { getCharacterList } from "./reselect";
 
 export const MOVE_PLAYER = "MOVE_PLAYER";
+export const GENERATE_CHARACTER = "GENERATE_CHARACTER";
+export const SET_CURRENT_CHARACTER = "SET_CURRENT_CHARACTER";
 
 const directionMove = (direction, newPos) => {
   const walkIndex = getWalkIndex();
@@ -46,7 +46,7 @@ export const attemptMove = direction => {
 
 const observeBoundaries = newPos => {
   const mapWidth = store.getState().map.size.width * SPRITE_SIZE;
-  const mapHeight = store.getState().map.size.height* SPRITE_SIZE;
+  const mapHeight = store.getState().map.size.height * SPRITE_SIZE;
 
   return (
     newPos[0] >= 0 &&
@@ -66,13 +66,13 @@ const observeImpassable = newPos => {
 const getSpriteLocation = (direction, walkIndex) => {
   switch (direction) {
     case DIRECTION.EAST:
-      return `${SPRITE_SIZE*.8 * walkIndex}px -${SPRITE_SIZE*.8 * 3}px`;
+      return `${SPRITE_SIZE * 0.8 * walkIndex}px -${SPRITE_SIZE * 0.8 * 3}px`;
     case DIRECTION.WEST:
-      return `${SPRITE_SIZE*.8 * walkIndex}px -${SPRITE_SIZE*.8 * 2}px`;
+      return `${SPRITE_SIZE * 0.8 * walkIndex}px -${SPRITE_SIZE * 0.8 * 2}px`;
     case DIRECTION.NORTH:
-      return `${SPRITE_SIZE*.8 * walkIndex}px -${SPRITE_SIZE*.8 * 1}px`;
+      return `${SPRITE_SIZE * 0.8 * walkIndex}px -${SPRITE_SIZE * 0.8 * 1}px`;
     case DIRECTION.SOUTH:
-      return `${SPRITE_SIZE*.8 * walkIndex}px ${SPRITE_SIZE*.8 * 0}px`;
+      return `${SPRITE_SIZE * 0.8 * walkIndex}px ${SPRITE_SIZE * 0.8 * 0}px`;
     default:
   }
 };
@@ -81,4 +81,21 @@ const getWalkIndex = () => {
   const walkIndex = store.getState().player.walkIndex;
 
   return walkIndex >= 2 ? 0 : walkIndex + 1;
+};
+
+export const generateCharacter = character => {
+  const characterList = Array.from(getCharacterList());
+
+  characterList.push(character);
+
+  store.dispatch({
+    type: GENERATE_CHARACTER,
+    payload: characterList
+  });
+};
+export const setCurrentCharacter = character => {
+  store.dispatch({
+    type: SET_CURRENT_CHARACTER,
+    payload: Object.assign({}, character)
+  });
 };

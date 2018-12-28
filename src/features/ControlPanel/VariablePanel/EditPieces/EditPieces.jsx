@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { Button, Modal } from "semantic-ui-react";
 
 import MonsterSelector from "./MonsterSelector";
+import CreateEditChracter from "./CreateEditCharacter";
+import CharacterSelector from "./CharacterSelector";
 
 import "./EditPieces.css";
-import CreateEditChracter from "./CreateEditCharacter";
 
 export class EditPieces extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ export class EditPieces extends Component {
 
   render() {
     const { createEditModalVisible } = this.state;
+    const { characterList } = this.props;
 
     return (
       <div>
@@ -43,6 +45,12 @@ export class EditPieces extends Component {
             <Button id="EditPieceButton" content="Export" />
           </Button.Group>
         </div>
+        {characterList.length !== 0 ? (
+          <div className="CharacterSelector">
+            <div style={{ textAlign: "center" }}>Character Selector</div>
+            <CharacterSelector characterList={characterList} />
+          </div>
+        ) : null}
         <div className="Monster">
           <div style={{ textAlign: "center" }}>Monsters Selector</div>
           <MonsterSelector />
@@ -55,17 +63,7 @@ export class EditPieces extends Component {
         >
           <Modal.Header>Create/Edit Character</Modal.Header>
           <Modal.Content>
-            <CreateEditChracter />
-            <Modal.Actions>
-              <Button onClick={this.closeCreateEdit} negative content="Exit" />
-              <Button
-                onClick={this.closeCreateEdit}
-                positive
-                labelPosition="right"
-                icon="save"
-                content="Create/Save Changes"
-              />
-            </Modal.Actions>
+            <CreateEditChracter closeCreateEdit={this.closeCreateEdit} />
           </Modal.Content>
         </Modal>
       </div>

@@ -5,7 +5,7 @@ import "./VariablePanel.css";
 
 import { CONTROL_TYPE } from "../../../config/constants";
 import EditMap from "./EditMap";
-import EditPieces from "./EditPieces/EditPieces";
+import EditPieces from "./EditPieces/";
 import Gameplay from "./Gameplay/Gameplay";
 
 export class VariablePanel extends Component {

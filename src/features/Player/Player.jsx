@@ -1,22 +1,36 @@
 import React, { Component } from "react";
 
 import "./Player.css";
-import { CONTROL_TYPE } from "../../config/constants";
 
-export default class Player extends Component {
+import PlayerSprite from "./PlayerSprite";
+
+export class Player extends Component {
   render() {
-    const { position, spriteLocation, controlType } = this.props;
+    const {
+      position,
+      spriteLocation,
+      controlType,
+      character,
+      positioning = "absolute"
+    } = this.props;
 
     return (
-        <div
-          style={{
-            top: position[1],
-            left: position[0],
-            backgroundPosition: spriteLocation,
-            pointerEvents: `${controlType === CONTROL_TYPE.PLAY ? "" : "none"}`
-          }}
-          className="Player"
+      <div
+        style={{
+          top: position[1],
+          left: position[0],
+          position: positioning
+        }}
+      >
+        <PlayerSprite
+          character={character}
+          spriteLocation={spriteLocation}
+          controlType={controlType}
+          positioning={positioning}
         />
+      </div>
     );
   }
 }
+
+export default Player;

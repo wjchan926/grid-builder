@@ -1,17 +1,15 @@
-import React, { Component } from "react";
-import Map from "../Map";
-import Player from "../Player";
+import { connect } from "react-redux";
+import World from "./World";
 
-import "./World.css";
+const mapStateToProps = state => ({
+  // selectedCharacter: getSelectedCharacter(state)
+});
 
-export class World extends Component {
-   render() {
-    return (
-      <div className="World">
-        <Map />
-        <Player />
-      </div>
-    );
-  }
-}
-export default World;
+const mapDispatchToProps = () => ({
+
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(World);

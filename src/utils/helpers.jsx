@@ -48,3 +48,5 @@ export const getTileNumberSprite = type => {
       return null;
   }
 };
+
+export const getCharacterSprite = () => {};
