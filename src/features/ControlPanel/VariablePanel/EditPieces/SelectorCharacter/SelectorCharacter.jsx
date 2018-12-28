@@ -22,7 +22,7 @@ export class SelectorCharacter extends Component {
 
     if (JSON.stringify(currentCharacter) === JSON.stringify(character)) {
       this.setState({ selected: false });
-      setCurrentCharacter(null);
+      setCurrentCharacter({});
     } else {
       this.setState({ selected: true });
       setCurrentCharacter(character);

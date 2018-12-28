@@ -28,6 +28,18 @@ export class EditPieces extends Component {
     });
   };
 
+  handleDelete = () => {
+    const {
+      setCurrentCharacter,
+      currentCharacter,
+      deleteCharacter
+    } = this.props;
+    if (JSON.stringify(currentCharacter) !== JSON.stringify({})) {
+      deleteCharacter(currentCharacter);
+      setCurrentCharacter({});
+    }
+  };
+
   closeCreateEdit = () => this.setState({ createEditModalVisible: false });
 
   render() {
@@ -53,7 +65,11 @@ export class EditPieces extends Component {
                   : null
               }
             />
-            <Button id="EditPieceButton" content="Delete" />
+            <Button
+              id="EditPieceButton"
+              content="Delete"
+              onClick={this.handleDelete}
+            />
           </Button.Group>
           <Button.Group vertical>
             <Button id="EditPieceButton" content="Import" />

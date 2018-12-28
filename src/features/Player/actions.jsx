@@ -148,3 +148,18 @@ export const setPlayerLocation = (rowIndex, columnIndex) => {
     payload: characterList
   });
 };
+
+export const deleteCharacter = character => {
+  let characterList = Array.from(getCharacterList());
+
+  const playerIndex = characterList.findIndex(
+    player => player.id === character.id
+  );
+
+  characterList.splice(playerIndex, 1);
+
+  store.dispatch({
+    type: GENERATE_CHARACTER,
+    payload: characterList
+  });
+};
