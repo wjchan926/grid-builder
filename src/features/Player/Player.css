@@ -1,5 +1,20 @@
 .Player {
   height:32px;
   width:32px;
-  margin:4px;
+  margin:2px;
+}
+
+.Highlight {
+  outline: 2px solid red;
+}
+
+.Selector {
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  margin: 2px;
+}
+
+.PlayerHover {
+  filter: brightness(40%);
 }

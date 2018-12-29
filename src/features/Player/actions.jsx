@@ -10,6 +10,7 @@ export const MOVE_PLAYER = "MOVE_PLAYER";
 export const GENERATE_CHARACTER = "GENERATE_CHARACTER";
 export const SET_CURRENT_CHARACTER = "SET_CURRENT_CHARACTER";
 export const SET_CURRENT_CHARACTER_LOCATION = "SET_CURRENT_CHARACTER_LOCATION";
+export const SET_SELECTED_PLAYER="SET_SELECTED_PLAYER"
 
 const directionMove = (direction, newPos) => {
   const selectedPlayer = getSelectedPlayer();
@@ -161,5 +162,12 @@ export const deleteCharacter = character => {
   store.dispatch({
     type: GENERATE_CHARACTER,
     payload: characterList
+  });
+};
+
+export const setSelectedPlayer = character => {
+  store.dispatch({
+    type: SET_SELECTED_PLAYER,
+    payload: Object.assign({}, character)
   });
 };

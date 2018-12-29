@@ -53,7 +53,7 @@ export class SelectorTile extends Component {
             className={`Selector ${
               currentTerrain === getTileSprite(tile.props.tile) && selected
                 ? `Highlight`
-                : null
+                : ""
             }`}
             onClick={this.handleOnClick}
           >

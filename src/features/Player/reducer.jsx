@@ -2,11 +2,13 @@ import {
   GENERATE_CHARACTER,
   SET_CURRENT_CHARACTER,
   SET_CURRENT_CHARACTER_LOCATION,
+  SET_SELECTED_PLAYER,
 } from "./actions";
 
 const initialState = {
   characterList: [],
-  currentCharacter: {}
+  currentCharacter: {},
+  selectedPlayer: {}
 };
 
 const playerReducer = (state = initialState, action) => {
@@ -28,6 +30,11 @@ const playerReducer = (state = initialState, action) => {
       };
     default:
       return state;
+    case SET_SELECTED_PLAYER:
+      return {
+        ...state,
+        selectedPlayer: action.payload
+      };
   }
 };
 

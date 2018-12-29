@@ -16,11 +16,12 @@ export default class World extends Component {
             position={character.location}
             controlType={controlType}
             key={character.id}
+            selectedCharacter={selectedCharacter}
           />
         );
       }
     });
-    
+
     return (
       <div className="World">
         <Map />
