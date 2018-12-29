@@ -9,11 +9,17 @@
   flex-direction: column;
 }
 
-#MainControl {
-  background-color: forestgreen;
+.MainControl {
+  border: 2px solid saddlebrown;
+  display: flex;
+  flex-direction: column;
+}
+
+#MainControlButton {
+  background-color: darkgoldenrod;
   border: 1px solid black;
   margin: 1px;
-  width: 98px;
+  width: 85px;
   text-align: center;
   padding: 5px;
 }
@@ -21,14 +27,14 @@
 #MainControlPlay {
   background-color: forestgreen;
   border: 1px solid black;
-  margin: 1px;
+  margin: 1px auto 2px auto;
   text-align: center;
-  width:198px;
+  width: 174px;
   padding: 5px;
   text-transform: uppercase;
 }
 
-#MainControl:hover {
+#MainControlButton:hover {
   filter: brightness(80%);
 }
 

@@ -24,3 +24,16 @@
 .Highlight {
   outline: 2px solid red;
 }
+
+#EditMapButton {
+  background-color: darkgoldenrod;
+  border: 1px solid black;
+  margin: auto;
+  width: 87px;
+  text-align: center;
+  padding: 5px;
+}
+
+#EditMapButton:hover {
+  filter: brightness(80%);
+}

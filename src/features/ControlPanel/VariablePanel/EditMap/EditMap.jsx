@@ -25,8 +25,8 @@ export class EditMap extends Component {
     return (
       <div>
         <div style={{ textAlign: "center" }}>Map Size</div>
-        <Form>
-          <Form.Group widths="equal">
+        <Form style={{ width: "170px", margin: "2px auto 10px auto" }}>
+          <Form.Group widths="equal" style={{ marginBottom: "5px" }}>
             <Form.Input
               label="Width:"
               placeholder="Width"
@@ -43,7 +43,8 @@ export class EditMap extends Component {
             />
           </Form.Group>
           <Form.Button
-            content="Resize"
+            id="EditMapButton"
+            content="Resize Map"
             onClick={() => {
               if (Number.isInteger(width) && Number.isInteger(height)) {
                 setMapSize(width, height);

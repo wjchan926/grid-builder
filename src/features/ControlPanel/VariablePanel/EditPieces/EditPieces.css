@@ -1,5 +1,5 @@
 #EditPieceButton {
-  background-color: forestgreen;
+  background-color: darkgoldenrod;
   border: 1px solid black;
   margin: 1px;
   width: 87px;
@@ -8,6 +8,19 @@
 }
 
 #EditPieceButton:hover {
+  filter: brightness(80%);
+}
+
+#DeleteButton {
+  background-color: rgba(155, 0, 0);
+  border: 1px solid black;
+  margin: 1px;
+  width: 87px;
+  text-align: center;
+  padding: 5px;
+}
+
+#DeleteButton:hover {
   filter: brightness(80%);
 }
 
@@ -51,3 +64,4 @@
 .Highlight {
   outline: 2px solid red;
 }
+

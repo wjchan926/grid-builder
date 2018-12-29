@@ -49,16 +49,18 @@ export class EditPieces extends Component {
     return (
       <div>
         <div style={{ textAlign: "center" }}>Edit Pieces</div>
-        <div>
-          <Button.Group vertical>
+        <div style={{display:"flex", flexDirection:"row"}}>
+          <Button.Group vertical style={{marginLeft:"auto"}}>
             <Button
               id="EditPieceButton"
               content="Create"
+              icon="add user"
               onClick={this.handleCreate}
             />
             <Button
               id="EditPieceButton"
               content="Edit"
+              icon="edit"
               onClick={
                 JSON.stringify(currentCharacter) !== JSON.stringify({})
                   ? this.handleEdit
@@ -66,12 +68,14 @@ export class EditPieces extends Component {
               }
             />
             <Button
-              id="EditPieceButton"
+              id="DeleteButton"
               content="Delete"
+              icon="delete"
               onClick={this.handleDelete}
+              className="Delete"
             />
           </Button.Group>
-          <Button.Group vertical>
+          <Button.Group vertical style={{marginRight:"auto"}}>
             <Button id="EditPieceButton" content="Import" />
             <Button id="EditPieceButton" content="Export" />
           </Button.Group>

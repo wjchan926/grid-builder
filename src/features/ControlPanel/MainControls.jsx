@@ -6,11 +6,15 @@ import "./ControlPanel.css";
 
 import { CONTROL_TYPE } from "../../config/constants";
 import { setControlType, setSelectedTerrainTile } from "./actions";
-import {setCurrentCharacter} from "../Player/actions"
+import { setCurrentCharacter } from "../Player/actions";
 
 export class MainControls extends Component {
   handleEditMapOnClick = () => {
-    const { setControlType, setSelectedTerrainTile, setCurrentCharacter} = this.props;
+    const {
+      setControlType,
+      setSelectedTerrainTile,
+      setCurrentCharacter
+    } = this.props;
 
     setControlType(CONTROL_TYPE.MAP);
     setSelectedTerrainTile(null);
@@ -18,7 +22,11 @@ export class MainControls extends Component {
   };
 
   handleEditCharOnClick = () => {
-    const { setControlType, setSelectedTerrainTile, setCurrentCharacter } = this.props;
+    const {
+      setControlType,
+      setSelectedTerrainTile,
+      setCurrentCharacter
+    } = this.props;
 
     setControlType(CONTROL_TYPE.CHARACTERS);
     setSelectedTerrainTile(null);
@@ -26,7 +34,11 @@ export class MainControls extends Component {
   };
 
   handlePlayGameOnClick = () => {
-    const { setControlType, setSelectedTerrainTile, setCurrentCharacter } = this.props;
+    const {
+      setControlType,
+      setSelectedTerrainTile,
+      setCurrentCharacter
+    } = this.props;
 
     setControlType(CONTROL_TYPE.PLAY);
     setSelectedTerrainTile(null);
@@ -35,31 +47,39 @@ export class MainControls extends Component {
 
   render() {
     return (
-      <div>
-        <div style={{ textAlign: "center" }}>Main Controls</div>
-        <div>
-          <Button.Group vertical>
-            <Button
-              content="Edit Map"
-              id="MainControl"
-              onClick={this.handleEditMapOnClick}
-            />
-            <Button
-              content="Edit Pieces"
-              id="MainControl"
-              onClick={this.handleEditCharOnClick}
-            />
-          </Button.Group>        
-          <Button.Group vertical>
-            <Button content="Save" id="MainControl" onClick={() => {}} />
-            <Button content="Load" id="MainControl" onClick={() => {}} />
-          </Button.Group>
-          <Button
-            content="Play Game"
-            id="MainControlPlay"
-            onClick={this.handlePlayGameOnClick}
-          />
+      <div className="MainControl">
+          <div style={{ textAlign: "center" }}>Main Controls</div>
+          <div style={{display:"block", textAlign:"center"}}>
+            <Button.Group vertical>
+              <Button
+                content="Edit Map"
+                id="MainControlButton"
+                onClick={this.handleEditMapOnClick}
+              />
+              <Button
+                content="Edit Pieces"
+                id="MainControlButton"
+                onClick={this.handleEditCharOnClick}
+              />
+            </Button.Group>
+            <Button.Group vertical>
+              <Button
+                content="Save"
+                id="MainControlButton"
+                onClick={() => {}}
+              />
+              <Button
+                content="Load"
+                id="MainControlButton"
+                onClick={() => {}}
+              />
+            </Button.Group>
         </div>
+        <Button
+              content="Play Game"
+              id="MainControlPlay"
+              onClick={this.handlePlayGameOnClick}
+            />
       </div>
     );
   }
