@@ -5,7 +5,7 @@ import "./World.css";
 
 export default class World extends Component {
   render() {
-    const { selectedCharacter, characterList, controlType } = this.props;
+    const { selectedPlayer, characterList, controlType } = this.props;
     let players = [];
 
     characterList.forEach(character => {
@@ -16,7 +16,7 @@ export default class World extends Component {
             position={character.location}
             controlType={controlType}
             key={character.id}
-            selectedCharacter={selectedCharacter}
+            selectedPlayer={selectedPlayer}
           />
         );
       }

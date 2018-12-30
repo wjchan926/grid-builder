@@ -8,7 +8,7 @@ export class ControlPanel extends Component {
     return (
       <div className="ControlPanel">
         <MainControls />
-        <VariablePanel/>
+        <VariablePanel />
       </div>
     );
   }

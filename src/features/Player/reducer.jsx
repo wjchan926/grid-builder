@@ -3,6 +3,7 @@ import {
   SET_CURRENT_CHARACTER,
   SET_CURRENT_CHARACTER_LOCATION,
   SET_SELECTED_PLAYER,
+  SET_SELECTED_PLAYER_STAT
 } from "./actions";
 
 const initialState = {
@@ -21,20 +22,25 @@ const playerReducer = (state = initialState, action) => {
     case SET_CURRENT_CHARACTER:
       return {
         ...state,
-        currentCharacter: action.payload
+        currentCharacter: Object.assign({}, action.payload)
       };
     case SET_CURRENT_CHARACTER_LOCATION:
       return {
         ...state,
-        currentCharacter: action.payload
+        currentCharacter: Object.assign({}, action.payload)
       };
-    default:
-      return state;
+    case SET_SELECTED_PLAYER_STAT:
+      return {
+        ...state,
+        selectedPlayer: Object.assign({}, action.payload)
+      };
     case SET_SELECTED_PLAYER:
       return {
         ...state,
-        selectedPlayer: action.payload
+        selectedPlayer: Object.assign({}, action.payload)
       };
+    default:
+      return state;
   }
 };
 

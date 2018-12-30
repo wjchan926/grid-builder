@@ -10,7 +10,8 @@ export const MOVE_PLAYER = "MOVE_PLAYER";
 export const GENERATE_CHARACTER = "GENERATE_CHARACTER";
 export const SET_CURRENT_CHARACTER = "SET_CURRENT_CHARACTER";
 export const SET_CURRENT_CHARACTER_LOCATION = "SET_CURRENT_CHARACTER_LOCATION";
-export const SET_SELECTED_PLAYER="SET_SELECTED_PLAYER"
+export const SET_SELECTED_PLAYER = "SET_SELECTED_PLAYER";
+export const SET_SELECTED_PLAYER_STAT = "SET_SELECTED_PLAYER_STAT";
 
 const directionMove = (direction, newPos) => {
   const selectedPlayer = getSelectedPlayer();
@@ -128,11 +129,6 @@ export const setPlayerLocation = (rowIndex, columnIndex) => {
   const currentCharacter = getCurrentCharacter();
   const startPos = [columnIndex, rowIndex];
 
-  store.dispatch({
-    type: SET_CURRENT_CHARACTER_LOCATION,
-    payload: Object.assign(currentCharacter, { location: startPos })
-  });
-
   let characterList = Array.from(getCharacterList());
 
   const playerIndex = characterList.findIndex(
@@ -169,5 +165,27 @@ export const setSelectedPlayer = character => {
   store.dispatch({
     type: SET_SELECTED_PLAYER,
     payload: Object.assign({}, character)
+  });
+};
+
+export const setStatValue = stat => {
+  const selectedPlayer = getSelectedPlayer();
+
+  store.dispatch({
+    type: SET_SELECTED_PLAYER_STAT,
+    payload: Object.assign(selectedPlayer, stat)
+  });
+
+  let characterList = Array.from(getCharacterList());
+
+  const playerIndex = characterList.findIndex(
+    player => player.id === selectedPlayer.id
+  );
+
+  characterList[playerIndex] = Object.assign(selectedPlayer, stat);
+
+  store.dispatch({
+    type: GENERATE_CHARACTER,
+    payload: characterList
   });
 };

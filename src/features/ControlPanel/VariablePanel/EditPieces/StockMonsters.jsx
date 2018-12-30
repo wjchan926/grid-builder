@@ -3,7 +3,7 @@ import { SPRITE_SIZE } from "../../../../config/constants";
 
 import "./EditPieces.css"
 
-export class MonsterSelector extends Component {
+export class StockMonsters extends Component {
   render() {
     // TODO: Update tiles with selectable buttons to replace map tiles
     // Replace with fetched array from database that contains jsons of all the monsters
@@ -145,4 +145,4 @@ export class MonsterSelector extends Component {
   }
 }
 
-export default MonsterSelector;
+export default StockMonsters;

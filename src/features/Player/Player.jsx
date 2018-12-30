@@ -31,7 +31,7 @@ export class Player extends Component {
 
   handleOver = () => {
     const { controlType, selectedPlayer, character } = this.props;
-    console.warn(this.state.on);
+
     if (
       controlType === CONTROL_TYPE.PLAY &&
       JSON.stringify(selectedPlayer) !== JSON.stringify({ character })
@@ -41,7 +41,6 @@ export class Player extends Component {
   };
 
   handleLeave = () => {
-    console.warn(this.state.on);
     this.setState({ on: false });
   };
 

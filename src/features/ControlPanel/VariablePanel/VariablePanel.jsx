@@ -22,10 +22,8 @@ export class VariablePanel extends Component {
         variableControls = <EditPieces />;
         break;
       case CONTROL_TYPE.PLAY:
-        variableControls = <Gameplay />;
-        break;
       default:
-        variableControls = <Gameplay />;
+        variableControls = <Gameplay/>;
         break;
     }
 

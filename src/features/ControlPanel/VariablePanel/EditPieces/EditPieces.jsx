@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Modal } from "semantic-ui-react";
 
-import MonsterSelector from "./MonsterSelector";
+import StockMonsters from "./StockMonsters";
 import CreateEditChracter from "./CreateEditCharacter";
 import CharacterSelector from "./CharacterSelector";
 
@@ -88,13 +88,14 @@ export class EditPieces extends Component {
         ) : null}
         <div className="Monster">
           <div style={{ textAlign: "center" }}>Monsters Selector</div>
-          <MonsterSelector />
+          <StockMonsters />
         </div>
         <Modal
           open={createEditModalVisible}
           closeOnEscape={true}
           closeOnDimmerClick={false}
           onClose={this.closeCreateEdit}
+          closeIcon
         >
           <Modal.Header>Create/Edit Character</Modal.Header>
           <Modal.Content>
