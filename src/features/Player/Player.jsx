@@ -12,7 +12,7 @@ export class Player extends Component {
     this.state = {
       selected: false,
       isOpen: false,
-      on: false
+      on: false,
     };
   }
 
@@ -34,7 +34,7 @@ export class Player extends Component {
 
     if (
       controlType === CONTROL_TYPE.PLAY &&
-      JSON.stringify(selectedPlayer) !== JSON.stringify({ character })
+      selectedPlayer.id === character.id
     ) {
       this.setState({ on: true });
     }
@@ -52,7 +52,7 @@ export class Player extends Component {
       return "";
     }
 
-    return `${on ? "PlayerHover" : null} ${JSON.stringify(selectedPlayer) === JSON.stringify(character) &&
+    return `${on ? "PlayerHover" : null} ${selectedPlayer.id === character.id &&
       selected
         ? `Highlight`
         : null}`
@@ -61,7 +61,6 @@ export class Player extends Component {
   render() {
     const {
       position,
-      spriteLocation,
       controlType,
       character,
       positioning = "absolute",
@@ -83,7 +82,6 @@ export class Player extends Component {
       >
         <PlayerSprite
           character={character}
-          spriteLocation={spriteLocation}
           controlType={controlType}
           positioning={positioning}
         />

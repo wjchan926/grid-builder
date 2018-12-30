@@ -19,7 +19,7 @@ const dndClass = [
   { key: "Barbarian", text: "Barbarian", value: "Barbarian" },
   { key: "Bard", text: "Bard", value: "Bard" },
   { key: "Cleric", text: "Cleric", value: "Cleric" },
-  { key: "Druid", text: "Cleric", value: "Cleric" },
+  { key: "Druid", text: "Druid", value: "Druid" },
   { key: "Fighter", text: "Fighter", value: "Fighter" },
   { key: "Monk", text: "Monk", value: "Monk" },
   { key: "Paladin", text: "Paladin", value: "Paladin" },

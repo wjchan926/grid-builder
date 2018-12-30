@@ -23,6 +23,14 @@ const directionMove = (direction, newPos) => {
     player => player.id === selectedPlayer.id
   );
 
+  store.dispatch({
+    type: SET_SELECTED_PLAYER_STAT,
+    payload: Object.assign(selectedPlayer, {
+      location: newPos,
+      spriteLocation: getSpriteLocation(direction, walkIndex)
+    })
+  });
+
   characterList[playerIndex] = Object.assign(selectedPlayer, {
     position: newPos,
     direction,
@@ -39,13 +47,13 @@ const directionMove = (direction, newPos) => {
 const getNewPosition = (oldPos, direction) => {
   switch (direction) {
     case DIRECTION.WEST:
-      return [oldPos[0] - SPRITE_SIZE, oldPos[1]];
+      return [oldPos[0] - 1, oldPos[1]];
     case DIRECTION.EAST:
-      return [oldPos[0] + SPRITE_SIZE, oldPos[1]];
+      return [oldPos[0] + 1, oldPos[1]];
     case DIRECTION.NORTH:
-      return [oldPos[0], oldPos[1] - SPRITE_SIZE];
+      return [oldPos[0], oldPos[1] - 1];
     case DIRECTION.SOUTH:
-      return [oldPos[0], oldPos[1] + SPRITE_SIZE];
+      return [oldPos[0], oldPos[1] + 1];
     default:
       return [oldPos[0], oldPos[1]];
   }
@@ -61,25 +69,26 @@ export const attemptMove = direction => {
 };
 
 const observeBoundaries = newPos => {
-  const mapWidth = store.getState().map.size.width * SPRITE_SIZE;
-  const mapHeight = store.getState().map.size.height * SPRITE_SIZE;
+  const mapWidth = store.getState().map.size.width;
+  const mapHeight = store.getState().map.size.height;
 
   return (
     newPos[0] >= 0 &&
-    newPos[0] <= mapWidth - SPRITE_SIZE &&
-    (newPos[1] >= 0 && newPos[1] <= mapHeight - SPRITE_SIZE)
+    newPos[0] <= mapWidth - 1 &&
+    (newPos[1] >= 0 && newPos[1] <= mapHeight - 1)
   );
 };
 
 const observeImpassable = newPos => {
   const tiles = store.getState().map.tiles;
-  const y = newPos[1] / SPRITE_SIZE;
-  const x = newPos[0] / SPRITE_SIZE;
+  const y = newPos[1];
+  const x = newPos[0];
+
   const nextTile = tiles[y][x];
   return nextTile < 6;
 };
 
-const getSpriteLocation = (direction, walkIndex) => {
+const getSpriteLocation = (direction, walkIndex = 0) => {
   switch (direction) {
     case DIRECTION.EAST:
       return `${SPRITE_SIZE * 0.8 * walkIndex}px -${SPRITE_SIZE * 0.8 * 3}px`;

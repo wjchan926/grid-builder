@@ -16,4 +16,4 @@ export const getCurrentCharacter = createSelector(
 export const getSelectedPlayer = createSelector(
   getPlayer,
   player => player.selectedPlayer || {}
-)
+);

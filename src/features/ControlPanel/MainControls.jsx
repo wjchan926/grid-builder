@@ -7,42 +7,49 @@ import "./ControlPanel.css";
 import { CONTROL_TYPE } from "../../config/constants";
 import { setControlType, setSelectedTerrainTile } from "./actions";
 import { setCurrentCharacter } from "../Player/actions";
+import {setSelectedPlayer} from "../Player/actions"
 
 export class MainControls extends Component {
   handleEditMapOnClick = () => {
     const {
       setControlType,
       setSelectedTerrainTile,
-      setCurrentCharacter
+      setCurrentCharacter,
+      setSelectedPlayer
     } = this.props;
 
     setControlType(CONTROL_TYPE.MAP);
     setSelectedTerrainTile(null);
     setCurrentCharacter({});
+    setSelectedPlayer({});
   };
 
   handleEditCharOnClick = () => {
     const {
       setControlType,
       setSelectedTerrainTile,
-      setCurrentCharacter
+      setCurrentCharacter,
+      setSelectedPlayer
     } = this.props;
 
     setControlType(CONTROL_TYPE.CHARACTERS);
     setSelectedTerrainTile(null);
     setCurrentCharacter({});
+    setSelectedPlayer({})
   };
 
   handlePlayGameOnClick = () => {
     const {
       setControlType,
       setSelectedTerrainTile,
-      setCurrentCharacter
+      setCurrentCharacter,
+      setSelectedPlayer
     } = this.props;
 
     setControlType(CONTROL_TYPE.PLAY);
     setSelectedTerrainTile(null);
     setCurrentCharacter({});
+    setSelectedPlayer({});
   };
 
   render() {
@@ -88,7 +95,8 @@ export class MainControls extends Component {
 const mapDispatchToProps = () => ({
   setControlType,
   setCurrentCharacter,
-  setSelectedTerrainTile
+  setSelectedTerrainTile,
+  setSelectedPlayer
 });
 
 export default connect(
