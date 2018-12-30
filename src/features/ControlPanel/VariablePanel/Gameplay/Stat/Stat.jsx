@@ -34,7 +34,7 @@ export class Stat extends Component {
     const { setStatValue, name } = this.props;
     const { value } = this.state;
 
-    if (value - 1 > 0) {
+    if (value - 1 >= 0) {
       const stat = Object.assign({});
       stat[name] = parseInt(value) - 1;
 
