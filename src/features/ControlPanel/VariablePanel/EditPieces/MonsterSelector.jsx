@@ -29,7 +29,7 @@ export class MonsterSelector extends Component {
     return (
       <div>
         <div
-          style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
+          style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent:"center" }}
         >
           {monsterArr}
         </div>

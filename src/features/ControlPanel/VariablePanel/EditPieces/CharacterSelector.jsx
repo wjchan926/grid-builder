@@ -4,7 +4,7 @@ import SelectorCharacter from "./SelectorCharacter/";
 
 export class CharacterSelector extends Component {
   render() {
-    const { characterList, controlType } = this.props;
+    const { characterList } = this.props;
 
     let characterArr = [];
 
