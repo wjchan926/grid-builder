@@ -16,7 +16,6 @@ export class CharacterSelector extends Component {
             <PlayerSprite
               character={character}
               spriteLocation="0px 0px"
-              controlType={controlType}
               positioning="relative"
               key={`${character.id}`}
             />

@@ -8,8 +8,10 @@ export class PlayerSprite extends Component {
     const { positioning, character, controlType } = this.props;
 
     let transform = "";
+    let backgroundColor = "";
     if (controlType !== CONTROL_TYPE.EDIT) {
       transform = character.hp === 0 ? "rotate(90deg)" : "";
+      backgroundColor =  character.hp === 0 ? "red" : "";
     }
 
     if (character) {
@@ -26,7 +28,8 @@ export class PlayerSprite extends Component {
             pointerEvents: `${"none"}`,
             backgroundImage: `url(${sprite})`,
             position: positioning,
-            transform: transform
+            transform: transform,
+            backgroundColor: backgroundColor
           }}
           className="Player"
         />

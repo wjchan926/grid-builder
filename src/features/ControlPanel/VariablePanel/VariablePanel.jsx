@@ -8,12 +8,10 @@ import EditMap from "./EditMap";
 import EditPieces from "./EditPieces/";
 import Gameplay from "./Gameplay/Gameplay";
 import { getControlType } from "../reselect";
-import { getSelectedMonster } from "../../Player/reselect";
 
 export class VariablePanel extends Component {
-
   render() {
-    const { controlType, selectedMonster } = this.props;
+    const { controlType } = this.props;
     let variableControls;
 
     switch (controlType) {
