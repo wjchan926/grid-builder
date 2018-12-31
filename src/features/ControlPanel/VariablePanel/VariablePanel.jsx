@@ -7,11 +7,13 @@ import { CONTROL_TYPE } from "../../../config/constants";
 import EditMap from "./EditMap";
 import EditPieces from "./EditPieces/";
 import Gameplay from "./Gameplay/Gameplay";
+import { getControlType } from "../reselect";
+import { getSelectedMonster } from "../../Player/reselect";
 
 export class VariablePanel extends Component {
 
   render() {
-    const { controlType } = this.props;
+    const { controlType, selectedMonster } = this.props;
     let variableControls;
 
     switch (controlType) {
@@ -23,7 +25,7 @@ export class VariablePanel extends Component {
         break;
       case CONTROL_TYPE.PLAY:
       default:
-        variableControls = <Gameplay/>;
+        variableControls = <Gameplay />;
         break;
     }
 
@@ -32,7 +34,7 @@ export class VariablePanel extends Component {
 }
 
 const mapStateToProps = state => ({
-  controlType: state.controls.controlType
+  controlType: getControlType(state)
 });
 
 export default connect(mapStateToProps)(VariablePanel);

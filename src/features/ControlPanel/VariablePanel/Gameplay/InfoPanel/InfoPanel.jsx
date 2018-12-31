@@ -24,13 +24,6 @@ export class InfoPanel extends Component {
     return null;
   }
 
-  // handleInputChange = e => {
-  //   let characterFormData = Object.assign({}, this.state.characterFormData);
-  //   characterFormData[e.target.name] = e.target.value;
-
-  //   setState({ characterFormData });
-  // };
-
   handleTextChange = (e) => {
     const {setStatValue} = this.props;
 
