@@ -4,9 +4,17 @@ import {
   getCharacterList,
   getCurrentCharacter,
   getStockMonsterList,
-  getMonsterList
+  getMonsterList,
+  getCurrentMonster
 } from "../../../Player/reselect";
-import { setCurrentCharacter, deleteCharacter } from "../../../Player/actions";
+import {
+  setCurrentCharacter,
+  deleteCharacter,
+  setSelectedPlayer,
+  setSelectedMonster,
+  setCurrentMonster,
+  deleteMonster
+} from "../../../Player/actions";
 import { getControlType } from "../../../ControlPanel/reselect";
 
 const mapStateToProps = state => ({
@@ -15,11 +23,16 @@ const mapStateToProps = state => ({
   stockMonsterList: getStockMonsterList(state),
   monsterList: getMonsterList(state),
   controlType: getControlType(state),
+  currentMonster: getCurrentMonster(state)
 });
 
 const mapDispatchToProps = () => ({
   setCurrentCharacter,
-  deleteCharacter
+  deleteCharacter,
+  setSelectedPlayer,
+  setSelectedMonster,
+  setCurrentMonster,
+  deleteMonster
 });
 
 export default connect(

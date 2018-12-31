@@ -271,3 +271,18 @@ export const setSelectedMonster = monster => {
     payload: Object.assign({}, monster)
   });
 };
+
+export const deleteMonster = currentMonster => {
+  let monsterList = Array.from(getMonsterList());
+
+  const monsterIndex = monsterList.findIndex(
+    monster => monster.id === currentMonster.id
+  );
+
+  monsterList.splice(monsterIndex, 1);
+
+  store.dispatch({
+    type: GENERATE_MONSTER,
+    payload: monsterList
+  });
+};

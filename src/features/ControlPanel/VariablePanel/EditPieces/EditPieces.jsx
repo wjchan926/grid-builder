@@ -33,11 +33,24 @@ export class EditPieces extends Component {
     const {
       setCurrentCharacter,
       currentCharacter,
-      deleteCharacter
+      deleteCharacter,
+      setSelectedPlayer,
+      deleteMonster,
+      setCurrentMonster,
+      currentMonster,
+      setSelectedMonster,
     } = this.props;
+
     if (JSON.stringify(currentCharacter) !== JSON.stringify({})) {
       deleteCharacter(currentCharacter);
       setCurrentCharacter({});
+      setSelectedPlayer({});
+    }
+
+    if (JSON.stringify(currentMonster) !== JSON.stringify({})) {
+      deleteMonster(currentMonster);
+      setCurrentMonster({});
+      setSelectedMonster({});
     }
   };
 
