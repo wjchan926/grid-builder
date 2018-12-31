@@ -1,9 +1,14 @@
 import { connect } from "react-redux";
 import Monster from "./Monster";
-// import handleMovement from "./movement";
+import handleMovement from "./movement";
 import { getControlType } from "../../ControlPanel/reselect";
 import { getSelectedMonster, getCurrentMonster } from "../reselect";
-import { setSelectedMonster, setSelectedPlayer, setCurrentCharacter,setCurrentMonster } from "../actions";
+import {
+  setSelectedMonster,
+  setSelectedPlayer,
+  setCurrentCharacter,
+  setCurrentMonster
+} from "../actions";
 
 const mapStateToProps = state => ({
   controlType: getControlType(state),
@@ -21,5 +26,4 @@ const mapDispatchToProps = () => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-// )(handleMovement(Monster));
-)(Monster)
+)(handleMovement(Monster));

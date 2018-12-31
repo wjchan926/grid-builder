@@ -8,7 +8,8 @@ import {
   getCurrentCharacter,
   getSelectedPlayer,
   getCurrentMonster,
-  getMonsterList
+  getMonsterList,
+  getSelectedMonster
 } from "./reselect";
 
 export const MOVE_PLAYER = "MOVE_PLAYER";
@@ -21,6 +22,7 @@ export const SET_SELECTED_PLAYER_STAT = "SET_SELECTED_PLAYER_STAT";
 export const SET_CURRENT_MONSTER = "SET_CURRENT_MONSTER";
 export const GENERATE_MONSTER = "GENERATE_MONSTER";
 export const SET_SELECTED_MONSTER = "SET_SELECTED_MONSTER"
+export const SET_SELECTED_MONSTER_STAT = "SET_SELECTED_MONSTER_STAT"
 
 const directionMove = (direction, newPos) => {
   const selectedPlayer = getSelectedPlayer();
@@ -280,6 +282,41 @@ export const deleteMonster = currentMonster => {
   );
 
   monsterList.splice(monsterIndex, 1);
+
+  store.dispatch({
+    type: GENERATE_MONSTER,
+    payload: monsterList
+  });
+};
+
+export const attemptMonsterMove = direction => {
+  const oldPos = getSelectedMonster().location;
+  const newPos = getNewPosition(oldPos, direction);
+
+  if (observeBoundaries(newPos) && observeImpassable(newPos)) {
+    directionMoveMonster(direction, newPos);
+  }
+};
+
+const directionMoveMonster = (direction, newPos) => {
+  const selectedMonster = getSelectedMonster();
+
+  let monsterList = Array.from(getMonsterList());
+
+  const monsterIndex = monsterList.findIndex(
+    monster => monster.id === selectedMonster.id
+  );
+
+  store.dispatch({
+    type: SET_SELECTED_MONSTER_STAT,
+    payload: Object.assign(selectedMonster, {
+      location: newPos,
+    })
+  });
+
+  monsterList[monsterIndex] = Object.assign(selectedMonster, {
+    position: newPos,
+  });
 
   store.dispatch({
     type: GENERATE_MONSTER,
