@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Stat from "../Stat/";
-import { Form, Image } from "semantic-ui-react";
+import { Form, Image, Input } from "semantic-ui-react";
 
 import "../Gameplay.css";
 
@@ -24,16 +24,16 @@ export class MonsterInfoPanel extends Component {
   }
 
   handleTextChange = e => {
-    const { setStatValue } = this.props;
+    const { setMonsterStatValue } = this.props;
 
     const stat = Object.assign({});
     stat[e.target.name] = e.target.value;
 
-    setStatValue(stat);
+    setMonsterStatValue(stat);
   };
 
   render() {
-    const {setMonsterStatValue} = this.props;
+    const { setMonsterStatValue } = this.props;
     const { selectedMonster = {} } = this.state;
     let imageFilename = "monsterSprites/portraits/placeholder.png";
 
@@ -53,13 +53,18 @@ export class MonsterInfoPanel extends Component {
           value={selectedMonster.characterName}
           showButtons={false}
         />
-        <Stat
-          stat="HP: "
-          value={selectedMonster.hp}
-          showButtons={true}
-          name="hp"
-          setStatValue={setMonsterStatValue}
-        />
+        <Form>
+          <Form.Field inline>
+            <label>HP: </label>
+            <Input
+              style={{ width: "75px", height: "25px" }}
+              placeholder="First name"
+              value={selectedMonster.hp}
+              name="hp"
+              onChange={this.handleTextChange}
+            />
+          </Form.Field>
+        </Form>
         <Stat
           stat="AC: "
           value={selectedMonster.ac}
@@ -116,7 +121,7 @@ export class MonsterInfoPanel extends Component {
           setStatValue={setMonsterStatValue}
         />
         <Form>
-        <Form.TextArea
+          <Form.TextArea
             label="Skills"
             autoHeight
             placeholder=""
@@ -126,7 +131,7 @@ export class MonsterInfoPanel extends Component {
                 : ""
             }
           />
-           <Form.TextArea
+          <Form.TextArea
             label="Senses"
             autoHeight
             placeholder=""
