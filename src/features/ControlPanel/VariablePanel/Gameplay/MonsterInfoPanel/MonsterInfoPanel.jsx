@@ -33,6 +33,7 @@ export class MonsterInfoPanel extends Component {
   };
 
   render() {
+    const {setMonsterStatValue} = this.props;
     const { selectedMonster = {} } = this.state;
     let imageFilename = "monsterSprites/portraits/placeholder.png";
 
@@ -57,53 +58,62 @@ export class MonsterInfoPanel extends Component {
           value={selectedMonster.hp}
           showButtons={true}
           name="hp"
+          setStatValue={setMonsterStatValue}
         />
         <Stat
           stat="AC: "
           value={selectedMonster.ac}
           showButtons={true}
           name="ac"
+          setStatValue={setMonsterStatValue}
         />
         <Stat
           stat="MS: "
           value={selectedMonster.ms}
           showButtons={true}
           name="ms"
+          setStatValue={setMonsterStatValue}
         />
         <Stat
           stat="Str: "
           value={selectedMonster.strength}
           showButtons={true}
           name="strength"
+          setStatValue={setMonsterStatValue}
         />
         <Stat
           stat="Dex: "
           value={selectedMonster.dexterity}
           showButtons={true}
+          setStatValue={setMonsterStatValue}
         />
         <Stat
           stat="Con: "
           value={selectedMonster.constitution}
           showButtons={true}
           name="constitution"
+          setStatValue={setMonsterStatValue}
         />
         <Stat
           stat="Int: "
           value={selectedMonster.intelligence}
           showButtons={true}
           name="intelligence"
+          setStatValue={setMonsterStatValue}
         />
         <Stat
           stat="Wis: "
           value={selectedMonster.wisdom}
           showButtons={true}
           name="wisdom"
+          setStatValue={setMonsterStatValue}
         />
         <Stat
           stat="Cha: "
           value={selectedMonster.charisma}
           showButtons={true}
           name="charisma"
+          setStatValue={setMonsterStatValue}
         />
         <Form>
         <Form.TextArea

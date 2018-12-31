@@ -323,3 +323,25 @@ const directionMoveMonster = (direction, newPos) => {
     payload: monsterList
   });
 };
+
+export const setMonsterStatValue = stat => {
+  const selectedMonster = getSelectedMonster();
+
+  store.dispatch({
+    type: SET_SELECTED_MONSTER_STAT,
+    payload: Object.assign(selectedMonster, stat)
+  });
+
+  let monsterList = Array.from(getMonsterList());
+
+  const monsterIndex = monsterList.findIndex(
+    monster => monster.id === selectedMonster.id
+  );
+
+  monsterList[monsterIndex] = Object.assign(selectedMonster, stat);
+
+  store.dispatch({
+    type: GENERATE_MONSTER,
+    payload: monsterList
+  });
+};

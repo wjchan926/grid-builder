@@ -18,14 +18,13 @@ export class InfoPanel extends Component {
       JSON.stringify(props.selectedPlayer) !==
       JSON.stringify(state.selectedPlayer)
     ) {
-
       return { selectedPlayer: props.selectedPlayer };
     }
     return null;
   }
 
-  handleTextChange = (e) => {
-    const {setStatValue} = this.props;
+  handleTextChange = e => {
+    const { setStatValue } = this.props;
 
     const stat = Object.assign({});
     stat[e.target.name] = e.target.value;
@@ -34,6 +33,7 @@ export class InfoPanel extends Component {
   };
 
   render() {
+    const { setStatValue } = this.props;
     const { selectedPlayer = {} } = this.state;
     let imageFilename = "playerSprites/portraits/placeholder.png";
 
@@ -56,65 +56,80 @@ export class InfoPanel extends Component {
           value={selectedPlayer.dndClass}
           showButtons={false}
         />
-        <Stat stat="Race: " value={selectedPlayer.race} showButtons={false} />
+        <Stat
+          stat="Race: "
+          value={selectedPlayer.race}
+          showButtons={false}
+        />
         <Stat
           stat="Lvl: "
           value={selectedPlayer.level}
           showButtons={true}
           name="level"
+          setStatValue={setStatValue}
         />
         <Stat
           stat="HP: "
           value={selectedPlayer.hp}
           showButtons={true}
           name="hp"
+          setStatValue={setStatValue}
         />
         <Stat
           stat="AC: "
           value={selectedPlayer.ac}
           showButtons={true}
           name="ac"
+          setStatValue={setStatValue}
         />
         <Stat
           stat="MS: "
           value={selectedPlayer.ms}
           showButtons={true}
           name="ms"
+          setStatValue={setStatValue}
         />
         <Stat
           stat="Str: "
           value={selectedPlayer.strength}
           showButtons={true}
           name="strength"
+          setStatValue={setStatValue}
         />
         <Stat
           stat="Dex: "
           value={selectedPlayer.dexterity}
           showButtons={true}
+          name="dexterity"
+          setStatValue={setStatValue}
         />
         <Stat
           stat="Con: "
           value={selectedPlayer.constitution}
           showButtons={true}
           name="constitution"
+          setStatValue={setStatValue}
         />
         <Stat
           stat="Int: "
           value={selectedPlayer.intelligence}
           showButtons={true}
           name="intelligence"
+          setStatValue={setStatValue}
         />
         <Stat
           stat="Wis: "
           value={selectedPlayer.wisdom}
           showButtons={true}
           name="wisdom"
+          setStatValue={setStatValue}
         />
         <Stat
           stat="Cha: "
           value={selectedPlayer.charisma}
           showButtons={true}
           name="charisma"
+          setStatValue={setStatValue}
         />
         <Form>
           <Form.TextArea

@@ -1,14 +1,14 @@
 import MonsterInfoPanel from "./MonsterInfoPanel";
 import { connect } from "react-redux";
 import { getSelectedMonster } from "../../../../Player/reselect";
-import { setStatValue } from "../../../../Player/actions";
+import { setMonsterStatValue } from "../../../../Player/actions";
 
 const mapStateToProps = state => ({
   selectedMonster: getSelectedMonster(state)
 });
 
 const mapDispatchToProps = () => ({
-  setStatValue
+  setMonsterStatValue
 });
 
 export default connect(
