@@ -17,14 +17,23 @@ export class SelectorCharacter extends Component {
   }
 
   handleOnClick = e => {
-    const { character, setCurrentCharacter, currentCharacter } = this.props;
+    const {
+      character,
+      setCurrentCharacter,
+      currentCharacter,
+      setCurrentMonster,
+      setSelectedPlayer
+    } = this.props;
     e.stopPropagation();
 
-    if (JSON.stringify(currentCharacter) === JSON.stringify(character)) {
+    if (currentCharacter.id === character.id) {
       this.setState({ selected: false });
+      setSelectedPlayer({});
       setCurrentCharacter({});
     } else {
       this.setState({ selected: true });
+      setCurrentMonster({});
+      setSelectedPlayer(character);
       setCurrentCharacter(character);
     }
   };
@@ -44,15 +53,14 @@ export class SelectorCharacter extends Component {
 
   render() {
     const { character, currentCharacter, sprite } = this.props;
-    const { selected, isOpen } = this.state;
+    const { isOpen } = this.state;
 
     return (
       <Popup
         trigger={
           <div
             className={`Selector ${
-              JSON.stringify(currentCharacter) === JSON.stringify(character) &&
-              selected
+              JSON.stringify(currentCharacter) === JSON.stringify(character)
                 ? `Highlight`
                 : null
             }`}

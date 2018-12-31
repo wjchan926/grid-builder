@@ -24,15 +24,11 @@
   filter: brightness(80%);
 }
 
-.Monster {
+.StockMonsters {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.MonsterRow {
-  display: flex;
-  flex-direction: row;
+  text-align: center;
 }
 
 .CharacterSelector {
@@ -65,3 +61,8 @@
   outline: 2px solid red;
 }
 
+.MonsterSelector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

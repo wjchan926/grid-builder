@@ -1,9 +1,14 @@
 import { DIRECTION, SPRITE_SIZE } from "../../config/constants";
 import store from "../../config/store";
+
+import uuid from "uuid";
+
 import {
   getCharacterList,
   getCurrentCharacter,
-  getSelectedPlayer
+  getSelectedPlayer,
+  getCurrentMonster,
+  getMonsterList
 } from "./reselect";
 
 export const MOVE_PLAYER = "MOVE_PLAYER";
@@ -12,6 +17,10 @@ export const SET_CURRENT_CHARACTER = "SET_CURRENT_CHARACTER";
 export const SET_CURRENT_CHARACTER_LOCATION = "SET_CURRENT_CHARACTER_LOCATION";
 export const SET_SELECTED_PLAYER = "SET_SELECTED_PLAYER";
 export const SET_SELECTED_PLAYER_STAT = "SET_SELECTED_PLAYER_STAT";
+
+export const SET_CURRENT_MONSTER = "SET_CURRENT_MONSTER";
+export const GENERATE_MONSTER = "GENERATE_MONSTER";
+export const SET_SELECTED_MONSTER = "SET_SELECTED_MONSTER"
 
 const directionMove = (direction, newPos) => {
   const selectedPlayer = getSelectedPlayer();
@@ -196,5 +205,69 @@ export const setStatValue = stat => {
   store.dispatch({
     type: GENERATE_CHARACTER,
     payload: characterList
+  });
+};
+
+///////////////////////////////////////
+////////   Monster Functions   ////////
+///////////////////////////////////////
+
+export const setCurrentMonster = monster => {
+  store.dispatch({
+    type: SET_CURRENT_MONSTER,
+    payload: Object.assign({}, monster)
+  });
+};
+
+export const setMonsterLocation = (rowIndex, columnIndex) => {
+  const currentMonster = getCurrentMonster();
+  const startPos = [columnIndex, rowIndex];
+
+  let monsterList = Array.from(getMonsterList());
+
+  const monsterIndex = monsterList.findIndex(
+    monster => monster.id === currentMonster.id
+  );
+
+  if (monsterIndex === -1) {
+    addMonsterToList(currentMonster, startPos);
+  } else {
+    monsterList[monsterIndex] = Object.assign(currentMonster, {
+      location: startPos,
+      visible: true
+    });
+
+    store.dispatch({
+      type: GENERATE_MONSTER,
+      payload: monsterList
+    });
+  }
+};
+
+const addMonsterToList = (monster, startPos) => {
+  const monsterList = Array.from(getMonsterList());
+  const oldMonster = Object.assign({}, monster);
+  const newMonster = Object.assign(monster, {
+    id: uuid.v4(),
+    location: startPos,
+    visible: true
+  });
+  monsterList.push(Object.assign({}, newMonster));
+
+  store.dispatch({
+    type: GENERATE_MONSTER,
+    payload: monsterList
+  });
+
+  store.dispatch({
+    type: SET_CURRENT_MONSTER,
+    payload: oldMonster
+  })
+};
+
+export const setSelectedMonster = monster => {
+  store.dispatch({
+    type: SET_SELECTED_MONSTER,
+    payload: Object.assign({}, monster)
   });
 };

@@ -12,13 +12,14 @@ const controlsReducer = (state = initialState, action) => {
     case SET_CONTROL_TYPE:
       return {
         ...state,
-        ...action.payload
+        controlType: action.payload
       };
     case SET_SELECTED_TERRAIN_TILE:
       return {
         ...state,
         selectedTerrain: action.payload
       };
+
     default:
       return state;
   }

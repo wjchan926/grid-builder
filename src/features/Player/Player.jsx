@@ -12,19 +12,30 @@ export class Player extends Component {
     this.state = {
       selected: false,
       isOpen: false,
-      on: false,
+      on: false
     };
   }
 
   handleOnClick = e => {
-    const { character, setSelectedPlayer, selectedPlayer } = this.props;
+    const {
+      character,
+      setSelectedPlayer,
+      selectedPlayer,
+      setCurrentCharacter,
+      setCurrentMonster,
+      setSelectedMonster
+    } = this.props;
     e.stopPropagation();
 
     if (JSON.stringify(selectedPlayer) === JSON.stringify(character)) {
       this.setState({ selected: false });
+      setCurrentCharacter({});
       setSelectedPlayer({});
     } else {
       this.setState({ selected: true });
+      setCurrentMonster({});
+      setSelectedMonster({});
+      setCurrentCharacter(character);
       setSelectedPlayer(character);
     }
   };
@@ -45,25 +56,29 @@ export class Player extends Component {
   };
 
   renderClassName = () => {
-    const {controlType, selectedPlayer, character, } = this.props;
+    const {
+      controlType,
+      selectedPlayer,
+      character,
+      currentPlayer
+    } = this.props;
     const { selected, on } = this.state;
 
-    if (controlType !== CONTROL_TYPE.PLAY){
+    if (controlType === CONTROL_TYPE.MAP) {
       return "";
     }
 
-    return `${on ? "PlayerHover" : null} ${selectedPlayer.id === character.id &&
-      selected
-        ? `Highlight`
-        : null}`
-  }
+    return `${on ? "PlayerHover" : null} ${
+      selectedPlayer.id === character.id && selected ? `Highlight` : null
+    } ${currentPlayer.id === character.id ? `Highlight` : null}`;
+  };
 
   render() {
     const {
       position,
       controlType,
       character,
-      positioning = "absolute",
+      positioning = "absolute"
     } = this.props;
 
     return (
@@ -74,10 +89,10 @@ export class Player extends Component {
           position: positioning
         }}
         className={`Selector ${this.renderClassName()}`}
-        onClick={controlType === CONTROL_TYPE.PLAY ? this.handleOnClick : null}
-        onMouseOver={controlType === CONTROL_TYPE.PLAY ? this.handleOver : null}
+        onClick={controlType !== CONTROL_TYPE.MAP ? this.handleOnClick : null}
+        onMouseOver={controlType !== CONTROL_TYPE.MAP ? this.handleOver : null}
         onMouseLeave={
-          controlType === CONTROL_TYPE.PLAY ? this.handleLeave : null
+          controlType !== CONTROL_TYPE.MAP ? this.handleLeave : null
         }
       >
         <PlayerSprite

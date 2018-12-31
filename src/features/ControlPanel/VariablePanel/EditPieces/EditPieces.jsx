@@ -4,6 +4,7 @@ import { Button, Modal } from "semantic-ui-react";
 import StockMonsters from "./StockMonsters";
 import CreateEditChracter from "./CreateEditCharacter";
 import CharacterSelector from "./CharacterSelector";
+import MonsterSelector from "./MonsterSelector";
 
 import "./EditPieces.css";
 
@@ -44,8 +45,8 @@ export class EditPieces extends Component {
 
   render() {
     const { createEditModalVisible, mode } = this.state;
-    const { characterList, currentCharacter } = this.props;
-
+    const { characterList, currentCharacter, monsterList, stockMonsterList, controlType } = this.props;
+ 
     return (
       <div>
         <div style={{ textAlign: "center" }}>Edit Pieces</div>
@@ -83,12 +84,17 @@ export class EditPieces extends Component {
         {characterList.length !== 0 ? (
           <div className="CharacterSelector">
             <div style={{ textAlign: "center" }}>Character Selector</div>
-            <CharacterSelector characterList={characterList} />
+            <CharacterSelector characterList={characterList} controlType={controlType}/>
           </div>
         ) : null}
-        <div className="Monster">
-          <div style={{ textAlign: "center" }}>Monsters Selector</div>
-          <StockMonsters />
+         {monsterList.length !== 0 ? (
+          <div className="MonsterSelector">
+            <div style={{ textAlign: "center" }}>Monster Selector</div>
+            <MonsterSelector monsterList={monsterList} controlType={controlType}/>
+          </div>
+        ) : null}
+        <div className="StockMonsters">
+          <StockMonsters controlType={controlType} monsterList={stockMonsterList}/>
         </div>
         <Modal
           open={createEditModalVisible}

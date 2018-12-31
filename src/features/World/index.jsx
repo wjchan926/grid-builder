@@ -1,17 +1,16 @@
 import { connect } from "react-redux";
 import World from "./World";
-import { getCharacterList, getSelectedPlayer } from "../Player/reselect";
-import { getControlType } from "../ControlPanel/reselect";
+import {
+  getCharacterList,
+  getMonsterList
+} from "../Player/reselect";
 
 const mapStateToProps = state => ({
   characterList: getCharacterList(state),
-  controlType: getControlType(state),
-  selectedPlayer: getSelectedPlayer(state)
+  monsterList: getMonsterList(state)
 });
 
-const mapDispatchToProps = () => ({
-
-});
+const mapDispatchToProps = () => ({});
 
 export default connect(
   mapStateToProps,

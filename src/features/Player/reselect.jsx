@@ -17,3 +17,23 @@ export const getSelectedPlayer = createSelector(
   getPlayer,
   player => player.selectedPlayer || {}
 );
+
+export const getStockMonsterList = createSelector(
+  getPlayer,
+  player => player.stockMonsterList || []
+);
+
+export const getCurrentMonster = createSelector(
+  getPlayer,
+  player => player.currentMonster || []
+);
+
+export const getMonsterList = createSelector(
+  getPlayer,
+  player => player.monsterList || []
+);
+
+export const getSelectedMonster = createSelector(
+  getPlayer,
+  player => player.selectedMonster || {}
+);

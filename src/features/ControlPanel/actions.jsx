@@ -5,15 +5,18 @@ import { getMap } from "../Map/reselect";
 
 import { getTileSprite, getTileNumberSprite } from "../../utils/helpers";
 
+import { stockMonsters } from "../../data/StockMonsters";
+
 export const SET_CONTROL_TYPE = "SET_CONTROL_TYPE";
 export const SET_MAP_SIZE = "SET_MAP_SIZE";
 export const SET_SELECTED_TERRAIN_TILE = "SET_SELECTED_TERRAIN_TILE";
 export const SET_TILE = "SET_TILE";
+export const GENERATE_STOCK_MONSTER_LIST = "GENERATE_STOCK_MONSTER_LIST"
 
 export const setControlType = controlType => {
   store.dispatch({
     type: SET_CONTROL_TYPE,
-    payload: { controlType }
+    payload: controlType
   });
 };
 
@@ -51,5 +54,14 @@ export const setTile = (rowIndex, columnIndex, selectedTerrain) => {
   store.dispatch({
     type: SET_TILE,
     payload: tiles
+  });
+};
+
+export const generateStockMonsterList = () => {
+  let stockMonsterList = Array.from(stockMonsters);
+
+  store.dispatch({
+    type: GENERATE_STOCK_MONSTER_LIST,
+    payload: stockMonsterList
   });
 };

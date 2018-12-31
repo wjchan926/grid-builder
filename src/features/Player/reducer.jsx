@@ -3,13 +3,21 @@ import {
   SET_CURRENT_CHARACTER,
   SET_CURRENT_CHARACTER_LOCATION,
   SET_SELECTED_PLAYER,
-  SET_SELECTED_PLAYER_STAT
+  SET_SELECTED_PLAYER_STAT,
+  SET_CURRENT_MONSTER,
+  GENERATE_MONSTER,
+  SET_SELECTED_MONSTER
 } from "./actions";
+import { GENERATE_STOCK_MONSTER_LIST } from "../ControlPanel/actions";
 
 const initialState = {
   characterList: [],
   currentCharacter: {},
-  selectedPlayer: {}
+  selectedPlayer: {},
+  stockMonsterList: [],
+  currentMonster: {},
+  monsterList: [],
+  selectedMonster: {}
 };
 
 const playerReducer = (state = initialState, action) => {
@@ -38,6 +46,26 @@ const playerReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedPlayer: Object.assign({}, action.payload)
+      };
+    case GENERATE_STOCK_MONSTER_LIST:
+      return {
+        ...state,
+        stockMonsterList: action.payload
+      };
+    case SET_CURRENT_MONSTER:
+      return {
+        ...state,
+        currentMonster: action.payload
+      };
+    case GENERATE_MONSTER:
+      return {
+        ...state,
+        monsterList: action.payload
+      };
+    case SET_SELECTED_MONSTER:
+      return {
+        ...state,
+        selectedMonster: Object.assign({}, action.payload)
       };
     default:
       return state;

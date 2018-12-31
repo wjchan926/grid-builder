@@ -11,7 +11,9 @@ export default class MapRow extends Component {
       selectedTerrain,
       setTile,
       currentCharacter,
-      setPlayerLocation
+      setPlayerLocation,
+      currentMonster,
+      setMonsterLocation
     } = this.props;
 
     return (
@@ -27,6 +29,8 @@ export default class MapRow extends Component {
               setTile={setTile}
               currentCharacter={currentCharacter}
               setPlayerLocation={setPlayerLocation}
+              setMonsterLocation={setMonsterLocation}
+              currentMonster={currentMonster}
               mapTile={
                 <MapTile
                   tile={tile}

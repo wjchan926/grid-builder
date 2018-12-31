@@ -18,10 +18,13 @@ export class MapTileWrapper extends Component {
       selectedTerrain,
       setTile,
       currentCharacter,
-      setPlayerLocation
+      setPlayerLocation,
+      setMonsterLocation,
+      currentMonster
     } = this.props;
 
     e.stopPropagation();
+
     switch (controlType) {
       case CONTROL_TYPE.MAP:
         if (selectedTerrain !== "none") {
@@ -32,6 +35,9 @@ export class MapTileWrapper extends Component {
         if (JSON.stringify(currentCharacter) !== JSON.stringify({})) {
           setPlayerLocation(rowIndex, columnIndex);
         }
+        if (JSON.stringify(currentMonster) !== JSON.stringify({})) {
+          setMonsterLocation(rowIndex, columnIndex);
+        }
         break;
       default:
         break;
@@ -39,13 +45,19 @@ export class MapTileWrapper extends Component {
   };
 
   handleOver = () => {
-    const { controlType, selectedTerrain, currentCharacter } = this.props;
+    const { controlType, selectedTerrain, currentCharacter, currentMonster } = this.props;
 
-    if (
+    const handleOverPlayer =
       (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "none") ||
       (controlType === CONTROL_TYPE.CHARACTERS &&
-        JSON.stringify(currentCharacter) !== JSON.stringify({}))
-    ) {
+        JSON.stringify(currentCharacter) !== JSON.stringify({}));
+
+    const handleOverMonster =
+      (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "none") ||
+      (controlType === CONTROL_TYPE.CHARACTERS &&
+        JSON.stringify(currentMonster) !== JSON.stringify({}));
+
+    if (handleOverPlayer || handleOverMonster) {
       this.setState({ on: true });
     }
   };
