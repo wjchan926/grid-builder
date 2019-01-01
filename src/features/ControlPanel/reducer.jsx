@@ -1,10 +1,11 @@
 import { CONTROL_TYPE } from "../../config/constants";
-import { SET_CONTROL_TYPE } from "./actions";
+import { SET_CONTROL_TYPE, SET_DEFAULT_TERRAIN } from "./actions";
 import { SET_SELECTED_TERRAIN_TILE } from "./actions";
 
 const initialState = {
   controlType: CONTROL_TYPE.PLAY,
-  selectedTerrain: "none"
+  selectedTerrain: "none",
+  defaultTerrain: "grass"
 };
 
 const controlsReducer = (state = initialState, action) => {
@@ -19,7 +20,11 @@ const controlsReducer = (state = initialState, action) => {
         ...state,
         selectedTerrain: action.payload
       };
-
+    case SET_DEFAULT_TERRAIN:
+      return {
+        ...state,
+        defaultTerrain: action.payload
+      };
     default:
       return state;
   }

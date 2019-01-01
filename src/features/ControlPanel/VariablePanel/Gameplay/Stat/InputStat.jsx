@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Input, Form } from "semantic-ui-react";
+import { Button, Input } from "semantic-ui-react";
 
 import "../Gameplay.css";
 

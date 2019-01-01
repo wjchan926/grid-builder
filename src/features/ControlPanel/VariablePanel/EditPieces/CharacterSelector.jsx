@@ -8,7 +8,7 @@ export class CharacterSelector extends Component {
 
     let characterArr = [];
 
-    characterList.forEach((character) => {
+    characterList.forEach(character => {
       characterArr.push(
         <SelectorCharacter
           character={character}

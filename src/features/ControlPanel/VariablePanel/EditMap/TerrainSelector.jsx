@@ -1,27 +1,69 @@
 import React, { Component } from "react";
 import { MapTile } from "../../../Map/MapTile";
 import "./EditMap.css";
-import  SelectorTile  from "./SelectorTile/";
+import SelectorTile from "./SelectorTile";
 
 export class TerrainSelector extends Component {
   render() {
-    // TODO: Update tiles with selectable buttons to replace map tiles
+    const { currentTerrain, setSelectedTerrainTile } = this.props;
+
     return (
       <div>
         <div className="TerrainRow">
-          <SelectorTile tile={<MapTile tile={0} />} />
-          <SelectorTile tile={<MapTile tile={1} />} />
-          <SelectorTile tile={<MapTile tile={2} />} />
+          <SelectorTile
+            tile={<MapTile tile={0} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
+          <SelectorTile
+            tile={<MapTile tile={1} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
+          <SelectorTile
+            tile={<MapTile tile={2} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
+          <SelectorTile
+            tile={<MapTile tile={3} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
         </div>
         <div className="TerrainRow">
-          <SelectorTile tile={<MapTile tile={3} />} />
-          <SelectorTile tile={<MapTile tile={4} />} />
-          <SelectorTile tile={<MapTile tile={5} />} />
+          <SelectorTile
+            tile={<MapTile tile={4} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
+          <SelectorTile
+            tile={<MapTile tile={5} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
+          <SelectorTile
+            tile={<MapTile tile={6} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
+          <SelectorTile
+            tile={<MapTile tile={7} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
         </div>
         <div className="TerrainRow">
-          <SelectorTile tile={<MapTile tile={6} />} />
-          <SelectorTile tile={<MapTile tile={7} />} />
-          <SelectorTile tile={<MapTile tile={8} />} />
+          <SelectorTile
+            tile={<MapTile tile={8} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
+          <SelectorTile
+            tile={<MapTile tile={9} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
         </div>
       </div>
     );

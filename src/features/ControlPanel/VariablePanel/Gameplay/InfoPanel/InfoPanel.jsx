@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Stat from "../Stat/";
+import Stat from "../Stat/Stat";
 import { Form, Image } from "semantic-ui-react";
 
 import "../Gameplay.css";
@@ -56,11 +56,7 @@ export class InfoPanel extends Component {
           value={selectedPlayer.dndClass}
           showButtons={false}
         />
-        <Stat
-          stat="Race: "
-          value={selectedPlayer.race}
-          showButtons={false}
-        />
+        <Stat stat="Race: " value={selectedPlayer.race} showButtons={false} />
         <Stat
           stat="Lvl: "
           value={selectedPlayer.level}

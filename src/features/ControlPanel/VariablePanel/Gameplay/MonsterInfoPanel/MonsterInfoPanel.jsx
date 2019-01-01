@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Stat from "../Stat/";
+import Stat from "../Stat/Stat";
 import InputStat from "../Stat/InputStat";
 import { Form, Image, Input } from "semantic-ui-react";
 

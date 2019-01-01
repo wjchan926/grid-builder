@@ -12,3 +12,8 @@ export const getControlType = createSelector(
   getControls,
   controls => controls.controlType || null
 );
+
+export const getDefaultTerrain = createSelector(
+  getControls,
+  controls => controls.defaultTerrain || ""
+);

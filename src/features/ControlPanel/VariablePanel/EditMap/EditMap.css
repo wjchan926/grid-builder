@@ -10,14 +10,14 @@
   justify-content: center;
 }
 
-.Selector {
+.TileSelector {
   display: inline-block;
   height: 40px;
   width: 40px;
   margin: 2px;
 }
 
-.Selector:hover {
+.TileSelector:hover {
   filter: brightness(80%);
 }
 
@@ -30,8 +30,12 @@
   border: 1px solid black;
   margin: auto;
   width: 87px;
+  height: 26px;
   text-align: center;
   padding: 5px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 700;
 }
 
 #EditMapButton:hover {

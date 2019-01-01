@@ -21,8 +21,8 @@ export const SET_SELECTED_PLAYER_STAT = "SET_SELECTED_PLAYER_STAT";
 
 export const SET_CURRENT_MONSTER = "SET_CURRENT_MONSTER";
 export const GENERATE_MONSTER = "GENERATE_MONSTER";
-export const SET_SELECTED_MONSTER = "SET_SELECTED_MONSTER"
-export const SET_SELECTED_MONSTER_STAT = "SET_SELECTED_MONSTER_STAT"
+export const SET_SELECTED_MONSTER = "SET_SELECTED_MONSTER";
+export const SET_SELECTED_MONSTER_STAT = "SET_SELECTED_MONSTER_STAT";
 
 const directionMove = (direction, newPos) => {
   const selectedPlayer = getSelectedPlayer();
@@ -96,7 +96,7 @@ const observeImpassable = newPos => {
   const x = newPos[0];
 
   const nextTile = tiles[y][x];
-  return nextTile < 6;
+  return nextTile < 7;
 };
 
 const getSpriteLocation = (direction, walkIndex = 0) => {
@@ -264,7 +264,7 @@ const addMonsterToList = (monster, startPos) => {
   store.dispatch({
     type: SET_CURRENT_MONSTER,
     payload: oldMonster
-  })
+  });
 };
 
 export const setSelectedMonster = monster => {
@@ -310,12 +310,12 @@ const directionMoveMonster = (direction, newPos) => {
   store.dispatch({
     type: SET_SELECTED_MONSTER_STAT,
     payload: Object.assign(selectedMonster, {
-      location: newPos,
+      location: newPos
     })
   });
 
   monsterList[monsterIndex] = Object.assign(selectedMonster, {
-    position: newPos,
+    position: newPos
   });
 
   store.dispatch({
@@ -339,6 +339,33 @@ export const setMonsterStatValue = stat => {
   );
 
   monsterList[monsterIndex] = Object.assign(selectedMonster, stat);
+
+  store.dispatch({
+    type: GENERATE_MONSTER,
+    payload: monsterList
+  });
+};
+
+///////////////////////////////////////
+//   Player and Monster Functions   ///
+///////////////////////////////////////
+
+export const resetPieces = () => {
+  let characterList = Array.from(getCharacterList());
+  let monsterList = Array.from(getMonsterList());
+
+  characterList.forEach(character => {
+    character.visible = false;
+  });
+
+  monsterList.forEach(monster => {
+    monster.visible = false;
+  });
+
+  store.dispatch({
+    type: GENERATE_CHARACTER,
+    payload: characterList
+  });
 
   store.dispatch({
     type: GENERATE_MONSTER,

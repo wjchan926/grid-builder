@@ -7,16 +7,18 @@ export const getTileSprite = type => {
     case 2:
       return "dirt";
     case 3:
-      return "jungle";
+      return "city";
     case 4:
-      return "chest";
+      return "jungle";
     case 5:
-      return "campfire";
+      return "chest";
     case 6:
-      return "rock";
+      return "campfire";
     case 7:
-      return "tree";
+      return "rock";
     case 8:
+      return "tree";
+    case 9:
       return "wall";
     default:
       return "none";
@@ -31,18 +33,20 @@ export const getTileNumberSprite = type => {
       return 1;
     case "dirt":
       return 2;
-    case "jungle":
+    case "city":
       return 3;
-    case "chest":
+    case "jungle":
       return 4;
-    case "campfire":
+    case "chest":
       return 5;
-    case "rock":
+    case "campfire":
       return 6;
-    case "tree":
+    case "rock":
       return 7;
-    case "wall":
+    case "tree":
       return 8;
+    case "wall":
+      return 9;
     case "none":
     default:
       return null;

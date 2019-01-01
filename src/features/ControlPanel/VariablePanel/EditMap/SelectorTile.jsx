@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import "../EditMap.css";
-import { getTileSprite } from "../../../../../utils/helpers";
+import "./EditMap.css";
+import { getTileSprite } from "../../../../utils/helpers";
 import { Popup } from "semantic-ui-react";
 
 const timeoutLength = 2500;
 
-export class SelectorTile extends Component {
+export default class SelectorTile extends Component {
   constructor(props) {
     super(props);
 
@@ -50,7 +50,7 @@ export class SelectorTile extends Component {
       <Popup
         trigger={
           <div
-            className={`Selector ${
+            className={`TileSelector ${
               currentTerrain === getTileSprite(tile.props.tile) && selected
                 ? `Highlight`
                 : ""

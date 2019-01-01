@@ -38,6 +38,10 @@
   background-image: url("/tiles/dirt.png");
 }
 
+.city {
+  background-image: url("/tiles/city.png");
+}
+
 .jungle {
   background-image: url("/tiles/jungle.png");
 }
