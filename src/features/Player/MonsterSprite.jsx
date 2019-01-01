@@ -10,8 +10,8 @@ export class MonsterSprite extends Component {
     let transform = "";
     let backgroundColor = "";
     if (controlType !== CONTROL_TYPE.EDIT) {
-      transform = monster.hp === 0 ? "rotate(90deg)" : "";
-      backgroundColor = monster.hp === 0 ? "red" : "";
+      transform = parseInt(monster.hp) === 0 ? "rotate(90deg)" : "";
+      backgroundColor = parseInt(monster.hp) === 0 ? "red" : "";
     }
 
     if (monster) {
