@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Stat from "../Stat/";
+import InputStat from "../Stat/InputStat";
 import { Form, Image, Input } from "semantic-ui-react";
 
 import "../Gameplay.css";
@@ -48,23 +49,23 @@ export class MonsterInfoPanel extends Component {
     return (
       <div className="InfoPanel">
         <Image className="Picture" src={portrait} />
-        <Stat
-          stat="Name: "
-          value={selectedMonster.characterName}
-          showButtons={false}
+        <span>
+          <label>Name: </label>
+          <Input
+            style={{ width: "130px", height: "25px", marginLeft: "5px" }}
+            placeholder=""
+            value={selectedMonster.characterName}
+            name="characterName"
+            onChange={this.handleTextChange}
+          />
+        </span>
+        <InputStat
+          stat="HP: "
+          value={selectedMonster.hp}
+          showButtons={true}
+          name="hp"
+          setStatValue={setMonsterStatValue}
         />
-        <Form>
-          <Form.Field inline>
-            <label>HP: </label>
-            <Input
-              style={{ width: "75px", height: "25px" }}
-              placeholder="First name"
-              value={selectedMonster.hp}
-              name="hp"
-              onChange={this.handleTextChange}
-            />
-          </Form.Field>
-        </Form>
         <Stat
           stat="AC: "
           value={selectedMonster.ac}
@@ -125,31 +126,25 @@ export class MonsterInfoPanel extends Component {
             label="Skills"
             autoHeight
             placeholder=""
-            value={
-              JSON.stringify(selectedMonster) !== JSON.stringify({})
-                ? selectedMonster.skills
-                : ""
-            }
+            value={selectedMonster.skills}
+            name="skills"
+            onChange={this.handleTextChange}
           />
           <Form.TextArea
             label="Senses"
             autoHeight
             placeholder=""
-            value={
-              JSON.stringify(selectedMonster) !== JSON.stringify({})
-                ? selectedMonster.senses
-                : ""
-            }
+            value={selectedMonster.senses}
+            name="senses"
+            onChange={this.handleTextChange}
           />
           <Form.TextArea
             label="Other Info"
             autoHeight
             placeholder=""
-            value={
-              JSON.stringify(selectedMonster) !== JSON.stringify({})
-                ? selectedMonster.otherInfo
-                : ""
-            }
+            value={selectedMonster.otherInfo}
+            name="otherInfo"
+            onChange={this.handleTextChange}
           />
         </Form>
       </div>

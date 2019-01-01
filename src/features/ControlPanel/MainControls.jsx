@@ -6,8 +6,12 @@ import "./ControlPanel.css";
 
 import { CONTROL_TYPE } from "../../config/constants";
 import { setControlType, setSelectedTerrainTile } from "./actions";
-import { setCurrentCharacter } from "../Player/actions";
-import {setSelectedPlayer} from "../Player/actions"
+import {
+  setCurrentCharacter,
+  setCurrentMonster,
+  setSelectedPlayer,
+  setSelectedMonster
+} from "../Player/actions";
 
 export class MainControls extends Component {
   handleEditMapOnClick = () => {
@@ -15,13 +19,17 @@ export class MainControls extends Component {
       setControlType,
       setSelectedTerrainTile,
       setCurrentCharacter,
-      setSelectedPlayer
+      setSelectedPlayer,
+      setCurrentMonster,
+      setSelectedMonster
     } = this.props;
 
     setControlType(CONTROL_TYPE.MAP);
     setSelectedTerrainTile(null);
     setCurrentCharacter({});
     setSelectedPlayer({});
+    setCurrentMonster({});
+    setSelectedMonster({});
   };
 
   handleEditCharOnClick = () => {
@@ -29,13 +37,17 @@ export class MainControls extends Component {
       setControlType,
       setSelectedTerrainTile,
       setCurrentCharacter,
-      setSelectedPlayer
+      setSelectedPlayer,
+      setCurrentMonster,
+      setSelectedMonster
     } = this.props;
 
     setControlType(CONTROL_TYPE.CHARACTERS);
     setSelectedTerrainTile(null);
     setCurrentCharacter({});
-    setSelectedPlayer({})
+    setSelectedPlayer({});
+    setCurrentMonster({});
+    setSelectedMonster({});
   };
 
   handlePlayGameOnClick = () => {
@@ -43,50 +55,46 @@ export class MainControls extends Component {
       setControlType,
       setSelectedTerrainTile,
       setCurrentCharacter,
-      setSelectedPlayer
+      setSelectedPlayer,
+      setCurrentMonster,
+      setSelectedMonster
     } = this.props;
 
     setControlType(CONTROL_TYPE.PLAY);
     setSelectedTerrainTile(null);
     setCurrentCharacter({});
     setSelectedPlayer({});
+    setCurrentMonster({});
+    setSelectedMonster({});
   };
 
   render() {
     return (
       <div className="MainControl">
-          <div style={{ textAlign: "center" }}>Main Controls</div>
-          <div style={{display:"block", textAlign:"center"}}>
-            <Button.Group vertical>
-              <Button
-                content="Edit Map"
-                id="MainControlButton"
-                onClick={this.handleEditMapOnClick}
-              />
-              <Button
-                content="Edit Pieces"
-                id="MainControlButton"
-                onClick={this.handleEditCharOnClick}
-              />
-            </Button.Group>
-            <Button.Group vertical>
-              <Button
-                content="Save"
-                id="MainControlButton"
-                onClick={() => {}}
-              />
-              <Button
-                content="Load"
-                id="MainControlButton"
-                onClick={() => {}}
-              />
-            </Button.Group>
+        <div style={{ textAlign: "center" }}>Main Controls</div>
+        <div style={{ display: "block", textAlign: "center" }}>
+          <Button.Group vertical>
+            <Button
+              content="Edit Map"
+              id="MainControlButton"
+              onClick={this.handleEditMapOnClick}
+            />
+            <Button
+              content="Edit Pieces"
+              id="MainControlButton"
+              onClick={this.handleEditCharOnClick}
+            />
+          </Button.Group>
+          <Button.Group vertical>
+            <Button content="Save" id="MainControlButton" onClick={() => {}} />
+            <Button content="Load" id="MainControlButton" onClick={() => {}} />
+          </Button.Group>
         </div>
         <Button
-              content="Play Game"
-              id="MainControlPlay"
-              onClick={this.handlePlayGameOnClick}
-            />
+          content="Play Game"
+          id="MainControlPlay"
+          onClick={this.handlePlayGameOnClick}
+        />
       </div>
     );
   }
@@ -96,7 +104,9 @@ const mapDispatchToProps = () => ({
   setControlType,
   setCurrentCharacter,
   setSelectedTerrainTile,
-  setSelectedPlayer
+  setSelectedPlayer,
+  setCurrentMonster,
+  setSelectedMonster
 });
 
 export default connect(
