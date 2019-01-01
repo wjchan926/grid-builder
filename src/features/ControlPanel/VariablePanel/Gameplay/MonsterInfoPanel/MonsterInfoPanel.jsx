@@ -42,8 +42,6 @@ export class MonsterInfoPanel extends Component {
       imageFilename = selectedMonster.portraitPath.replace("./", "");
     }
 
-    console.log(imageFilename);
-
     const portrait = require(`../../../../Player/${imageFilename}`);
 
     return (

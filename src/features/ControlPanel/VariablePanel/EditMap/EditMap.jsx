@@ -45,7 +45,6 @@ export class EditMap extends Component {
     const { setMap } = this.props;
     const map = fileReader.result;
     setMap(map);
-    console.log(map);
   };
 
   handleMapExport = () => {
