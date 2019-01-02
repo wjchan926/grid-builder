@@ -38,7 +38,7 @@ export class MonsterInfoPanel extends Component {
     const { selectedMonster = {} } = this.state;
     let imageFilename = "monsterSprites/portraits/placeholder.png";
 
-    if (JSON.stringify(selectedMonster) !== JSON.stringify({})) {
+    if (JSON.stringify(selectedMonster) !== "{}") {
       imageFilename = selectedMonster.portraitPath.replace("./", "");
     }
 

@@ -141,10 +141,7 @@ export class CreateEditChracter extends Component {
   componentDidMount() {
     const { currentCharacter, mode } = this.props;
 
-    if (
-      mode === "edit" &&
-      JSON.stringify(currentCharacter) !== JSON.stringify({})
-    ) {
+    if (mode === "edit" && JSON.stringify(currentCharacter) !== "{}") {
       this.setState({ characterFormData: currentCharacter });
     }
   }
@@ -155,12 +152,12 @@ export class CreateEditChracter extends Component {
     const { avatar } = formData;
 
     const portraitPath = "./playerSprites/portraits/";
-    const spirtePath = "./playerSprites/";
+    const spritePath = "./playerSprites/";
 
     let characterFormData = Object.assign({}, formData);
 
     characterFormData["portraitPath"] = `${portraitPath}${avatar}`;
-    characterFormData["spritePath"] = `${spirtePath}${avatar}`;
+    characterFormData["spritePath"] = `${spritePath}${avatar}`;
 
     if (mode === "create") {
       characterFormData["id"] = uuid.v4();

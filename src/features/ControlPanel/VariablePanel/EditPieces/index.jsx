@@ -13,7 +13,8 @@ import {
   setSelectedPlayer,
   setSelectedMonster,
   setCurrentMonster,
-  deleteMonster
+  deleteMonster,
+  generateCharacter
 } from "../../../Player/actions";
 import { getControlType } from "../../../ControlPanel/reselect";
 
@@ -32,7 +33,8 @@ const mapDispatchToProps = () => ({
   setSelectedPlayer,
   setSelectedMonster,
   setCurrentMonster,
-  deleteMonster
+  deleteMonster,
+  generateCharacter
 });
 
 export default connect(

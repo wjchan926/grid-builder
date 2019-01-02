@@ -26,7 +26,7 @@
       "spritePath": "./playerSprites/Dragoon.png",
       "location": [],
       "visible": false,
-      "spriteLocation": "64px 0px",
+      "spriteLocation": "0px 0px",
       "walkIndex": 0,
       "direction": 39
     },
@@ -55,7 +55,7 @@
       "spritePath": "./playerSprites/BlackMage.png",
       "location": [],
       "visible": false,
-      "spriteLocation": "64px 0px",
+      "spriteLocation": "0px 0px",
       "walkIndex": 0,
       "direction": 39
     },
@@ -84,7 +84,7 @@
       "spritePath": "./playerSprites/Kid.png",
       "location": [],
       "visible": false,
-      "spriteLocation": "64px 0px",
+      "spriteLocation": "0px 0px",
       "walkIndex": 0,
       "direction": 39
     },
@@ -113,7 +113,7 @@
       "spritePath": "./playerSprites/Druid.png",
       "location": [],
       "visible": false,
-      "spriteLocation": "64px 0px",
+      "spriteLocation": "0px 0px",
       "walkIndex": 0,
       "direction": 39
     }

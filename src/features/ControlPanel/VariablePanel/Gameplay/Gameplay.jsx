@@ -11,7 +11,7 @@ export class Gameplay extends Component {
     return (
       <div>
         <div style={{ textAlign: "center" }}>Character Info</div>
-        {JSON.stringify(selectedMonster) === JSON.stringify({}) ? (
+        {JSON.stringify(selectedMonster) === "{}" ? (
           <InfoPanel />
         ) : (
           <MonsterInfoPanel />

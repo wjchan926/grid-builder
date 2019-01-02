@@ -9,7 +9,7 @@ const handleMovement = player => {
   const handleKeyDown = e => {
     if (
       getControlType() === CONTROL_TYPE.PLAY &&
-      JSON.stringify(getSelectedPlayer()) !== JSON.stringify({})
+      JSON.stringify(getSelectedPlayer()) !== "{}"
     ) {
       if (preventedKeys.includes(e.keyCode)) {
         e.preventDefault();

@@ -37,7 +37,7 @@ export class InfoPanel extends Component {
     const { selectedPlayer = {} } = this.state;
     let imageFilename = "playerSprites/portraits/placeholder.png";
 
-    if (JSON.stringify(selectedPlayer) !== JSON.stringify({})) {
+    if (JSON.stringify(selectedPlayer) !== "{}") {
       imageFilename = selectedPlayer.portraitPath.replace("./", "");
     }
 
@@ -133,7 +133,7 @@ export class InfoPanel extends Component {
             autoHeight
             placeholder="Equipment"
             value={
-              JSON.stringify(selectedPlayer) !== JSON.stringify({})
+              JSON.stringify(selectedPlayer) !== "{}"
                 ? selectedPlayer.equipment
                 : ""
             }
@@ -145,7 +145,7 @@ export class InfoPanel extends Component {
             autoHeight
             placeholder="Proficiencies and Languages"
             value={
-              JSON.stringify(selectedPlayer) !== JSON.stringify({})
+              JSON.stringify(selectedPlayer) !== "{}"
                 ? selectedPlayer.profAndLang
                 : ""
             }
@@ -157,7 +157,7 @@ export class InfoPanel extends Component {
             autoHeight
             placeholder="Feature and Traits"
             value={
-              JSON.stringify(selectedPlayer) !== JSON.stringify({})
+              JSON.stringify(selectedPlayer) !== "{}"
                 ? selectedPlayer.featAndTraits
                 : ""
             }
@@ -169,7 +169,7 @@ export class InfoPanel extends Component {
             autoHeight
             placeholder="Other Character Info"
             value={
-              JSON.stringify(selectedPlayer) !== JSON.stringify({})
+              JSON.stringify(selectedPlayer) !== "{}"
                 ? selectedPlayer.otherInfo
                 : ""
             }

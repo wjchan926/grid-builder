@@ -5,6 +5,9 @@
   width: 87px;
   text-align: center;
   padding: 5px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 700;
 }
 
 #EditPieceButton:hover {

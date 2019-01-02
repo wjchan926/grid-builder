@@ -9,7 +9,7 @@ const handleMovement = monster => {
   const handleKeyDown = e => {
     if (
       getControlType() === CONTROL_TYPE.PLAY &&
-      JSON.stringify(getSelectedMonster()) !== JSON.stringify({})
+      JSON.stringify(getSelectedMonster()) !== "{}"
     ) {
       if (preventedKeys.includes(e.keyCode)) {
         e.preventDefault();
