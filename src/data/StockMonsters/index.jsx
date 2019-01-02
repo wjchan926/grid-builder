@@ -414,6 +414,27 @@ export const stockMonsters = [
     visible: false
   },
   {
+    id: "Lizard",
+    characterName: "Lizardfolk",
+    avatar: "Lizardfolk.png",
+    hp: "22",
+    ac: "15",
+    ms: "30",
+    strength: "15",
+    dexterity: "10",
+    constitution: "13",
+    intelligence: "7",
+    wisdom: "12",
+    charisma: "7",
+    skills: "Perception +3, Stealth +4, Survival +5",
+    senses: "passive Perception 13",
+    otherInfo: "Hold Breath-The lizardfolk can hold its breath for 15 minutes.",
+    portraitPath: "./monsterSprites/portraits/Lizardfolk.png",
+    spritePath: "./monsterSprites/Lizardfolk.png",
+    location: [],
+    visible: false
+  },
+  {
     id: "Mindflayer",
     characterName: "Mindflayer",
     avatar: "Mindflayer.png",
