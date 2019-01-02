@@ -414,7 +414,7 @@ export const stockMonsters = [
     visible: false
   },
   {
-    id: "Lizard",
+    id: "Lizardfolk",
     characterName: "Lizardfolk",
     avatar: "Lizardfolk.png",
     hp: "22",
