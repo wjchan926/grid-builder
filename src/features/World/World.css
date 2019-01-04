@@ -1,9 +1,12 @@
 :root {
-  --mapWidth: 1000px;
-  --mapHeight: 600px;
+  --mapWidth: 80%;
+  --mapHeight: 90%;
 }
 
 .World {
   position: relative;
-  margin: 20px 10px 20px auto;
+  margin: 20px auto auto 20px;
+  width: var(--mapWidth);
+  height: 90vh;
+  overflow: scroll scroll;
 }

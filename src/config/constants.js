@@ -1,4 +1,4 @@
-export const SPRITE_SIZE = 40;
+export const SPRITE_SIZE = 60;
 
 export const DIRECTION = {
   WEST: 37,
@@ -14,4 +14,4 @@ export const CONTROL_TYPE = {
   MAP: "MAP",
   CHARACTERS: "CHARACTERS",
   PLAY: "PLAY"
-}
+};

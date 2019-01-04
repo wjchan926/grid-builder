@@ -1,18 +1,21 @@
 @import "../World/World.css";
 
 .ControlPanel {
-  height: var(--mapHeight);
-  width: 200px;
+  height: 90vh;
+  width: 15%;
   background-color: grey;
-  margin: 20px auto 20px 10px;
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  margin-right: 20px;
+  right: 0;
+  margin-top: 20px;
 }
 
 .MainControl {
   border: 2px solid saddlebrown;
   display: flex;
   flex-direction: column;
+  height: 20vh;
+  overflow: scroll scroll;
 }
 
 #MainControlButton {
@@ -29,7 +32,6 @@
   border: 1px solid black;
   margin: 1px auto 2px auto;
   text-align: center;
-  width: 174px;
   padding: 5px;
   text-transform: uppercase;
 }
@@ -40,4 +42,9 @@
 
 #MainControlPlay:hover {
   filter: brightness(80%);
+}
+
+.World,
+.ControlPanel {
+  max-width: 100%;
 }

@@ -6,10 +6,11 @@
   position: relative;
   top: 0px;
   left: 0px;
+  /* margin: auto; */
 }
 
 .MapTileWrapper {
-  height: 40px;
+  height: 60px;
 }
 
 .MapTileWrapperHover {

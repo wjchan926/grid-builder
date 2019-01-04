@@ -38,6 +38,8 @@ const directionMove = (direction, newPos) => {
     type: SET_SELECTED_PLAYER_STAT,
     payload: Object.assign(selectedPlayer, {
       location: newPos,
+      direction,
+      walkIndex,
       spriteLocation: getSpriteLocation(direction, walkIndex)
     })
   });

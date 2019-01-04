@@ -1,18 +1,11 @@
 .Player {
-  height:32px;
-  width:32px;
-  margin:2px;
+  height: 48px;
+  width: 48px;
+  margin: 3px;
 }
 
 .Highlight {
   outline: 2px solid red;
-}
-
-.Selector {
-  display: inline-block;
-  height: 36px;
-  width: 36px;
-  margin: 2px;
 }
 
 .PlayerHover {

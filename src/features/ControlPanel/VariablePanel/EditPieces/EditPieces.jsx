@@ -115,8 +115,15 @@ export class EditPieces extends Component {
     return (
       <div>
         <div style={{ textAlign: "center" }}>Edit Pieces</div>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <Button.Group vertical style={{ marginLeft: "auto" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <Button.Group vertical>
             <Button
               id="EditPieceButton"
               content="Create"
