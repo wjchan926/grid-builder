@@ -5,8 +5,9 @@
 .Map {
   position: relative;
   top: 0px;
+  display: flex;
+  flex-direction: column;
   left: 0px;
-  /* margin: auto; */
 }
 
 .MapTileWrapper {

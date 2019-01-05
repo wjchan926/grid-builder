@@ -4,7 +4,7 @@
   height: 90vh;
   width: 15%;
   background-color: grey;
-  position: fixed;
+  position: relative;
   margin-right: 20px;
   right: 0;
   margin-top: 20px;

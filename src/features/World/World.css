@@ -5,8 +5,8 @@
 
 .World {
   position: relative;
-  margin: 20px auto auto 20px;
-  width: var(--mapWidth);
+  margin: 20px;
   height: 90vh;
   overflow: scroll scroll;
+  outline: 1px solid black;
 }
