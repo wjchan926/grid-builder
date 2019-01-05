@@ -20,8 +20,13 @@ export const getTileSprite = type => {
       return "tree";
     case 9:
       return "wall";
+    case 10:
+      return "house1";
+    case 11:
+      return "house2";
+    case 99:
     default:
-      return "none";
+      return "theVoid";
   }
 };
 
@@ -47,8 +52,12 @@ export const getTileNumberSprite = type => {
       return 8;
     case "wall":
       return 9;
-    case "none":
+    case "house1":
+      return 10;
+    case "house2":
+      return 11;
+    case "theVoid":
     default:
-      return null;
+      return 99;
   }
 };

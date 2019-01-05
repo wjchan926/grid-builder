@@ -1,11 +1,12 @@
 import {ADD_TILES} from "./actions"
 import { SET_MAP_SIZE, SET_TILE } from "../ControlPanel/actions";
+import { tiles } from "../../data/Maps/1";
 
 const initialState = {
   tiles: [],
   size: {
-    width: 25,
-    height: 15
+    width: tiles[0].length,
+    height: tiles.length
   }
 };
 

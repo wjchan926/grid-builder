@@ -70,6 +70,14 @@
   background-image: url("/tiles/wall.png");
 }
 
-.none {
+.house1 {
+  background-image: url("/tiles/house1.png");
+}
+
+.house2 {
+  background-image: url("/tiles/house2.png");
+}
+
+.theVoid {
   background-color: black;
 }

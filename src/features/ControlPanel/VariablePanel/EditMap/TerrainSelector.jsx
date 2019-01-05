@@ -64,6 +64,23 @@ export class TerrainSelector extends Component {
             setSelectedTerrainTile={setSelectedTerrainTile}
             currentTerrain={currentTerrain}
           />
+          <SelectorTile
+            tile={<MapTile tile={10} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
+          <SelectorTile
+            tile={<MapTile tile={11} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
+        </div>
+        <div className="TerrainRow">
+          <SelectorTile
+            tile={<MapTile tile={99} />}
+            setSelectedTerrainTile={setSelectedTerrainTile}
+            currentTerrain={currentTerrain}
+          />
         </div>
       </div>
     );
