@@ -6,11 +6,8 @@ import Monster from "../Player/Monster";
 
 export default class World extends Component {
   render() {
-    const {
-      characterList,
-      monsterList,
-    } = this.props;
-    
+    const { characterList, monsterList } = this.props;
+
     let players = [];
     let monsters = [];
 
@@ -18,11 +15,13 @@ export default class World extends Component {
       characterList.forEach(character => {
         if (character.visible) {
           players.push(
-            <Player
-              character={character}
-              position={character.location}
-              key={character.id}
-            />
+            <div style={{ margin: "2px" }}>
+              <Player
+                character={character}
+                position={character.location}
+                key={character.id}
+              />
+            </div>
           );
         }
       });

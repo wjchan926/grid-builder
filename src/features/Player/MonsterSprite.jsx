@@ -27,7 +27,7 @@ export class MonsterSprite extends Component {
             transform: transform,
             backgroundColor: backgroundColor
           }}
-          className="Player"
+          className="Monster"
         />
       );
     }

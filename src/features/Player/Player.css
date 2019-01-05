@@ -1,7 +1,7 @@
 .Player {
   height: 48px;
   width: 48px;
-  margin: 3px;
+  margin: 4px 4px;
 }
 
 .Highlight {
@@ -10,4 +10,9 @@
 
 .PlayerHover {
   filter: brightness(40%);
+}
+
+.Monster {
+  height: 56px;
+  width: 56px;
 }
