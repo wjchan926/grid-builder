@@ -42,3 +42,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Docker
+
+Use `docker run -p 8000:80 grid-builder` to run the application in a docker container.
+The application will run on [localhost](http://localhost:8000)
