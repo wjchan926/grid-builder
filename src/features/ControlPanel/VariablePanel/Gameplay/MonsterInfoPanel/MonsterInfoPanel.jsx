@@ -71,11 +71,11 @@ export class MonsterInfoPanel extends Component {
           name="ac"
           setStatValue={setMonsterStatValue}
         />
-        <Stat
-          stat="MS: "
-          value={selectedMonster.ms}
-          showButtons={true}
-          name="ms"
+        <InputStat
+          stat="Speed: "
+          value={selectedMonster.speed}
+          showButtons={false}
+          name="speed"
           setStatValue={setMonsterStatValue}
         />
         <Stat
@@ -142,6 +142,22 @@ export class MonsterInfoPanel extends Component {
             placeholder=""
             value={selectedMonster.otherInfo}
             name="otherInfo"
+            onChange={this.handleTextChange}
+          />
+          <Form.TextArea
+            label="Actions"
+            autoHeight
+            placeholder=""
+            value={selectedMonster.actions}
+            name="actions"
+            onChange={this.handleTextChange}
+          />
+          <Form.TextArea
+            label="Challenge"
+            autoHeight
+            placeholder=""
+            value={selectedMonster.challenge}
+            name="challenge"
             onChange={this.handleTextChange}
           />
         </Form>
