@@ -51,8 +51,8 @@ export class EditMap extends Component {
     const { tiles } = this.props;
     const tileObj = Object.assign({}, { tiles });
 
-    var element = document.createElement("a");
-    var file = new Blob([JSON.stringify(tileObj)], {
+    let element = document.createElement("a");
+    let file = new Blob([JSON.stringify(tileObj)], {
       type: "application/json"
     });
     element.href = URL.createObjectURL(file);

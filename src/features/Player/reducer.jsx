@@ -9,7 +9,7 @@ import {
   SET_SELECTED_MONSTER,
   SET_SELECTED_MONSTER_STAT
 } from "./actions";
-import { GENERATE_STOCK_MONSTER_LIST } from "../ControlPanel/actions";
+import { GENERATE_STOCK_MONSTER_LIST, SET_GAME_STATE } from "../ControlPanel/actions";
 
 const initialState = {
   characterList: [],
@@ -73,6 +73,8 @@ const playerReducer = (state = initialState, action) => {
         ...state,
         selectedMonster: Object.assign({}, action.payload)
       };
+    case SET_GAME_STATE:
+    return action.payload.player;
     default:
       return state;
   }

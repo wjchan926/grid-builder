@@ -15,7 +15,10 @@ export default class World extends Component {
       characterList.forEach(character => {
         if (character.visible) {
           players.push(
-            <div style={{ margin: "2px" }}>
+            <div
+              style={{ margin: "2px" }}
+              key={`${character.id} ${character.id}`}
+            >
               <Player
                 character={character}
                 position={character.location}

@@ -1,5 +1,5 @@
 import {ADD_TILES} from "./actions"
-import { SET_MAP_SIZE, SET_TILE } from "../ControlPanel/actions";
+import { SET_MAP_SIZE, SET_TILE, SET_GAME_STATE } from "../ControlPanel/actions";
 import { tiles } from "../../data/Maps/1";
 
 const initialState = {
@@ -27,6 +27,8 @@ const mapReducer = (state = initialState, action) => {
         ...state,
         tiles: action.payload
       }
+    case SET_GAME_STATE:
+    return action.payload.map;
     default:
       return state;
   }

@@ -14,6 +14,7 @@ export const SET_SELECTED_TERRAIN_TILE = "SET_SELECTED_TERRAIN_TILE";
 export const SET_TILE = "SET_TILE";
 export const GENERATE_STOCK_MONSTER_LIST = "GENERATE_STOCK_MONSTER_LIST";
 export const SET_DEFAULT_TERRAIN = "SET_DEFAULT_TERRAIN";
+export const SET_GAME_STATE = "SET_GAME_STATE";
 
 export const setControlType = controlType => {
   store.dispatch({
@@ -89,5 +90,14 @@ export const setDefaultTerrain = tile => {
   store.dispatch({
     type: SET_DEFAULT_TERRAIN,
     payload: getTileSprite(tile)
+  });
+};
+
+export const setGameState = gameState => {
+  const loadedState = JSON.parse(gameState);
+
+  store.dispatch({
+    type: SET_GAME_STATE,
+    payload: loadedState
   });
 };

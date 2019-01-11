@@ -1,5 +1,9 @@
 import { CONTROL_TYPE } from "../../config/constants";
-import { SET_CONTROL_TYPE, SET_DEFAULT_TERRAIN } from "./actions";
+import {
+  SET_CONTROL_TYPE,
+  SET_DEFAULT_TERRAIN,
+  SET_GAME_STATE
+} from "./actions";
 import { SET_SELECTED_TERRAIN_TILE } from "./actions";
 
 const initialState = {
@@ -25,6 +29,8 @@ const controlsReducer = (state = initialState, action) => {
         ...state,
         defaultTerrain: action.payload
       };
+    case SET_GAME_STATE:
+      return action.payload.controls;
     default:
       return state;
   }
