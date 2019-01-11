@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Button, Input } from "semantic-ui-react";
+import { Button, Input, Form } from "semantic-ui-react";
 import store from "../../config/store";
 
 import "./ControlPanel.css";
@@ -106,8 +106,8 @@ export class MainControls extends Component {
   render() {
     return (
       <div className="MainControl">
-        <div style={{ textAlign: "center" }}>Main Controls</div>
-        <div style={{ display: "block", textAlign: "center" }}>
+        <div>Main Controls</div>
+        <div style={{ display: "flex", justifyContent:"center"}}>
           <Button.Group vertical>
             <Button
               content="Edit Map"
@@ -120,7 +120,8 @@ export class MainControls extends Component {
               onClick={this.handleEditCharOnClick}
             />
           </Button.Group>
-          <Button.Group vertical>
+          <div style={{display:"flex", flexDirection:"column", width:"87px"}}>
+          <Form.Group>
             <Button
               content="Save"
               id="MainControlButton"
@@ -139,8 +140,8 @@ export class MainControls extends Component {
               onClick={this.handleGameLoad}
               className="Import"
             />
-            {/* <Button content="Load" id="MainControlButton" onClick={() => {}} /> */}
-          </Button.Group>
+            </Form.Group>
+            </div>
         </div>
         <Button
           content="Play Game"

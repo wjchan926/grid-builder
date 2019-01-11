@@ -14,8 +14,9 @@
   border: 2px solid saddlebrown;
   display: flex;
   flex-direction: column;
-  height: 20vh;
+  height: 15vh;
   overflow: scroll scroll;
+  text-align: center;
 }
 
 #MainControlButton {
