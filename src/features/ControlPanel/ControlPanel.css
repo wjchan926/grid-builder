@@ -12,8 +12,6 @@
 
 .MainControl {
   border: 2px solid saddlebrown;
-  display: flex;
-  flex-direction: column;
   height: 15vh;
   overflow: scroll scroll;
   text-align: center;

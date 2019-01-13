@@ -111,7 +111,7 @@ export class MainControls extends Component {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
           }}>
           <Button.Group vertical>
             <Button
