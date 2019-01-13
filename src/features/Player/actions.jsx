@@ -254,7 +254,8 @@ const addMonsterToList = (monster, startPos) => {
   const newMonster = Object.assign(monster, {
     id: uuid.v4(),
     location: startPos,
-    visible: true
+    visible: true,
+    maxhp: oldMonster.hp,
   });
   monsterList.push(Object.assign({}, newMonster));
 
@@ -340,7 +341,7 @@ export const setMonsterStatValue = stat => {
     monster => monster.id === selectedMonster.id
   );
 
-  monsterList[monsterIndex] = Object.assign(selectedMonster, stat);
+  monsterList[monsterIndex] = Object.assign(selectedMonster, stat)
 
   store.dispatch({
     type: GENERATE_MONSTER,

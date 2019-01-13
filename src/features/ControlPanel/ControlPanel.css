@@ -35,6 +35,8 @@
   text-align: center;
   padding: 5px;
   text-transform: uppercase;
+  height: 26px;
+  max-width: 170px;
 }
 
 #MainControlButton:hover {

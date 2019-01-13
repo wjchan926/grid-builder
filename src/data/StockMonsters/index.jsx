@@ -18,14 +18,15 @@ export const stockMonsters = [
     skills: "Stealth +2",
     senses: "blindsight 60ft, passive Perception 11",
     otherInfo:
-      "Echolocation-While it can't hear, the bat has no blindsight\nKeen Hearing-The bat has advantage on Wisdom (Perception) checks that rely on hearing",
+      "Echolocation-While it can't hear, the bat has no blindsight\n\nKeen Hearing-The bat has advantage on Wisdom (Perception) checks that rely on hearing",
     actions:
       "Bite: Melee Weapon Attack: +0 to hit, reach 5 ft., one creature. Hit: (1d1) piercing damage.",
     challenge: "0 (10 XP)",
     portraitPath: "./monsterSprites/portraits/Bat.png",
     spritePath: "./monsterSprites/Bat.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Bear",
@@ -45,12 +46,13 @@ export const stockMonsters = [
     otherInfo:
       "Keen Smell-the bear has advantage on Wisdom (perception) checks that rely on smell",
     actions:
-      "Multiattack-The bear makes two attacks: one with its bite and one with its claws.\nBite-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (1d8 + 4) piercing damage.\nClaws-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (2d6 + 4) slashing damage.",
+      "Multiattack-The bear makes two attacks: one with its bite and one with its claws.\n\nBite-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (1d8 + 4) piercing damage.\n\nClaws-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (2d6 + 4) slashing damage.",
     challenge: "1 (200 XP)",
     portraitPath: "./monsterSprites/portraits/Bear.png",
     spritePath: "./monsterSprites/Bear.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Bullywug",
@@ -68,14 +70,15 @@ export const stockMonsters = [
     skills: "Stealth +3",
     senses: "passive Perception 10",
     otherInfo:
-      "Amphibious-The bullywug can breathe air and water.\nSpeak with Frogs and Toads-The bullywug can communicate simple concepts to frogs and toads when it speaks in Bullywug.\nSwamp Camouflage-The bullywug has advantage on Dexterity (Stealth) checks made to hide in swampy terrain.\nStanding Leap-The bullywug's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start.",
+      "Amphibious-The bullywug can breathe air and water.\n\nSpeak with Frogs and Toads-The bullywug can communicate simple concepts to frogs and toads when it speaks in Bullywug.\n\nSwamp Camouflage-The bullywug has advantage on Dexterity (Stealth) checks made to hide in swampy terrain.\n\nStanding Leap-The bullywug's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start.",
     actions:
-      "Multiattack-The bullywug makes two melee attacks: one with its bite and one with its spear.\nBite-Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage.\nSpear-Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.",
+      "Multiattack-The bullywug makes two melee attacks: one with its bite and one with its spear.\n\nBite-Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage.\n\nSpear-Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.",
     challenge: "1/4 (50 XP)",
     portraitPath: "./monsterSprites/portraits/Bullywug.png",
     spritePath: "./monsterSprites/Bullywug.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Centaur",
@@ -95,12 +98,13 @@ export const stockMonsters = [
     otherInfo:
       "Charge-If the centaur moves at least 30 feet straight toward a target and then hits it with a pike attack on the same turn, the target takes an extra 10 (3d6) piercing damage.",
     actions:
-      "Multiattack-The centaur makes two attacks: one with its pike and one with its hooves or two with its longbow.\nPike-Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 9 (1d10 + 4) piercing damage.\nHooves. Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.\nLongbow. Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
+      "Multiattack-The centaur makes two attacks: one with its pike and one with its hooves or two with its longbow.\n\nPike-Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 9 (1d10 + 4) piercing damage.\n\nHooves. Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.\n\nLongbow. Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
     challenge: "2 (450 XP)",
     portraitPath: "./monsterSprites/portraits/Centaur.png",
     spritePath: "./monsterSprites/Centaur.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Chimera",
@@ -119,12 +123,13 @@ export const stockMonsters = [
     senses: "darkvision 60 ft., passive Perception 18",
     otherInfo: "",
     actions:
-      "Multiattack-The chimera makes three attacks: one with its bite, one with its horns, and one with its claws. When its fire breath is available, it can use the breath in place of its bite or horns.\nBite. Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage.\nHorns. Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) bludgeoning damage.\nClaws. Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.\nFire Breath (Recharge 5-6). The dragon head exhales fire in a 15-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 31 (7d8) fire damage on a failed save, or half as much damage on a successful one.",
+      "Multiattack-The chimera makes three attacks: one with its bite, one with its horns, and one with its claws. When its fire breath is available, it can use the breath in place of its bite or horns.\n\nBite. Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage.\n\nHorns. Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) bludgeoning damage.\n\nClaws. Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.\n\nFire Breath (Recharge 5-6). The dragon head exhales fire in a 15-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 31 (7d8) fire damage on a failed save, or half as much damage on a successful one.",
     challenge: "6 (2300 XP)",
     portraitPath: "./monsterSprites/portraits/Chimera.png",
     spritePath: "./monsterSprites/Chimera.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Constrictor_Snake",
@@ -143,12 +148,13 @@ export const stockMonsters = [
     senses: "blindsight 10ft, passive Perception 10",
     otherInfo: "",
     actions:
-      "Bite-Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: (1d6 + 2) piercing damage.\nConstrict. Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: (1d8 + 2) bludgeoning damage. The target is grappled (escape dc 14) Until this grapple ends, the creature is restrained, and the snake can't constrict another target",
+      "Bite-Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: (1d6 + 2) piercing damage.\n\nConstrict. Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: (1d8 + 2) bludgeoning damage. The target is grappled (escape dc 14) Until this grapple ends, the creature is restrained, and the snake can't constrict another target",
     challenge: "1/4 (50 XP)",
     portraitPath: "./monsterSprites/portraits/Constrictor_Snake.png",
     spritePath: "./monsterSprites/Constrictor_Snake.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Crocodile",
@@ -172,7 +178,8 @@ export const stockMonsters = [
     portraitPath: "./monsterSprites/portraits/Crocodile.png",
     spritePath: "./monsterSprites/Crocodile.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Dire_Wolf",
@@ -190,14 +197,15 @@ export const stockMonsters = [
     skills: "Perception +3, Stealth +4",
     senses: "passive Perception 13",
     otherInfo:
-      "Keen Hearing and Smell-the wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell\nPack Tactics-the wolf has advantage on attach rolls agains a creature if at last one of the wolf's allies is within 5 feet of the creature and isn't incapacitated",
+      "Keen Hearing and Smell-the wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell\n\nPack Tactics-the wolf has advantage on attach rolls agains a creature if at last one of the wolf's allies is within 5 feet of the creature and isn't incapacitated",
     actions:
       "Bite-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
     challenge: "1 (200 XP)",
     portraitPath: "./monsterSprites/portraits/Dire_Wolf.png",
     spritePath: "./monsterSprites/Dire_Wolf.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Dragon_Turtle",
@@ -215,14 +223,15 @@ export const stockMonsters = [
     skills: "",
     senses: "darkvision 120 ft., passive Perception 11",
     otherInfo:
-      "Saving Throws:Dex +6, Con +11, Wis +7\nDamage Resistances:fire\nAmphibious-The dragon turtle can breathe air and water.",
+      "Saving Throws:Dex +6, Con +11, Wis +7\n\nDamage Resistances:fire\n\nAmphibious-The dragon turtle can breathe air and water.",
     actions:
-      "Multiattack-The dragon turtle makes three attacks: one with its bite and two with its claws. It can make one tail attack in place of its two claw attacks.\nBite. Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 26 (3d12 + 7) piercing damage.\nClaw. Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 16 (2d8 + 7) slashing damage.\nTail. Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 26 (3d12 + 7) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be pushed up to 10 feet away from the dragon turtle and knocked prone.\nSteam Breath (Recharge 5-6). The dragon turtle exhales scalding steam in a 60-foot cone. Each creature in that area must make a DC 18 Constitution saving throw, taking 52 (15d 6) fire damage on a failed save, or half as much damage on a successful one. Being underwater doesn't grant resistance against this damage.",
+      "Multiattack-The dragon turtle makes three attacks: one with its bite and two with its claws. It can make one tail attack in place of its two claw attacks.\n\nBite. Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 26 (3d12 + 7) piercing damage.\n\nClaw. Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 16 (2d8 + 7) slashing damage.\n\nTail. Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 26 (3d12 + 7) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be pushed up to 10 feet away from the dragon turtle and knocked prone.\n\nSteam Breath (Recharge 5-6). The dragon turtle exhales scalding steam in a 60-foot cone. Each creature in that area must make a DC 18 Constitution saving throw, taking 52 (15d 6) fire damage on a failed save, or half as much damage on a successful one. Being underwater doesn't grant resistance against this damage.",
     challenge: "17 (18000 XP)",
     portraitPath: "./monsterSprites/portraits/Dragon_Turtle.png",
     spritePath: "./monsterSprites/Dragon_Turtle.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Gargoyle",
@@ -240,14 +249,15 @@ export const stockMonsters = [
     skills: "",
     senses: "darkvision 60 ft., passive Perception 10",
     otherInfo:
-      "Damage Resistances:bludgeoning, piercing, and slashing from nonmagical attacks that aren't adamantine\nDamage Immunities:poison\nCondition Immunities:exhaustion, petrified, poisoned\nFalse Appearance-While the gargoyle remains motionless, it is indistinguishable from an inanimate statue.",
+      "Damage Resistances:bludgeoning, piercing, and slashing from nonmagical attacks that aren't adamantine\n\nDamage Immunities:poison\n\nCondition Immunities:exhaustion, petrified, poisoned\n\nFalse Appearance-While the gargoyle remains motionless, it is indistinguishable from an inanimate statue.",
     actions:
-      "Multiattack-The gargoyle makes two attacks: one with its bite and one with its claws.\nBite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\nClaws-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
+      "Multiattack-The gargoyle makes two attacks: one with its bite and one with its claws.\n\nBite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\n\nClaws-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.",
     challenge: "2 (450 XP)",
     portraitPath: "./monsterSprites/portraits/Gargoyle.png",
     spritePath: "./monsterSprites/Gargoyle.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Centipede",
@@ -271,7 +281,8 @@ export const stockMonsters = [
     portraitPath: "./monsterSprites/portraits/Centipede.png",
     spritePath: "./monsterSprites/Centipede.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Eagle",
@@ -291,13 +302,14 @@ export const stockMonsters = [
     otherInfo:
       "Keen Sight-the eagle has advantage on Wisdom (Perception) checks that rely on sight",
     actions:
-      "Multiattack-The eagle makes two attacks: one with its beak and one with its talons.\nBeak-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.\nTalons-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
+      "Multiattack-The eagle makes two attacks: one with its beak and one with its talons.\n\nBeak-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.\n\nTalons-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
     challenge: "1 (200 XP)",
 
     portraitPath: "./monsterSprites/portraits/Eagle.png",
     spritePath: "./monsterSprites/Eagle.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Lizard",
@@ -321,7 +333,8 @@ export const stockMonsters = [
     portraitPath: "./monsterSprites/portraits/Lizard.png",
     spritePath: "./monsterSprites/Lizard.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Toad",
@@ -339,14 +352,15 @@ export const stockMonsters = [
     skills: "",
     senses: "darkvision 30 ft., passive Perception 10",
     otherInfo:
-      "Amphibious-The toad can breathe air and water.\nStanding Leap-The toad's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start.",
+      "Amphibious-The toad can breathe air and water.\n\nStanding Leap-The toad's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start.",
     actions:
-      "Bite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 5 (1d10) poison damage, and the target is grappled (escape DC 13). Until this grapple ends, the target is restrained, and the toad can't bite another target.\nSwallow-The toad makes one bite attack against a Medium or smaller target it is grappling. If the attack hits, the target is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the toad, and it takes 10 (3d6) acid damage at the start of each of the toad's turns. The toad can have only one target swallowed at a time. If the toad dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone.",
+      "Bite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 5 (1d10) poison damage, and the target is grappled (escape DC 13). Until this grapple ends, the target is restrained, and the toad can't bite another target.\n\nSwallow-The toad makes one bite attack against a Medium or smaller target it is grappling. If the attack hits, the target is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the toad, and it takes 10 (3d6) acid damage at the start of each of the toad's turns. The toad can have only one target swallowed at a time. If the toad dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone.",
     challenge: "1 (200 XP)",
     portraitPath: "./monsterSprites/portraits/Toad.png",
     spritePath: "./monsterSprites/Toad.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Goblin",
@@ -366,12 +380,13 @@ export const stockMonsters = [
     otherInfo:
       "Nimble Escape-The goblin can take the Disengage or Hide action as a bonus action on each of its turns.",
     actions:
-      "Scimitar-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.\nShortbow-Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "Scimitar-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.\n\nShortbow-Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
     challenge: "1/4 (50 XP)",
     portraitPath: "./monsterSprites/portraits/Goblin.png",
     spritePath: "./monsterSprites/Goblin.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Golem",
@@ -389,14 +404,15 @@ export const stockMonsters = [
     skills: "",
     senses: "darkvision 120 ft., passive Perception 10",
     otherInfo:
-      "Damage Immunities:poison, psychic, bludgeoning, piercing, and slashing from nonmagical attacks that aren't adamantine\nCondition Immunities:charmed, exhaustion, frightened, paralyzed, petrified, poisoned\nImmutable Form-The golem is immune to any spell or effect that would alter its form.\nMagic Resistance-The golem has advantage on saving throws against spells and other magical effects.\nMagic Weapons-The golem's weapon attacks are magical.",
+      "Damage Immunities:poison, psychic, bludgeoning, piercing, and slashing from nonmagical attacks that aren't adamantine\n\nCondition Immunities:charmed, exhaustion, frightened, paralyzed, petrified, poisoned\n\nImmutable Form-The golem is immune to any spell or effect that would alter its form.\n\nMagic Resistance-The golem has advantage on saving throws against spells and other magical effects.\n\nMagic Weapons-The golem's weapon attacks are magical.",
     actions:
-      "Multiattack-The golem makes two slam attacks.\nSlam-Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.\nSlow (Recharge 5-6)-The golem targets one or more creatures it can see within 10 feet of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "Multiattack-The golem makes two slam attacks.\n\nSlam-Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.\n\nSlow (Recharge 5-6)-The golem targets one or more creatures it can see within 10 feet of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     challenge: "10 (5900 XP)",
     portraitPath: "./monsterSprites/portraits/Golem.png",
     spritePath: "./monsterSprites/Golem.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Imp",
@@ -411,17 +427,18 @@ export const stockMonsters = [
     intelligence: "11",
     wisdom: "12",
     charisma: "14",
-    skills: "Deception +4\nInsight +3\nPersuasion +4\nStealth +5",
+    skills: "Deception +4\n\nInsight +3\n\nPersuasion +4\n\nStealth +5",
     senses: "darkvision 120ft, passive Perception 11",
     otherInfo:
-      "Resistances:cold,bludgeoning, piercing, slashing from nonmagical weapons that aren't silvered.\nImmunities:fire, poison.\nShapchanger-The imp can use its action to polymorph into the beast form of a rate, raven, or spider, or into its develi form. It statistics are the smae in each form with the exception of speed. It reverts to devil form if it dies\nDevil's Sight-Magical darkness doesn't impede the imp's darkvision\nMagical Reistance-The imp has advantage on saving throws against spells and other magical effects",
+      "Resistances:cold,bludgeoning, piercing, slashing from nonmagical weapons that aren't silvered.\n\nImmunities:fire, poison.\n\nShapchanger-The imp can use its action to polymorph into the beast form of a rate, raven, or spider, or into its develi form. It statistics are the smae in each form with the exception of speed. It reverts to devil form if it dies\n\nDevil's Sight-Magical darkness doesn't impede the imp's darkvision\n\nMagical Reistance-The imp has advantage on saving throws against spells and other magical effects",
     actions:
-      "Sting (Bite in Beast Form)-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must make on a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.\nInvisibility-The imp magically turns invisible until it attacks or until its concentration ends (as if concentrating on a spell). Any equipment the imp wears or carries is invisible with it.",
+      "Sting (Bite in Beast Form)-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must make on a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.\n\nInvisibility-The imp magically turns invisible until it attacks or until its concentration ends (as if concentrating on a spell). Any equipment the imp wears or carries is invisible with it.",
     challenge: "1 (200 XP)",
     portraitPath: "./monsterSprites/portraits/Imp.png",
     spritePath: "./monsterSprites/Imp.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Knight",
@@ -444,7 +461,8 @@ export const stockMonsters = [
     portraitPath: "./monsterSprites/portraits/Knight.png",
     spritePath: "./monsterSprites/Knight.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Lich",
@@ -465,7 +483,8 @@ export const stockMonsters = [
     portraitPath: "./monsterSprites/portraits/Lich.png",
     spritePath: "./monsterSprites/Lich.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Lion",
@@ -483,14 +502,15 @@ export const stockMonsters = [
     skills: "Perception +3, Stealth +6",
     senses: "passive Perception 13",
     otherInfo:
-      "Keen Smell-the lion has advantage on Wisdom (Perception) checks that rely on smell\nPack Tactics-the lion has advantage on attach rolls agains a creature if at last one of the lion's allies is within 5 feet of the creature and isn't incapacitated",
+      "Keen Smell-the lion has advantage on Wisdom (Perception) checks that rely on smell\n\nPack Tactics-the lion has advantage on attach rolls agains a creature if at last one of the lion's allies is within 5 feet of the creature and isn't incapacitated",
     actions:
-      "Bite-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.\nClaw-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
+      "Bite-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.\n\nClaw-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
     challenge: "1 (200 XP)",
     portraitPath: "./monsterSprites/portraits/Lion.png",
     spritePath: "./monsterSprites/Lion.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Lizardfolk",
@@ -509,12 +529,13 @@ export const stockMonsters = [
     senses: "passive Perception 13",
     otherInfo: "Hold Breath-The lizardfolk can hold its breath for 15 minutes.",
     actions:
-      "Multiattack-The lizardfolk makes two melee attacks, each one with a different weapon.\nBite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\nHeavy Club-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.\nJavelin-Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\nSpiked Shield-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "Multiattack-The lizardfolk makes two melee attacks, each one with a different weapon.\n\nBite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\n\nHeavy Club-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.\n\nJavelin-Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\n\nSpiked Shield-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
     challenge: "1/2 (100 XP)",
     portraitPath: "./monsterSprites/portraits/Lizardfolk.png",
     spritePath: "./monsterSprites/Lizardfolk.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Mindflayer",
@@ -533,14 +554,15 @@ export const stockMonsters = [
       "Arcana +7, Deception +6, Insight +6, Perception +6, Persuasion +6, Stealth +4",
     senses: "darkvision 120 ft.",
     otherInfo:
-      "Saving Throws:Int +7, Wis +6, Cha +6\nMagic Resistance-The mind flayer has advantage on saving throws against spells and other magical effects.\nInnate Spellcasting (Psionics)-The mind flayer’s innate spellcasting ability is Intelligence (spell save DC 15). It can innately cast the following spells, requiring no components.\nAt will-detect thoughts, levitate\n1/day each-dominate monster, plane shift (self only)",
+      "Saving Throws:Int +7, Wis +6, Cha +6\n\nMagic Resistance-The mind flayer has advantage on saving throws against spells and other magical effects.\n\nInnate Spellcasting (Psionics)-The mind flayer’s innate spellcasting ability is Intelligence (spell save DC 15). It can innately cast the following spells, requiring no components.\n\nAt will-detect thoughts, levitate\n\n1/day each-dominate monster, plane shift (self only)",
     actions:
-      "Tentacles-Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 15 (2d10 + 4) psychic damage. If the target is Medium or smaller, it is grappled (escape DC 15) and must succeed on a DC 15 Intelligence saving throw or be stunned until this grapple ends\nExtract Brain-Melee Weapon Attack: +7 to hit, reach 5 ft., one incapacitated humanoid grappled by the mind flayer. Hit: The target takes 55 (10d10) piercing damage. If this damage reduces the target to 0 hit points, the mind flayer kills the target by extracting and devouring its brain.\nMind Blast (Recharge 5-6)-The mind flayer magically emits psychic energy in a 60-foot cone. Each creature in that area must succeed on a DC 15 Intelligence saving throw or take 22 (4d8 + 4) psychic damage and be stunned for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "Tentacles-Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 15 (2d10 + 4) psychic damage. If the target is Medium or smaller, it is grappled (escape DC 15) and must succeed on a DC 15 Intelligence saving throw or be stunned until this grapple ends\n\nExtract Brain-Melee Weapon Attack: +7 to hit, reach 5 ft., one incapacitated humanoid grappled by the mind flayer. Hit: The target takes 55 (10d10) piercing damage. If this damage reduces the target to 0 hit points, the mind flayer kills the target by extracting and devouring its brain.\n\nMind Blast (Recharge 5-6)-The mind flayer magically emits psychic energy in a 60-foot cone. Each creature in that area must succeed on a DC 15 Intelligence saving throw or take 22 (4d8 + 4) psychic damage and be stunned for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     challenge: "7 (2,900 XP)",
     portraitPath: "./monsterSprites/portraits/Mindflayer.png",
     spritePath: "./monsterSprites/Mindflayer.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Minotaur",
@@ -558,14 +580,15 @@ export const stockMonsters = [
     skills: "Perception +7",
     senses: "darkvision 60 ft., passive Perception 17",
     otherInfo:
-      "Charge-If the minotaur moves at least 10 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 feet away and knocked prone.\nLabyrinthine Recall-The minotaur can perfectly recall any path it has traveled.\nReckless-At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.",
+      "Charge-If the minotaur moves at least 10 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 feet away and knocked prone.\n\nLabyrinthine Recall-The minotaur can perfectly recall any path it has traveled.\n\nReckless-At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.",
     actions:
-      "Greataxe-Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.\nGore-Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.",
+      "Greataxe-Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.\n\nGore-Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.",
     challenge: "3 (700 XP)",
     portraitPath: "./monsterSprites/portraits/Minotaur.png",
     spritePath: "./monsterSprites/Minotaur.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Naga",
@@ -583,14 +606,15 @@ export const stockMonsters = [
     skills: "",
     senses: "darkvision 60 ft., passive Perception 12",
     otherInfo:
-      "Saving Throws:Dex +6, Con +5, Wis +5, Cha +6\nDamage Immunities:poison\nCondition Immunities:charmed, poisoned\nRejuvenation-If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning.\nSpellcasting: The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:\nCantrips (at will): mage hand, minor illusion, ray of frost\n1st level (4 slots): charm person, detect magic, sleep\n2nd level (3 slots): detect thoughts, hold person\n3rd level (3 slots): lightning bolt, water breathing\n4th level (3 slots): blight, dimension door\n5th level (2 slots): dominate person",
+      "Saving Throws:Dex +6, Con +5, Wis +5, Cha +6\n\nDamage Immunities:poison\n\nCondition Immunities:charmed, poisoned\n\nRejuvenation-If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning.\n\nSpellcasting: The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared:\n\nCantrips (at will): mage hand, minor illusion, ray of frost\n\n1st level (4 slots): charm person, detect magic, sleep\n\n2nd level (3 slots): detect thoughts, hold person\n\n3rd level (3 slots): lightning bolt, water breathing\n\n4th level (3 slots): blight, dimension door\n\n5th level (2 slots): dominate person",
     actions:
       "Bite-Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 7 (1d6 + 4) piercing damage, and the target must make a DC 13 Constitution saving throw, taking 31 (7d8) poison damage on a failed save, or half as much damage on a successful one.",
     challenge: "8 (3900 XP)",
     portraitPath: "./monsterSprites/portraits/Naga.png",
     spritePath: "./monsterSprites/Naga.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Ogre",
@@ -609,12 +633,13 @@ export const stockMonsters = [
     senses: "darkvision 60 ft., passive Perception 8",
     otherInfo: "",
     actions:
-      "Greatclub-Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.\nJavelin-Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 11 (2d6 + 4) piercing damage.",
+      "Greatclub-Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.\n\nJavelin-Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 11 (2d6 + 4) piercing damage.",
     challenge: "2 (450 XP)",
     portraitPath: "./monsterSprites/portraits/Ogre.png",
     spritePath: "./monsterSprites/Ogre.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Pseudodragon",
@@ -629,17 +654,18 @@ export const stockMonsters = [
     intelligence: "10",
     wisdom: "12",
     charisma: "10",
-    skills: "Perception +3\nStealth +4",
+    skills: "Perception +3\n\nStealth +4",
     senses: "blindsight 10ft, darkvision 60ft, passive Perception 13",
     otherInfo:
-      "Keen Senses-The pseudodragon has advantage on Wisom (perception) checks that rely on sight, hearing, or smell.\nMagic Resistance-The pseudodragon has advantage on saving throws against speels and other magical effects\nLimited Telepathy-The pseudodragon can magically communicate simple ideas, emotions, andimages telepathically with any creature within 100ft of it that can understand language.",
+      "Keen Senses-The pseudodragon has advantage on Wisom (perception) checks that rely on sight, hearing, or smell.\n\nMagic Resistance-The pseudodragon has advantage on saving throws against speels and other magical effects\n\nLimited Telepathy-The pseudodragon can magically communicate simple ideas, emotions, andimages telepathically with any creature within 100ft of it that can understand language.",
     actions:
-      "Bite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.\nSting-Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or become poisoned for 1 hour. If the saving throw fails by 5 or more, the target falls unconscious for the same duration, or until it takes damage or another creature uses an action to shake it awake.",
+      "Bite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.\n\nSting-Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or become poisoned for 1 hour. If the saving throw fails by 5 or more, the target falls unconscious for the same duration, or until it takes damage or another creature uses an action to shake it awake.",
     challenge: "1/4 (50 XP)",
     portraitPath: "./monsterSprites/portraits/Pseudodragon.png",
     spritePath: "./monsterSprites/Pseudodragon.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Skeleton",
@@ -656,14 +682,15 @@ export const stockMonsters = [
     charisma: "5",
     skills: "",
     senses: "darkvision 60ft, passive Perception 9",
-    otherInfo: "Vulnerabilities: bludgeoning\nImmunities: Poison, exhaustion",
+    otherInfo: "Vulnerabilities: bludgeoning\n\nImmunities: Poison, exhaustion",
     actions:
-      "Shortsword-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\nShortbow-Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+      "Shortsword-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.\n\nShortbow-Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
     challenge: "1/4 (50 XP)",
     portraitPath: "./monsterSprites/portraits/Skeleton.png",
     spritePath: "./monsterSprites/Skeleton.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Slime_Black",
@@ -684,12 +711,13 @@ export const stockMonsters = [
     otherInfo:
       "Immunities:acid, cold, lightning, slashing, blinded, charmed, deafened, exhaustion, frightened, prone",
     actions:
-      "Pseudopod-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage plus 18 (4d8) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10.\nSplit-When a pudding that is Medium or larger is subjected to lightning or slashing damage, it splits into two new puddings if it has at least 10 hit points. Each new pudding has hit points equal to half the original pudding's, rounded down. New puddings are one size smaller than the original pudding.",
+      "Pseudopod-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage plus 18 (4d8) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10.\n\nSplit-When a pudding that is Medium or larger is subjected to lightning or slashing damage, it splits into two new puddings if it has at least 10 hit points. Each new pudding has hit points equal to half the original pudding's, rounded down. New puddings are one size smaller than the original pudding.",
     challenge: "4 (1100 XP)",
     portraitPath: "./monsterSprites/portraits/Slime_Black.png",
     spritePath: "./monsterSprites/Slime_Black.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Sorceress",
@@ -712,7 +740,8 @@ export const stockMonsters = [
     portraitPath: "./monsterSprites/portraits/Sorceress.png",
     spritePath: "./monsterSprites/Sorceress.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Spider",
@@ -730,14 +759,15 @@ export const stockMonsters = [
     skills: "Stealth +7",
     senses: "Blindsight 10ft, darkvision 60ft, passive Perception 10",
     otherInfo:
-      "Spider Climb-can climb difficult surfaces without needing to make an ability check\nWeb Sense-While in contact with a web, the spider knows the exact location of any other creature in contact with the same web\nWeb Walker-ignores movement restrictions caused by webbing",
+      "Spider Climb-can climb difficult surfaces without needing to make an ability check\n\nWeb Sense-While in contact with a web, the spider knows the exact location of any other creature in contact with the same web\n\nWeb Walker-ignores movement restrictions caused by webbing",
     actions:
-      "Bite-Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 7 (1d8 + 3) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.\nWeb (Recharge 5-6)-Ranged Weapon Attack: +5 to hit, range 30/60 ft., one creature. Hit: The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).",
+      "Bite-Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 7 (1d8 + 3) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.\n\nWeb (Recharge 5-6)-Ranged Weapon Attack: +5 to hit, range 30/60 ft., one creature. Hit: The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).",
     challenge: "1 (200 XP)",
     portraitPath: "./monsterSprites/portraits/Spider.png",
     spritePath: "./monsterSprites/Spider.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Treant",
@@ -755,14 +785,15 @@ export const stockMonsters = [
     skills: "",
     senses: "passive Perception 13",
     otherInfo:
-      "Damage Resistances:bludgeoning, piercing\nDamage vulnerabilities:fire\nFalse Appearance-While the treant remains motionless, it is indistinguishable from a normal tree.\nSiege Monster-The treant deals double damage to objects and structures.",
+      "Damage Resistances:bludgeoning, piercing\n\nDamage vulnerabilities:fire\n\nFalse Appearance-While the treant remains motionless, it is indistinguishable from a normal tree.\n\nSiege Monster-The treant deals double damage to objects and structures.",
     actions:
-      "Multiattack-The treant makes two slam attacks.\nSlam-Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 16 (3d6 + 6) bludgeoning damage.\nRock-Ranged Weapon Attack: +10 to hit, range 60/180 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.\nAnimate Trees (1/Day)-The treant magically animates one or two trees it can see within 60 feet of it. These trees have the same statistics as a treant, except they have Intelligence and Charisma scores of 1, they can't speak, and they have only the Slam action option. An animated tree acts as an ally of the treant. The tree remains animate for 1 day or until it dies; until the treant dies or is more than 120 feet from the tree; or until the treant takes a bonus action to turn it back into an inanimate tree. The tree then takes root if possible.",
+      "Multiattack-The treant makes two slam attacks.\n\nSlam-Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 16 (3d6 + 6) bludgeoning damage.\n\nRock-Ranged Weapon Attack: +10 to hit, range 60/180 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.\n\nAnimate Trees (1/Day)-The treant magically animates one or two trees it can see within 60 feet of it. These trees have the same statistics as a treant, except they have Intelligence and Charisma scores of 1, they can't speak, and they have only the Slam action option. An animated tree acts as an ally of the treant. The tree remains animate for 1 day or until it dies; until the treant dies or is more than 120 feet from the tree; or until the treant takes a bonus action to turn it back into an inanimate tree. The tree then takes root if possible.",
     challenge: "9 (5000 XP)",
     portraitPath: "./monsterSprites/portraits/Treant.png",
     spritePath: "./monsterSprites/Treant.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Troglodyte",
@@ -780,14 +811,15 @@ export const stockMonsters = [
     skills: "Stealth +2",
     senses: "darkvision 60ft, passive Perception 10",
     otherInfo:
-      "Chameleon Skin-The troglodyte has advantage on Dexterity(Stealth) checks made to hide.\nStench-Any creature other than a troglodyte that starts its turn within 5 feet of the troglodyte must succeed on a DC 12 Constitution saving throw or be poisoned until the start of the creature's next turn. On a successful saving throw, the creature is immune to the stench of all troglodytes for 1 hour.\nSunlight Sensitivity-While in sunlight, the troglodyte has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+      "Chameleon Skin-The troglodyte has advantage on Dexterity(Stealth) checks made to hide.\n\nStench-Any creature other than a troglodyte that starts its turn within 5 feet of the troglodyte must succeed on a DC 12 Constitution saving throw or be poisoned until the start of the creature's next turn. On a successful saving throw, the creature is immune to the stench of all troglodytes for 1 hour.\n\nSunlight Sensitivity-While in sunlight, the troglodyte has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
     actions:
-      "Multiattack-The troglodyte makes three attacks: one with its bite and two with its claws.\nBite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.\nClaw-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.",
+      "Multiattack-The troglodyte makes three attacks: one with its bite and two with its claws.\n\nBite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.\n\nClaw-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.",
     challenge: "1/4 (50 XP)",
     portraitPath: "./monsterSprites/portraits/Troglodyte.png",
     spritePath: "./monsterSprites/Troglodyte.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Wolf",
@@ -805,14 +837,15 @@ export const stockMonsters = [
     skills: "Perception +3, Stealth +4",
     senses: "passive Perception 13",
     otherInfo:
-      "Keen Hearing and Smell-the wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell\nPack Tactics-the wolf has advantage on attach rolls agains a creature if at last one of the wolf's allies is within 5 feet of the creature and isn't incapacitated",
+      "Keen Hearing and Smell-the wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell\n\nPack Tactics-the wolf has advantage on attach rolls agains a creature if at last one of the wolf's allies is within 5 feet of the creature and isn't incapacitated",
     actions:
       "Bite-Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
     challenge: "1/4 (50 XP)",
     portraitPath: "./monsterSprites/portraits/Wolf.png",
     spritePath: "./monsterSprites/Wolf.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Purple_Worm",
@@ -830,14 +863,15 @@ export const stockMonsters = [
     skills: "",
     senses: "Blindsight 30 Ft., Tremorsense 60 Ft., passive Perception 9",
     otherInfo:
-      "Saving Throws:Con +11, Wis +4\nTunneler-The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.",
+      "Saving Throws:Con +11, Wis +4\n\nTunneler-The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.",
     actions:
-      "Multiattack-The worm makes two attacks: one with its bite and one with its stinger.\nBite-Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 22 (3d8 + 9) piercing damage. If the target is a Large or smaller creature, it must succeed on a DC 19 Dexterity saving throw or be swallowed by the worm. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the worm, and it takes 21 (6d6) acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the worm. If the worm dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 20 feet of movement, exiting prone.\nTail Stinger-Melee Weapon Attack: +14 to hit, reach 10 ft., one creature. Hit: 19 (3d6 + 9) piercing damage, and the target must make a DC 19 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one.",
+      "Multiattack-The worm makes two attacks: one with its bite and one with its stinger.\n\nBite-Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 22 (3d8 + 9) piercing damage. If the target is a Large or smaller creature, it must succeed on a DC 19 Dexterity saving throw or be swallowed by the worm. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the worm, and it takes 21 (6d6) acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the worm. If the worm dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 20 feet of movement, exiting prone.\n\nTail Stinger-Melee Weapon Attack: +14 to hit, reach 10 ft., one creature. Hit: 19 (3d6 + 9) piercing damage, and the target must make a DC 19 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one.",
     challenge: "15 (13000 XP)",
     portraitPath: "./monsterSprites/portraits/Purple_Worm.png",
     spritePath: "./monsterSprites/Purple_Worm.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
   },
   {
     id: "Zombie",
@@ -855,13 +889,38 @@ export const stockMonsters = [
     skills: "",
     senses: "darkvision 60ft, passive Perception 8",
     otherInfo:
-      "Saving Throws-Wis +0\nImmunities:poison\nUndead Fortitude-if damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken unless the damage is radiant or from a critical hit.  On success, the zombie drops to 1 hit point instead.",
+      "Saving Throws-Wis +0\n\nImmunities:poison\n\nUndead Fortitude-if damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken unless the damage is radiant or from a critical hit.  On success, the zombie drops to 1 hit point instead.",
     actions:
       "Slam-Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage.",
     challegne: "1/4 (50 XP)",
     portraitPath: "./monsterSprites/portraits/Zombie.png",
     spritePath: "./monsterSprites/Zombie.png",
     location: [],
-    visible: false
+    visible: false,
+    maxhp: "0"
+  },
+  {
+    id: "Black_Dragon",
+    characterName: "Black Dragon",
+    avatar: "DragonTest.png",
+    hp: "",
+    ac: "",
+    speed: "",
+    strength: "",
+    dexterity: "",
+    constitution: "",
+    intelligence: "",
+    wisdom: "",
+    charisma: "",
+    skills: "",
+    senses: "",
+    otherInfo: "",
+    actions: "",
+    challegne: "",
+    portraitPath: "./monsterSprites/portraits/DragonTest.png",
+    spritePath: "./monsterSprites/DragonTest.png",
+    location: [],
+    visible: false,
+    maxhp: "0"
   }
 ];

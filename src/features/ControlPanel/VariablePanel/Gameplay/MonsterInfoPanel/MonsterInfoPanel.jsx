@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Stat from "../Stat/Stat";
-import InputStat from "../Stat/InputStat";
-import { Form, Image, Input } from "semantic-ui-react";
+import { Image, Input } from "semantic-ui-react";
 
 import "../Gameplay.css";
 
@@ -33,6 +32,30 @@ export class MonsterInfoPanel extends Component {
     setMonsterStatValue(stat);
   };
 
+  renderStatus = selectedMonster => {
+    if (selectedMonster.hp === 0) {
+      return <span className="Stat">Status: <span style={{color:"darkred"}}>DEAD</span></span>;
+    }
+
+    if (selectedMonster.maxhp === 1) {
+      return <span className="Stat">Status: <span style={{color:"gold"}}>Normal</span></span>;
+    }
+
+    if (selectedMonster.hp < Math.ceil(parseInt(selectedMonster.maxhp) / 2)) {
+      return <span className="Stat">Status: <span style={{color:"darkred"}}>Bloodied</span></span>;
+    }
+
+    return <span className="Stat">Status: <span style={{color:"gold"}}>Normal</span></span>;
+  };
+
+  renderDamageTaken = selectedMonster => {
+    return (
+      <span className="Stat">
+        Damage Taken: <span  style={{ color: "gold" }}>{selectedMonster.hp - selectedMonster.maxhp}</span>
+      </span>
+    );
+  };
+
   render() {
     const { setMonsterStatValue } = this.props;
     const { selectedMonster = {} } = this.state;
@@ -57,110 +80,16 @@ export class MonsterInfoPanel extends Component {
             onChange={this.handleTextChange}
           />
         </span>
-        <InputStat
-          stat="HP: "
+        <Stat
+          stat="HP"
           value={selectedMonster.hp}
-          showButtons={true}
+          showButtons
+          hideValue
           name="hp"
           setStatValue={setMonsterStatValue}
         />
-        <Stat
-          stat="AC: "
-          value={selectedMonster.ac}
-          showButtons={true}
-          name="ac"
-          setStatValue={setMonsterStatValue}
-        />
-        <InputStat
-          stat="Speed: "
-          value={selectedMonster.speed}
-          showButtons={false}
-          name="speed"
-          setStatValue={setMonsterStatValue}
-        />
-        <Stat
-          stat="Str: "
-          value={selectedMonster.strength}
-          showButtons={true}
-          name="strength"
-          setStatValue={setMonsterStatValue}
-        />
-        <Stat
-          stat="Dex: "
-          value={selectedMonster.dexterity}
-          showButtons={true}
-          setStatValue={setMonsterStatValue}
-        />
-        <Stat
-          stat="Con: "
-          value={selectedMonster.constitution}
-          showButtons={true}
-          name="constitution"
-          setStatValue={setMonsterStatValue}
-        />
-        <Stat
-          stat="Int: "
-          value={selectedMonster.intelligence}
-          showButtons={true}
-          name="intelligence"
-          setStatValue={setMonsterStatValue}
-        />
-        <Stat
-          stat="Wis: "
-          value={selectedMonster.wisdom}
-          showButtons={true}
-          name="wisdom"
-          setStatValue={setMonsterStatValue}
-        />
-        <Stat
-          stat="Cha: "
-          value={selectedMonster.charisma}
-          showButtons={true}
-          name="charisma"
-          setStatValue={setMonsterStatValue}
-        />
-        <Form>
-          <Form.TextArea
-            label="Skills"
-            autoHeight
-            placeholder=""
-            value={selectedMonster.skills}
-            name="skills"
-            onChange={this.handleTextChange}
-          />
-          <Form.TextArea
-            label="Senses"
-            autoHeight
-            placeholder=""
-            value={selectedMonster.senses}
-            name="senses"
-            onChange={this.handleTextChange}
-          />
-          <Form.TextArea
-            label="Other Info"
-            autoHeight
-            placeholder=""
-            value={selectedMonster.otherInfo}
-            name="otherInfo"
-            onChange={this.handleTextChange}
-          />
-          <Form.TextArea
-            label="Actions"
-            autoHeight
-            placeholder=""
-            value={selectedMonster.actions}
-            name="actions"
-            onChange={this.handleTextChange}
-          />
-          <Form.TextArea
-            label="Challenge"
-            autoHeight
-            placeholder=""
-            value={selectedMonster.challenge}
-            name="challenge"
-            onChange={this.handleTextChange}
-          />
-        </Form>
+        {this.renderStatus(selectedMonster)}
+        {this.renderDamageTaken(selectedMonster)}
       </div>
     );
   }

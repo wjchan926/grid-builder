@@ -44,13 +44,13 @@ export class Stat extends Component {
   };
 
   render() {
-    const { stat, showButtons } = this.props;
+    const { stat, showButtons, hideValue } = this.props;
     const { value } = this.state;
 
     return (
       <span className="Stat">
         {stat}
-        <span style={{ color: "gold" }}>{value}</span>
+        <span style={{ color: "gold" }}>{hideValue ? "" : value}</span>
         {showButtons ? (
           <span>
             <Button

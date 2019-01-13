@@ -11,7 +11,11 @@ export class MonsterSprite extends Component {
     let backgroundColor = "";
     if (controlType !== CONTROL_TYPE.EDIT) {
       transform = parseInt(monster.hp) === 0 ? "rotate(90deg)" : "";
-      backgroundColor = parseInt(monster.hp) === 0 ? "red" : "";
+      if (monster.hp === 0) {
+        backgroundColor = "red";
+      } else if (monster.hp < Math.ceil(parseInt(monster.maxhp) / 2)) {
+        backgroundColor = "indianred";
+      }
     }
 
     if (monster) {
