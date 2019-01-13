@@ -9,7 +9,7 @@ export class StockMonsters extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeIndex: null };
+    this.state = { activeIndex: 0 };
   }
 
   handleClick = (e, titleProps) => {

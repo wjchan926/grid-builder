@@ -117,7 +117,7 @@ export class EditMap extends Component {
           }}
         >
           <div>Map Size</div>
-          <Form style={{ width: "170px", margin: "1px auto 10px auto" }}>
+          <Form style={{ width: "99%", margin: "1px auto 10px auto" }}>
             <Form.Group widths="equal" style={{ marginBottom: "5px" }}>
               <Form.Input
                 label="Width:"
@@ -136,7 +136,12 @@ export class EditMap extends Component {
             </Form.Group>
             <div className="Terrain" style={{ marginBottom: "5px" }}>
               <div style={{ textAlign: "center" }}>Default Map Tile</div>
-              <div className="TerrainRow">
+              <div
+                style={{
+                  flexWrap: "wrap",
+                  justifyContent: "center"
+                }}
+              >
                 <SelectorTile
                   tile={<MapTile tile={0} />}
                   setSelectedTerrainTile={setDefaultTerrain}
@@ -154,6 +159,11 @@ export class EditMap extends Component {
                 />
                 <SelectorTile
                   tile={<MapTile tile={3} />}
+                  setSelectedTerrainTile={setDefaultTerrain}
+                  currentTerrain={defaultTerrain}
+                />
+                <SelectorTile
+                  tile={<MapTile tile={99} />}
                   setSelectedTerrainTile={setDefaultTerrain}
                   currentTerrain={defaultTerrain}
                 />

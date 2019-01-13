@@ -9,7 +9,14 @@ export class TerrainSelector extends Component {
 
     return (
       <div>
-        <div className="TerrainRow">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "center"
+          }}
+        >
           <SelectorTile
             tile={<MapTile tile={0} />}
             setSelectedTerrainTile={setSelectedTerrainTile}
@@ -30,8 +37,6 @@ export class TerrainSelector extends Component {
             setSelectedTerrainTile={setSelectedTerrainTile}
             currentTerrain={currentTerrain}
           />
-        </div>
-        <div className="TerrainRow">
           <SelectorTile
             tile={<MapTile tile={4} />}
             setSelectedTerrainTile={setSelectedTerrainTile}
@@ -52,8 +57,6 @@ export class TerrainSelector extends Component {
             setSelectedTerrainTile={setSelectedTerrainTile}
             currentTerrain={currentTerrain}
           />
-        </div>
-        <div className="TerrainRow">
           <SelectorTile
             tile={<MapTile tile={8} />}
             setSelectedTerrainTile={setSelectedTerrainTile}
@@ -74,8 +77,6 @@ export class TerrainSelector extends Component {
             setSelectedTerrainTile={setSelectedTerrainTile}
             currentTerrain={currentTerrain}
           />
-        </div>
-        <div className="TerrainRow">
           <SelectorTile
             tile={<MapTile tile={99} />}
             setSelectedTerrainTile={setSelectedTerrainTile}

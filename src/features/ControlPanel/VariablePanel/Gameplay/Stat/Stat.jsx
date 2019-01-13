@@ -51,7 +51,7 @@ export class Stat extends Component {
       return "";
     }
 
-    if (hideModifier) {
+    if (hideModifier || value === undefined) {
       return <span style={{ color: "gold" }}>{value}</span>;
     }
 
