@@ -97,7 +97,7 @@ export class EditPieces extends Component {
         type: "application/json"
       });
       element.href = URL.createObjectURL(file);
-      element.download = "character.json";
+      element.download = `${currentCharacter.characterName}.json`;
       element.click();
     }
   };
