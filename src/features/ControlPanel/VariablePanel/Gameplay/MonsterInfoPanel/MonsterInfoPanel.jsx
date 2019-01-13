@@ -51,7 +51,7 @@ export class MonsterInfoPanel extends Component {
   renderDamageTaken = selectedMonster => {
     return (
       <span className="Stat">
-        Damage Taken: <span  style={{ color: "gold" }}>{selectedMonster.hp - selectedMonster.maxhp}</span>
+        Damage: <span  style={{ color: "gold" }}>{selectedMonster.hp - selectedMonster.maxhp}</span>
       </span>
     );
   };

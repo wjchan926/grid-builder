@@ -16,3 +16,10 @@
   height: 56px;
   width: 56px;
 }
+
+.Counter {
+  position: relative;
+  z-index: 1;
+  color: azure;
+  text-shadow: 1px 1px black;
+}

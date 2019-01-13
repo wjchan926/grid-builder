@@ -100,6 +100,7 @@ export class Player extends Component {
           controlType={controlType}
           positioning={positioning}
         />
+        <div className="Counter">HP: {character.hp}</div>
       </div>
     );
   }

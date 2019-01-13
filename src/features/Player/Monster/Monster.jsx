@@ -100,6 +100,7 @@ export class Monster extends Component {
           controlType={controlType}
           positioning={positioning}
         />
+        <div className="Counter">{monster.hp - monster.maxhp}</div>
       </div>
     );
   }
