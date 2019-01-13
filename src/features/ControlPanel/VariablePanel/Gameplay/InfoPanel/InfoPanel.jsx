@@ -50,19 +50,22 @@ export class InfoPanel extends Component {
           stat="Name: "
           value={selectedPlayer.characterName}
           showButtons={false}
+          hideModifier
         />
         <Stat
           stat="Class: "
           value={selectedPlayer.dndClass}
           showButtons={false}
+          hideModifier
         />
-        <Stat stat="Race: " value={selectedPlayer.race} showButtons={false} />
+        <Stat stat="Race: " value={selectedPlayer.race} showButtons={false} hideModifier/>
         <Stat
           stat="Lvl: "
           value={selectedPlayer.level}
           showButtons={true}
           name="level"
           setStatValue={setStatValue}
+          hideModifier
         />
         <Stat
           stat="HP: "
@@ -70,6 +73,7 @@ export class InfoPanel extends Component {
           showButtons={true}
           name="hp"
           setStatValue={setStatValue}
+          hideModifier
         />
         <Stat
           stat="AC: "
@@ -77,6 +81,7 @@ export class InfoPanel extends Component {
           showButtons={true}
           name="ac"
           setStatValue={setStatValue}
+          hideModifier
         />
         <Stat
           stat="MS: "
@@ -84,6 +89,7 @@ export class InfoPanel extends Component {
           showButtons={true}
           name="ms"
           setStatValue={setStatValue}
+          hideModifier
         />
         <Stat
           stat="Str: "

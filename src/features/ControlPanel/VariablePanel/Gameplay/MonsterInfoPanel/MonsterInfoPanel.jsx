@@ -85,6 +85,7 @@ export class MonsterInfoPanel extends Component {
           value={selectedMonster.hp}
           showButtons
           hideValue
+          hideModifier
           name="hp"
           setStatValue={setMonsterStatValue}
         />

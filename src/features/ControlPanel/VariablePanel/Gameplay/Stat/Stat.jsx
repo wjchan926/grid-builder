@@ -43,14 +43,35 @@ export class Stat extends Component {
     }
   };
 
-  render() {
-    const { stat, showButtons, hideValue } = this.props;
+  renderStatModifier = () => {
     const { value } = this.state;
+    const { hideModifier, hideValue } = this.props;
+
+    if (hideValue) {
+      return "";
+    }
+
+    if (hideModifier) {
+      return <span style={{ color: "gold" }}>{value}</span>;
+    }
+
+    return (
+      <span style={{ color: "gold" }}>
+        {value}
+        <span style={{ color: "blue" }}>{` (${Math.trunc(
+          (value - 10) / 2
+        )})`}</span>
+      </span>
+    );
+  };
+
+  render() {
+    const { stat, showButtons } = this.props;
 
     return (
       <span className="Stat">
         {stat}
-        <span style={{ color: "gold" }}>{hideValue ? "" : value}</span>
+        {this.renderStatModifier()}
         {showButtons ? (
           <span>
             <Button
