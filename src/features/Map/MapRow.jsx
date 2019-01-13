@@ -13,7 +13,8 @@ export default class MapRow extends Component {
       currentCharacter,
       setPlayerLocation,
       currentMonster,
-      setMonsterLocation
+      setMonsterLocation,
+      dragging
     } = this.props;
 
     return (
@@ -41,6 +42,7 @@ export default class MapRow extends Component {
                   selectedTerrain={selectedTerrain}
                 />
               }
+              dragging={dragging}
             />
           );
         })}

@@ -8,7 +8,7 @@ import { SET_SELECTED_TERRAIN_TILE } from "./actions";
 
 const initialState = {
   controlType: CONTROL_TYPE.PLAY,
-  selectedTerrain: "none",
+  selectedTerrain: null,
   defaultTerrain: "grass"
 };
 

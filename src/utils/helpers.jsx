@@ -25,8 +25,9 @@ export const getTileSprite = type => {
     case 11:
       return "house2";
     case 99:
-    default:
       return "theVoid";
+    default:
+      return null;
   }
 };
 
@@ -57,7 +58,8 @@ export const getTileNumberSprite = type => {
     case "house2":
       return 11;
     case "theVoid":
-    default:
       return 99;
+    default:
+      return null;
   }
 };

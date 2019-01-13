@@ -7,9 +7,18 @@ export class MapTileWrapper extends Component {
     super(props);
 
     this.state = {
-      on: false
+      on: false,
+      dragging: false
     };
   }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.dragging !== state.dragging) {
+      return { dragging: props.dragging };
+    }
+    return null;
+  }
+
   handleOnClick = e => {
     const {
       rowIndex,
@@ -27,7 +36,7 @@ export class MapTileWrapper extends Component {
 
     switch (controlType) {
       case CONTROL_TYPE.MAP:
-        if (selectedTerrain !== "none") {
+        if (selectedTerrain !== null) {
           setTile(rowIndex, columnIndex, selectedTerrain);
         }
         break;
@@ -44,7 +53,9 @@ export class MapTileWrapper extends Component {
     }
   };
 
-  handleOver = () => {
+  handleOver = e => {
+    const { dragging } = this.state;
+
     const {
       controlType,
       selectedTerrain,
@@ -52,18 +63,22 @@ export class MapTileWrapper extends Component {
       currentMonster
     } = this.props;
 
-    const handleOverPlayer =
-      (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "none") ||
-      (controlType === CONTROL_TYPE.CHARACTERS &&
-        JSON.stringify(currentCharacter) !== "{}");
+    if (dragging) {
+      this.handleOnClick(e);
+    } else {
+      const handleOverPlayer =
+        (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "") ||
+        (controlType === CONTROL_TYPE.CHARACTERS &&
+          JSON.stringify(currentCharacter) !== "{}");
 
-    const handleOverMonster =
-      (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "none") ||
-      (controlType === CONTROL_TYPE.CHARACTERS &&
-        JSON.stringify(currentMonster) !== "{}");
+      const handleOverMonster =
+        (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "") ||
+        (controlType === CONTROL_TYPE.CHARACTERS &&
+          JSON.stringify(currentMonster) !== "{}");
 
-    if (handleOverPlayer || handleOverMonster) {
-      this.setState({ on: true });
+      if (handleOverPlayer || handleOverMonster) {
+        this.setState({ on: true });
+      }
     }
   };
 
@@ -72,15 +87,18 @@ export class MapTileWrapper extends Component {
   };
 
   render() {
-    const { mapTile } = this.props;
+    const { mapTile, selectedTerrain, currentCharacter, currentMonster } = this.props;
     const { on } = this.state;
-
+   
     return (
       <div
-        onClick={this.handleOnClick}
+        onClick={(selectedTerrain || currentCharacter || currentMonster) !== "" ? this.handleOnClick : null}
+        onDragStart={e => {
+          e.preventDefault();
+        }}
         className={`MapTileWrapper ${on ? `MapTileWrapperHover` : ""}`}
-        onMouseOver={this.handleOver}
-        onMouseLeave={this.handleLeave}
+        onMouseOver={(selectedTerrain || currentCharacter || currentMonster) !== "" ? this.handleOver : null}
+        onMouseLeave={(selectedTerrain || currentCharacter || currentMonster) !== "" ? this.handleLeave : null}
       >
         {mapTile}
       </div>

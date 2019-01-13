@@ -3,6 +3,7 @@ import MapRow from "./MapRow";
 import { tiles } from "../../data/Maps/1";
 
 import "./Map.css";
+import { CONTROL_TYPE } from "../../config/constants";
 
 export default class Map extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ export default class Map extends Component {
 
     this.state = {
       // Initialize tiles with default map
-      tiles: addTiles(tiles)
+      tiles: addTiles(tiles),
+      dragging: false
     };
   }
 
@@ -28,6 +30,20 @@ export default class Map extends Component {
     return null;
   }
 
+  handleMouseDown = e => {
+    const { controlType } = this.props;
+    if (controlType === CONTROL_TYPE.MAP) {
+      this.setState({ dragging: true });
+    }
+  };
+
+  handleMouseUp = e => {
+    const { controlType } = this.props;
+    if (controlType === CONTROL_TYPE.MAP) {
+      this.setState({ dragging: false });
+    }
+  };
+
   render() {
     const {
       controlType,
@@ -38,10 +54,14 @@ export default class Map extends Component {
       setMonsterLocation,
       currentMonster
     } = this.props;
-    const { tiles } = this.state;
+    const { tiles, dragging } = this.state;
 
     return (
-      <div className="Map">
+      <div
+        className="Map"
+        onMouseDown={this.handleMouseDown}
+        onMouseUp={this.handleMouseUp}
+      >
         {tiles.map((row, rowIndex) => {
           return (
             <MapRow
@@ -55,6 +75,7 @@ export default class Map extends Component {
               setPlayerLocation={setPlayerLocation}
               setMonsterLocation={setMonsterLocation}
               currentMonster={currentMonster}
+              dragging={dragging}
             />
           );
         })}
