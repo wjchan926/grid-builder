@@ -32,8 +32,6 @@ export class MapTileWrapper extends Component {
       currentMonster
     } = this.props;
 
-    e.stopPropagation();
-
     switch (controlType) {
       case CONTROL_TYPE.MAP:
         if (selectedTerrain !== null) {
@@ -63,22 +61,22 @@ export class MapTileWrapper extends Component {
       currentMonster
     } = this.props;
 
+    const handleOverPlayer =
+      (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "") ||
+      (controlType === CONTROL_TYPE.CHARACTERS &&
+        JSON.stringify(currentCharacter) !== "{}");
+
+    const handleOverMonster =
+      (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "") ||
+      (controlType === CONTROL_TYPE.CHARACTERS &&
+        JSON.stringify(currentMonster) !== "{}");
+
+    if (handleOverPlayer || handleOverMonster) {
+      this.setState({ on: true });
+    }
+
     if (dragging) {
       this.handleOnClick(e);
-    } else {
-      const handleOverPlayer =
-        (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "") ||
-        (controlType === CONTROL_TYPE.CHARACTERS &&
-          JSON.stringify(currentCharacter) !== "{}");
-
-      const handleOverMonster =
-        (controlType === CONTROL_TYPE.MAP && selectedTerrain !== "") ||
-        (controlType === CONTROL_TYPE.CHARACTERS &&
-          JSON.stringify(currentMonster) !== "{}");
-
-      if (handleOverPlayer || handleOverMonster) {
-        this.setState({ on: true });
-      }
     }
   };
 
@@ -87,18 +85,30 @@ export class MapTileWrapper extends Component {
   };
 
   render() {
-    const { mapTile, selectedTerrain, currentCharacter, currentMonster } = this.props;
+    const {
+      mapTile,
+      selectedTerrain,
+      currentCharacter,
+      currentMonster
+    } = this.props;
     const { on } = this.state;
-   
+
     return (
       <div
-        onClick={(selectedTerrain || currentCharacter || currentMonster) !== "" ? this.handleOnClick : null}
+        onClick={
+          (selectedTerrain || currentCharacter || currentMonster) !== ""
+            ? this.handleOnClick
+            : null
+        }
         onDragStart={e => {
           e.preventDefault();
         }}
         className={`MapTileWrapper ${on ? `MapTileWrapperHover` : ""}`}
-        onMouseOver={(selectedTerrain || currentCharacter || currentMonster) !== "" ? this.handleOver : null}
-        onMouseLeave={(selectedTerrain || currentCharacter || currentMonster) !== "" ? this.handleLeave : null}
+        onMouseOver={this.handleOver}
+        onMouseLeave={this.handleLeave}
+        onMouseDown={e => {
+          this.handleOnClick(e);
+        }}
       >
         {mapTile}
       </div>
