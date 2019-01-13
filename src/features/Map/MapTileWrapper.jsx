@@ -34,7 +34,7 @@ export class MapTileWrapper extends Component {
 
     switch (controlType) {
       case CONTROL_TYPE.MAP:
-        if (selectedTerrain !== null) {
+        if (selectedTerrain !== "") {
           setTile(rowIndex, columnIndex, selectedTerrain);
         }
         break;
