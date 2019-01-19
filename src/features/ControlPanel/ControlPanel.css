@@ -12,7 +12,7 @@
 
 .MainControl {
   border: 2px solid saddlebrown;
-  height: 15vh;
+  height: 20vh;
   overflow: scroll scroll;
   text-align: center;
 }
