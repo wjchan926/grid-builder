@@ -617,6 +617,31 @@ export const stockMonsters = [
     maxhp: "0"
   },
   {
+    id: "Orc",
+    characterName: "Orc",
+    avatar: "Orc.png",
+    hp: "15",
+    ac: "13",
+    speed: "30ft",
+    strength: "16",
+    dexterity: "12",
+    constitution: "16",
+    intelligence: "75",
+    wisdom: "11",
+    charisma: "10",
+    skills: "",
+    senses: "Darkvision 60 Ft., passive Perception 10",
+    otherInfo: "Aggressive-As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.",
+    actions:
+      "Greataxe-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (1d12 + 3) slashing damage.\n\nJavelin-Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: (1d6 + 3) piercing damage.\n\nJavelin-Ranged Weapon Attack: +5 to hit, reach 30/120 ft., one target. Hit: (1d6 + 3) piercing damage.",
+    challenge: "1/2 (100 XP)",
+    portraitPath: "./monsterSprites/portraits/Orc.png",
+    spritePath: "./monsterSprites/Orc.png",
+    location: [],
+    visible: false,
+    maxhp: "0"
+  },
+  {
     id: "Ogre",
     characterName: "Ogre",
     avatar: "Ogre.png",
