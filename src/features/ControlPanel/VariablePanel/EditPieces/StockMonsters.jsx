@@ -6,11 +6,7 @@ import "./EditPieces.css";
 import MonsterSprite from "../../../Player/MonsterSprite";
 
 export class StockMonsters extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { activeIndex: 0 };
-  }
+  state = { activeIndex: 0 };
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -27,18 +23,18 @@ export class StockMonsters extends Component {
 
     monsterList.forEach(monster => {
       monsterGrid.push(
-          <SelectorMonster
-            monster={monster}
-            key={`${monster.id}`}
-            sprite={
-              <MonsterSprite
-                monster={monster}
-                controlType={controlType}
-                positioning="relative"
-                key={`${monster.id}`}
-              />
-            }
-          />
+        <SelectorMonster
+          monster={monster}
+          key={`${monster.id}`}
+          sprite={
+            <MonsterSprite
+              monster={monster}
+              controlType={controlType}
+              positioning="relative"
+              key={`${monster.id}`}
+            />
+          }
+        />
       );
     });
 
@@ -62,7 +58,12 @@ export class StockMonsters extends Component {
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
           <div
-            style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" , justifyContent:"center"}}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "center"
+            }}
           >
             {this.generateStockMonsterGrid()}
           </div>

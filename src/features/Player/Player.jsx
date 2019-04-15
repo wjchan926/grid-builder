@@ -6,15 +6,11 @@ import PlayerSprite from "./PlayerSprite";
 import { SPRITE_SIZE, CONTROL_TYPE } from "../../config/constants";
 
 export class Player extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selected: false,
-      isOpen: false,
-      on: false
-    };
-  }
+  state = {
+    selected: false,
+    isOpen: false,
+    on: false
+  };
 
   handleOnClick = e => {
     const {

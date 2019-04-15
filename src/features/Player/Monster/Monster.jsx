@@ -6,15 +6,11 @@ import { SPRITE_SIZE, CONTROL_TYPE } from "../../../config/constants";
 import MonsterSprite from "../MonsterSprite";
 
 export class Monster extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selected: false,
-      isOpen: false,
-      on: false
-    };
-  }
+  state = {
+    selected: false,
+    isOpen: false,
+    on: false
+  };
 
   handleOnClick = e => {
     const {
@@ -90,9 +86,9 @@ export class Monster extends Component {
         }}
         className={`Selector ${this.renderClassName()}`}
         onClick={controlType !== CONTROL_TYPE.MAP ? this.handleOnClick : null}
-        onMouseOver={controlType  !== CONTROL_TYPE.MAP ? this.handleOver : null}
+        onMouseOver={controlType !== CONTROL_TYPE.MAP ? this.handleOver : null}
         onMouseLeave={
-          controlType  !== CONTROL_TYPE.MAP ? this.handleLeave : null
+          controlType !== CONTROL_TYPE.MAP ? this.handleLeave : null
         }
       >
         <MonsterSprite

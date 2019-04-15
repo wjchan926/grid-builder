@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import "./VariablePanel.css";
@@ -9,26 +9,24 @@ import EditPieces from "./EditPieces/";
 import Gameplay from "./Gameplay/Gameplay";
 import { getControlType } from "../reselect";
 
-export class VariablePanel extends Component {
-  render() {
-    const { controlType } = this.props;
-    let variableControls;
+export function VariablePanel(props) {
+  const { controlType } = props;
+  let variableControls;
 
-    switch (controlType) {
-      case CONTROL_TYPE.MAP:
-        variableControls = <EditMap />;
-        break;
-      case CONTROL_TYPE.CHARACTERS:
-        variableControls = <EditPieces />;
-        break;
-      case CONTROL_TYPE.PLAY:
-      default:
-        variableControls = <Gameplay />;
-        break;
-    }
-
-    return <div className="VariablePanel">{variableControls}</div>;
+  switch (controlType) {
+    case CONTROL_TYPE.MAP:
+      variableControls = <EditMap />;
+      break;
+    case CONTROL_TYPE.CHARACTERS:
+      variableControls = <EditPieces />;
+      break;
+    case CONTROL_TYPE.PLAY:
+    default:
+      variableControls = <Gameplay />;
+      break;
   }
+
+  return <div className="VariablePanel">{variableControls}</div>;
 }
 
 const mapStateToProps = state => ({

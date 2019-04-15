@@ -11,14 +11,10 @@ import "./EditPieces.css";
 let fileReader;
 
 export class EditPieces extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      createEditModalVisible: false,
-      mode: "create"
-    };
-  }
+  state = {
+    createEditModalVisible: false,
+    mode: "create"
+  };
 
   handleCreate = () => {
     this.setState({ createEditModalVisible: true, mode: "create" });

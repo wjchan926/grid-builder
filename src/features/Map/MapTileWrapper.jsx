@@ -3,22 +3,10 @@ import { CONTROL_TYPE } from "../../config/constants";
 import "./Map.css";
 
 export class MapTileWrapper extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      on: false,
-      dragging: false
-    };
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    if (props.dragging !== state.dragging) {
-      return { dragging: props.dragging };
-    }
-    return null;
-  }
-
+  state = {
+    on: false
+  };
+  
   handleOnClick = e => {
     const {
       rowIndex,
@@ -52,7 +40,7 @@ export class MapTileWrapper extends Component {
   };
 
   handleOver = e => {
-    const { dragging } = this.state;
+    const { dragging } = this.props;
 
     const {
       controlType,

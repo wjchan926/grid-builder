@@ -8,14 +8,10 @@ import { CONTROL_TYPE } from "../../../../../config/constants";
 const timeoutLength = 2500;
 
 export class SelectorMonster extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
+    state = {
       selected: false,
       isOpen: false
     };
-  }
 
   handleOnClick = e => {
     const {

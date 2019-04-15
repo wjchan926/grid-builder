@@ -9,14 +9,10 @@ import "./EditMap.css";
 let fileReader;
 
 export class EditMap extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      width: 25,
-      height: 15
-    };
-  }
+  state = {
+    width: 25,
+    height: 15
+  };
 
   handleChange = e => {
     this.setState({ [e.target.name]: parseInt(e.target.value) });

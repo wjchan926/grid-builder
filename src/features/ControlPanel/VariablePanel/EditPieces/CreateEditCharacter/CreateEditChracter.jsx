@@ -102,41 +102,37 @@ const avatar = [
 ];
 
 export class CreateEditChracter extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      characterFormData: {
-        id: "",
-        characterName: "",
-        playerName: "",
-        avatar: "",
-        dndClass: "",
-        race: "",
-        level: "",
-        hp: "",
-        ac: "",
-        ms: "",
-        strength: "",
-        dexterity: "",
-        constitution: "",
-        intelligence: "",
-        wisdom: "",
-        charisma: "",
-        equipment: "",
-        profAndLang: "",
-        featAndTraits: "",
-        otherInfo: "",
-        portraitPath: "",
-        spritePath: "",
-        location: [0, 0],
-        visible: false,
-        spriteLocation: `${SPRITE_SIZE * 0}px ${SPRITE_SIZE * 0}px`,
-        walkIndex: 0,
-        direction: DIRECTION.SOUTH
-      }
-    };
-  }
+  state = {
+    characterFormData: {
+      id: "",
+      characterName: "",
+      playerName: "",
+      avatar: "",
+      dndClass: "",
+      race: "",
+      level: "",
+      hp: "",
+      ac: "",
+      ms: "",
+      strength: "",
+      dexterity: "",
+      constitution: "",
+      intelligence: "",
+      wisdom: "",
+      charisma: "",
+      equipment: "",
+      profAndLang: "",
+      featAndTraits: "",
+      otherInfo: "",
+      portraitPath: "",
+      spritePath: "",
+      location: [0, 0],
+      visible: false,
+      spriteLocation: `${SPRITE_SIZE * 0}px ${SPRITE_SIZE * 0}px`,
+      walkIndex: 0,
+      direction: DIRECTION.SOUTH
+    }
+  };
 
   componentDidMount() {
     const { currentCharacter, mode } = this.props;

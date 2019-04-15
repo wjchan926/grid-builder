@@ -1,34 +1,13 @@
 import React, { Component } from "react";
 import MapRow from "./MapRow";
-import { tiles } from "../../data/Maps/1";
 
 import "./Map.css";
 import { CONTROL_TYPE } from "../../config/constants";
 
 export default class Map extends Component {
-  constructor(props) {
-    super(props);
-
-    const { addTiles } = this.props;
-
-    this.state = {
-      // Initialize tiles with default map
-      tiles: addTiles(tiles),
-      dragging: false
-    };
-  }
-
-  componentDidMount() {
-    const { tiles } = this.props;
-    this.setState({ tiles: tiles });
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    if (props.tiles !== state.tiles) {
-      return { tiles: props.tiles };
-    }
-    return null;
-  }
+  state = {
+    dragging: false
+  };
 
   handleMouseDown = e => {
     const { controlType } = this.props;
@@ -52,9 +31,10 @@ export default class Map extends Component {
       currentCharacter,
       setPlayerLocation,
       setMonsterLocation,
-      currentMonster
+      currentMonster,
+      tiles
     } = this.props;
-    const { tiles, dragging } = this.state;
+    const { dragging } = this.state;
 
     return (
       <div

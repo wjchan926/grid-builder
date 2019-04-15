@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import InfoPanel from "./InfoPanel/";
 import MonsterInfoPanel from "./MonsterInfoPanel/";
 import { getSelectedMonster } from "../../../Player/reselect";
 
-export class Gameplay extends Component {
-  render() {
-    const { selectedMonster } = this.props;
+export function Gameplay(props){
+    const { selectedMonster } = props;
 
     return (
       <div>
@@ -19,7 +18,7 @@ export class Gameplay extends Component {
       </div>
     );
   }
-}
+
 
 const mapStateToProps = state => ({
   selectedMonster: getSelectedMonster(state)

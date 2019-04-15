@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import MonsterSprite from "../../../Player/MonsterSprite";
 import SelectorMonster from "./SelectorMonster";
 
-export class MonsterSelector extends Component {
-  render() {
-    const { monsterList, controlType } = this.props;
+export function MonsterSelector(props){
+    const { monsterList, controlType } = props;
 
     let monsterArr = [];
 
@@ -36,6 +35,5 @@ export class MonsterSelector extends Component {
       </div>
     );
   }
-}
 
 export default MonsterSelector;

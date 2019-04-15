@@ -7,14 +7,10 @@ import { Popup } from "semantic-ui-react";
 const timeoutLength = 2500;
 
 export default class SelectorTile extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selected: false,
-      isOpen: false
-    };
-  }
+  state = {
+    selected: false,
+    isOpen: false
+  };
 
   handleOnClick = e => {
     const { tile, setSelectedTerrainTile, currentTerrain } = this.props;

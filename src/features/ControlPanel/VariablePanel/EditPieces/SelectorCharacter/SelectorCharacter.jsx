@@ -7,14 +7,10 @@ import "../EditPieces.css";
 const timeoutLength = 2500;
 
 export class SelectorCharacter extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selected: false,
-      isOpen: false
-    };
-  }
+  state = {
+    selected: false,
+    isOpen: false
+  };
 
   handleOnClick = e => {
     const {
