@@ -81,6 +81,8 @@ export class Monster extends Component {
       positioning = "absolute"
     } = this.props;
 
+    const {size} = this.props;
+
     return (
       <div
         style={{
@@ -99,6 +101,7 @@ export class Monster extends Component {
           monster={monster}
           controlType={controlType}
           positioning={positioning}
+          size={size}
         />
         <div className="Counter">{monster.hp - monster.maxhp}</div>
       </div>

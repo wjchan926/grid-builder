@@ -1,11 +1,34 @@
 import React, { Component } from "react";
 
 import "./Player.css";
-import { CONTROL_TYPE } from "../../config/constants";
+import { CONTROL_TYPE, SPRITE_SIZE } from "../../config/constants";
 
 export class MonsterSprite extends Component {
   render() {
     const { positioning, monster, controlType } = this.props;
+    const { size } = this.props;
+
+    let width = SPRITE_SIZE;
+    let height = SPRITE_SIZE;
+
+    switch (size) {
+      case "large":
+        width = SPRITE_SIZE * 2;
+        height = SPRITE_SIZE * 2;
+        break;
+      case "huge":
+        width = SPRITE_SIZE * 3;
+        height = SPRITE_SIZE * 3;
+        break;
+      case "gargantuan":
+        width = SPRITE_SIZE * 4;
+        height = SPRITE_SIZE * 4;
+        break;
+      default:
+        width = SPRITE_SIZE;
+        height = SPRITE_SIZE;
+        break;
+    }
 
     let transform = "";
     let backgroundColor = "";
@@ -29,7 +52,9 @@ export class MonsterSprite extends Component {
             backgroundImage: `url(${sprite})`,
             position: positioning,
             transform: transform,
-            backgroundColor: backgroundColor
+            backgroundColor: backgroundColor,
+            width: width,
+            height: height
           }}
           className="Monster"
         />

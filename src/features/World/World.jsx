@@ -38,6 +38,7 @@ export default class World extends Component {
               monster={monster}
               position={monster.location}
               key={monster.id}
+              size="large"
             />
           );
         }
